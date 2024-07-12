@@ -1,0 +1,17 @@
+.notificationBar{
+  height: 2.5rem;
+  background-color: $neutral02;
+  :global{
+    span{
+      font-weight: $fw600;
+      line-height: 1.375rem;
+    }
+    .shop_now{
+      color: $information;
+      display: flex;
+      gap: 0 $s4;
+      border-bottom: 1px solid $information;
+    }
+  }
+  
+}  

@@ -1,0 +1,173 @@
+
+
+.iu-ac {
+  align-items: center;
+}
+
+.iu-al {
+  align-items: left;
+}
+
+//font
+.iu-cap {
+  text-transform: capitalize;
+}
+
+.iu-upp {
+  text-transform: uppercase;
+}
+
+.iu-low {
+  text-transform: lowercase;
+}
+
+// display
+.iu-d-flexcenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iu-align-start {
+  align-items: flex-start;
+}
+
+.iu-d-flexend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.iu-d-flexcolumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.iu-d-flexbetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iu-flex-grow1 {
+  flex-grow: 1;
+}
+
+.iu-w-full {
+  width: 100%;
+}
+
+.iu-w-fitcontent {
+  width: fit-content;
+}
+
+// width
+.iu-w14 {
+  width: 14%;
+}
+
+.iu-w15 {
+  width: 15%;
+}
+
+.iu-w16 {
+  width: 16%;
+}
+
+.iu-w17 {
+  width: 17%;
+}
+
+.iu-w18 {
+  width: 18%;
+}
+
+.iu-w25 {
+  width: 25%;
+}
+
+.iu-w38 {
+  width: 38%;
+}
+
+.iu-w40 {
+  width: 40%;
+}
+
+.iu-w45 {
+  width: 45%;
+}
+
+.iu-w50 {
+  width: 50%;
+}
+
+.iu-w60 {
+  width: 60%;
+}
+
+.iu-w100 {
+  width: 100%;
+}
+
+// position
+.iu-fr {
+  float: right;
+}
+
+.iu-pr {
+  position: relative;
+}
+
+.iu-pa {
+  position: absolute;
+}
+
+.iu-tc {
+  text-align: center;
+}
+
+.iu-tl {
+  text-align: left;
+}
+
+.iu-tr {
+  text-align: right;
+}
+
+//pre
+.iu-pre {
+  white-space: pre-wrap;
+}
+
+.iu-cp {
+  cursor: pointer;
+}
+
+.iu-text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.iu-hidden-y {
+  overflow: hidden !important;
+}
+
+.iu-pointer {
+  cursor: pointer;
+}
+
+.iu-button-default {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.iu-fw-600 {
+  font-weight: $fw600;
+}
