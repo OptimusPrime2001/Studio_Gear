@@ -57,14 +57,14 @@ $br20: 1.25rem !default;
 // resonsive breakpoints
 $grid-breakpoints: (
   xs: 0,
-  sm: 576px,
+  sm: 640px,
   md: 768px,
   ipadmini: 769px,
   ipadair: 821px,
-  lg: 1134px,
-  xl: 1200px,
-  xxl: 1367px,
-  xxxl: 1679px) !default;
+  lg: 1024px,
+  xl: 1280px,
+  2xl: 1440px,
+  3xl: 1536px) !default;
 
 // color variables
 $red: #df1820 !default;

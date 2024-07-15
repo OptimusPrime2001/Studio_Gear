@@ -1,23 +1,40 @@
 export const navigationLink = [
-  { id: 'home', label: 'Home', href: '/' },
-  { id: 'shop', label: 'Shop', href: '/shop' },
-  { id: 'product', label: 'Product', href: '/product' },
-  { id: 'contact', label: 'Contact Us', href: '/contact' }
+  { id: 'home', label: 'Trang chủ', href: '/' },
+  { id: 'shop', label: 'Cửa hàng', href: '/shop' },
+  { id: 'product', label: 'Sản phẩm', href: '/product' },
+  { id: 'contact', label: 'Liên hệ', href: '/contact' }
 ];
 export const navigationIcon = [
   {
     id: 'search',
-    label: 'Search',
+    label: 'Tìm kiếm',
     svg: '/interfaceoutlinesearch-02.svg'
   },
   {
     id: 'account',
-    label: 'Account',
+    label: 'Tài khonar',
     svg: '/interfaceoutlineusercircle.svg'
   },
   {
     id: 'bag',
-    label: 'Bag',
+    label: 'Giỏ hàng',
     svg: '/outlineshopping-bag.svg'
+  }
+];
+export const listSocial = [
+  {
+    id: 'instagram',
+    href: '/instagram',
+    svg: '/socialoutlineinstagram.svg'
+  },
+  {
+    id: 'facebook',
+    href: '/facebook',
+    svg: '/socialoutlinefacebook.svg'
+  },
+  {
+    id: 'youtube',
+    href: '/youtube',
+    svg: '/youtube.svg'
   }
 ];

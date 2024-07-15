@@ -1,0 +1,93 @@
+.footerWrapper{
+  background-color: #141718;
+  align-items: flex-start;
+  padding: 80px calc((100vw - 80vw)/2) 3.25rem;
+    gap: 3.062rem;
+    overflow: hidden;
+    color: #fff;
+    :global{
+      .footer_top{
+        display: flex;
+        text-wrap: nowrap;
+        align-items: center;
+        gap:0 $s32;
+        margin-bottom: 3.5625rem;
+        flex-wrap: wrap;
+        .line{
+          height: 1.5rem;
+          width: 1px;
+          background:$text-primary-blur;
+        }
+        ul{
+          display: flex;
+          justify-content: right;
+          flex: 1;
+          @include media-breakpoint-between(md,lg){
+            justify-content: flex-start
+          }
+
+        }
+      }
+      .footer_line{
+        height: .0625rem;
+        width: 100%;
+        background:$text-primary-blur;
+      }
+      .footer_bottom{
+        padding: 1rem 0;
+        font-size: 0.75rem; 
+        display: flex;
+        gap:0 1.75rem ;
+        text-wrap: nowrap;
+        flex-wrap: wrap;
+        ul{
+          display: flex;
+          gap: 0 1.75rem;
+          font-weight: bold;
+        }
+        .list_social{
+          flex: 1;
+          display: flex;
+          justify-content: right;
+          gap:0 $s24;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(md){
+    .footerWrapper{
+      background-color: #232627;
+      :global{
+        .footer_top{
+          flex-direction: column;
+          justify-content: center;
+          margin-bottom: 2.5rem;
+          gap:$s16 0;
+          .line{
+            width: 1.5rem!important;
+            height: .0625rem!important;
+          }
+          ul{
+            flex-direction: column;
+            text-align: center;
+          }
+        }
+        .footer_bottom{
+          gap:1.75rem 0;
+          padding:$s24 0 0 0 ;
+          flex-wrap: wrap-reverse;
+          flex-direction: column-reverse;
+          align-items: center;
+          ul{
+            gap: 0 1.75rem;
+          }
+          .list_social{
+            flex: 1;
+            display: flex;
+            justify-content: right;
+            gap:0 $s24;
+          }
+        }
+      }
+    }
+  }

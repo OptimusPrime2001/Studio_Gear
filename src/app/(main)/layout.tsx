@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './_components/header/header';
-import Footer from './_components/footer/footer';
-import NotificationBar from './_components/notification-bar/notification-bar';
+import Header from '@common/header/header';
+import Footer from '@common/footer/footer';
+import NotificationBar from '@common/notification-bar/notification-bar';
 
 const MainLyout = ({
   children

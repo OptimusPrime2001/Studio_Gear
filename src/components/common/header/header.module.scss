@@ -3,16 +3,11 @@
   width: 80vw;
   margin: auto;
   :global{
-    .logo_link{
-      font-size: $f24;
-      line-height: $lh125;
-      font-weight:$fw600;
-    }
     ul>li>a{
       font-size: $f16;
       line-height: $lh125;
       font-weight:$fw600;
-
+      text-wrap: nowrap;
     }
     .menu_active{
       color: $text-primary;
