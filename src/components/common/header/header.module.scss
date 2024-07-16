@@ -4,15 +4,22 @@
   margin: auto;
   :global {
     .header-logo>button{
-      @include media-breakpoint-up(md){
+      @include media-breakpoint-up(ipadair){
         display: none;
       }
     }
-    ul>li>a{
-      font-size: $f16;
-      line-height: $lh125;
-      font-weight:$fw600;
-      text-wrap: nowrap;
+    ul{
+      @include media-breakpoint-up(ipadair){
+        &{
+          display: flex;
+        }
+      }
+      &>li>a{
+        font-size: $f16;
+        line-height: $lh125;
+        font-weight:$fw600;
+        text-wrap: nowrap;
+      }
     }
     .menu_active{
       color: $text-primary;

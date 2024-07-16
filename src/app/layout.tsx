@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import './index.scss';
-import { space_grotesk } from '@lib/fonts';
 import { ThemeProvider } from '@components/provider/theme-provider';
 
 export const metadata: Metadata = {
@@ -14,10 +13,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <ThemeProvider attribute='class' defaultTheme='light' enableSystem disableTransitionOnChange>
-        <body className={space_grotesk.className}>{children}</body>
-      </ThemeProvider>
+    <html lang='en' suppressHydrationWarning>
+      <body>
+        <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

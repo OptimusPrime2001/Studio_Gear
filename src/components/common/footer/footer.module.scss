@@ -40,10 +40,16 @@
         gap:0 1.75rem ;
         text-wrap: nowrap;
         flex-wrap: wrap;
+        .copy_right{
+          text-align: center;
+          text-wrap: wrap;
+        }
         ul{
           display: flex;
           gap: 0 1.75rem;
           font-weight: bold;
+          flex-wrap: wrap;
+          justify-content: center;
         }
         .list_social{
           flex: 1;

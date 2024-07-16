@@ -24,7 +24,7 @@ const Header = () => {
           <SheetTrigger>
             <MenuIcon />
           </SheetTrigger>
-          <SheetContent datatype='menu_mobile' id='panel_menu_mobile' side='left' className='md:hidden w-[300px]'>
+          <SheetContent datatype='menu_mobile' side='left' className='ipadair:hidden w-[300px]'>
             <SheetHeader>
               <SheetTitle>Are you absolutely sure?</SheetTitle>
               <SheetDescription>
@@ -36,7 +36,7 @@ const Header = () => {
         </Sheet>
         <Logo />
       </section>
-      <ul className='iu-d-flexbetween xl:gap-x-10 md:gap-x-6 md:flex hidden '>
+      <ul className='iu-d-flexbetween xl:gap-x-10 md:gap-x-6 hidden'>
         {navigationLink.map(item => (
           <li key={item.id}>
             <Link className={checkMenuActive(item.href)} href={item.href}>
@@ -45,7 +45,7 @@ const Header = () => {
           </li>
         ))}
       </ul>
-      <section className='iu-d-flexbetween gap-x-4 cursor-pointer relative '>
+      <section className='iu-d-flexbetween gap-x-4 cursor-pointer relative'>
         {navigationIcon.map(navItem => {
           if (navItem.id === 'bag')
             return (

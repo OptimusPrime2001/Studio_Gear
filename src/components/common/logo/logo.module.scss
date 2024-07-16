@@ -2,6 +2,7 @@
   font-size: $f24;
   line-height: $lh125;
   font-weight:$fw600;
+  text-wrap: nowrap;
   @include media-breakpoint-down(md){
     font-size: $f16;
   }

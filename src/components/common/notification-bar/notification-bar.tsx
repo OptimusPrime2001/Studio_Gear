@@ -13,7 +13,7 @@ const NotificationBar = () => {
   return (
     <section className={cn(styles.notificationBar, 'iu-d-flexcenter gap-x-3 flex dark:bg-slate-900 relative')}>
       <VoucherIcon />
-      <span>Giảm giá 30% trên toàn cửa hàng — Thời gian có hạn! </span>
+      <span className='text-center'>Giảm giá 30% trên toàn cửa hàng — Thời gian có hạn! </span>
       <Link className='shop_now' href='/product'>
         <span>Mua ngay</span>
         <ArrowRightIcon />
