@@ -2,7 +2,12 @@
   height: 3.75rem;
   width: 80vw;
   margin: auto;
-  :global{
+  :global {
+    .header-logo>button{
+      @include media-breakpoint-up(md){
+        display: none;
+      }
+    }
     ul>li>a{
       font-size: $f16;
       line-height: $lh125;

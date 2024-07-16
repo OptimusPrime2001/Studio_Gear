@@ -2,4 +2,7 @@
   font-size: $f24;
   line-height: $lh125;
   font-weight:$fw600;
+  @include media-breakpoint-down(md){
+    font-size: $f16;
+  }
 }

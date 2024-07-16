@@ -1,7 +1,7 @@
 .footerWrapper{
   background-color: #141718;
   align-items: flex-start;
-  padding: 80px calc((100vw - 80vw)/2) 3.25rem;
+  padding: 5rem calc((100vw - 80vw)/2) 3.25rem;
     gap: 3.062rem;
     overflow: hidden;
     color: #fff;
@@ -54,15 +54,19 @@
       }
     }
   }
-  @include media-breakpoint-down(md){
+@include media-breakpoint-down(md){
     .footerWrapper{
       background-color: #232627;
+      padding: 3rem calc((100vw - 80vw)/2);
       :global{
         .footer_top{
           flex-direction: column;
           justify-content: center;
           margin-bottom: 2.5rem;
           gap:$s16 0;
+          a{
+            font-size: $f24;
+          }
           .line{
             width: 1.5rem!important;
             height: .0625rem!important;
@@ -74,7 +78,7 @@
         }
         .footer_bottom{
           gap:1.75rem 0;
-          padding:$s24 0 0 0 ;
+          padding:$s24 0  ;
           flex-wrap: wrap-reverse;
           flex-direction: column-reverse;
           align-items: center;

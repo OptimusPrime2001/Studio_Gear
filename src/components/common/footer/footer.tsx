@@ -1,14 +1,13 @@
 import React from 'react';
 import styles from './footer.module.scss';
-import { clsx } from 'clsx';
 import { inter } from '@lib/fonts';
-import { listSocial, navigationLink } from '@lib/constant';
-import Image from 'next/image';
+import { listSocialIcon, navigationLink } from '@lib/constant';
 import Logo from '@common/logo/logo';
 import Link from 'next/link';
+import { cn } from '@lib/utils';
 const Footer = () => {
   return (
-    <footer className={clsx(styles.footerWrapper, inter.className)}>
+    <footer className={cn(styles.footerWrapper, inter.className, 'dark:bg-white dark:text-black')}>
       <section className='footer_top'>
         <Logo />
         <span className='line' />
@@ -27,9 +26,9 @@ const Footer = () => {
           <li>Terms of Use</li>
         </ul>
         <div className='list_social'>
-          {listSocial.map(item => (
+          {listSocialIcon.map(item => (
             <Link href={item.href} key={item.id}>
-              <Image height={24} width={24} alt={item.id} src={item.svg} />
+              <item.Component />
             </Link>
           ))}
         </div>

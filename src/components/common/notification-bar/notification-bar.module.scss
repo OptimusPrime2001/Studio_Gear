@@ -1,6 +1,9 @@
 .notificationBar{
   height: 2.5rem;
   background-color: $neutral02;
+  @include media-breakpoint-down(md){
+    font-size: $f12;
+  }
   :global{
     span{
       font-weight: $fw600;
@@ -9,8 +12,12 @@
     .shop_now{
       color: $information;
       display: flex;
+      align-items: center;
       gap: 0 $s4;
       border-bottom: 1px solid $information;
+      @include media-breakpoint-down(md){
+        display:none;
+      }
     }
   }
   

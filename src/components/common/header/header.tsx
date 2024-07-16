@@ -4,27 +4,39 @@ import React from 'react';
 import styles from './header.module.scss';
 import { navigationIcon, navigationLink } from '@lib/constant';
 import { usePathname } from 'next/navigation';
-import clsx from 'clsx';
-import Image from 'next/image';
-import { Button } from '@components/ui/button';
 import { inter } from '@lib/fonts';
 import Logo from '@common/logo/logo';
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@components/ui/sheet';
+import { ModeToggle } from '@common/mode-toggle/ModeToggle';
+import MenuIcon from '@components/icons/menu-bars';
+import ShoppingBag from '@components/icons/shopping-bag';
+import { cn } from '@lib/utils';
 
 const Header = () => {
   const pathname = usePathname();
   const checkMenuActive = (label: string) => {
-    return pathname === label ? 'menu_active' : 'menu_link';
+    return pathname === label ? 'menu_active dark:text-white' : 'menu_link';
   };
   return (
-    <header className={clsx(styles.headerWrapper, 'iu-d-flexbetween')}>
-      <section className='iu-d-flexcenter gap-x-2'>
-        <Button className='border-none shadow-none gap-x2 md:hidden flex' variant='outline' size='icon'>
-          <Image src='/menuoutlinemenulinehorizontal.svg' alt='menu-icon' height={24} width={24} />
-        </Button>
-
+    <header className={cn(styles.headerWrapper, 'iu-d-flexbetween')}>
+      <section className='iu-d-flexcenter header-logo gap-x-2'>
+        <Sheet>
+          <SheetTrigger>
+            <MenuIcon />
+          </SheetTrigger>
+          <SheetContent datatype='menu_mobile' id='panel_menu_mobile' side='left' className='md:hidden w-[300px]'>
+            <SheetHeader>
+              <SheetTitle>Are you absolutely sure?</SheetTitle>
+              <SheetDescription>
+                This action cannot be undone. This will permanently delete your account and remove your data from our
+                servers.
+              </SheetDescription>
+            </SheetHeader>
+          </SheetContent>
+        </Sheet>
         <Logo />
       </section>
-      <ul className='iu-d-flexbetween xl:gap-x-10 md:gap-x-6 md:flex hidden'>
+      <ul className='iu-d-flexbetween xl:gap-x-10 md:gap-x-6 md:flex hidden '>
         {navigationLink.map(item => (
           <li key={item.id}>
             <Link className={checkMenuActive(item.href)} href={item.href}>
@@ -34,16 +46,21 @@ const Header = () => {
         ))}
       </ul>
       <section className='iu-d-flexbetween gap-x-4 cursor-pointer relative '>
-        {navigationIcon.map(item => {
-          if (item.label === 'Bag')
+        {navigationIcon.map(navItem => {
+          if (navItem.id === 'bag')
             return (
-              <div key={item.id} className='iu-d-flexbetween gap-x-1'>
-                <Image width={24} height={24} key={item.id} src={item.svg} alt={item.label} />
-                <span className={clsx('index_ellipseParent iu-d-flexcenter', inter.className)}>3</span>
+              <div key={navItem.id} className='iu-d-flexbetween gap-x-1'>
+                <ShoppingBag />
+                <span
+                  className={cn('index_ellipseParent iu-d-flexcenter dark:bg-white dark:text-black', inter.className)}
+                >
+                  3
+                </span>
               </div>
             );
-          else return <Image width={24} height={24} key={item.id} src={item.svg} alt={item.label} />;
+          else return <navItem.Component key={navItem.id} className='hidden md:block' />;
         })}
+        <ModeToggle />
       </section>
     </header>
   );

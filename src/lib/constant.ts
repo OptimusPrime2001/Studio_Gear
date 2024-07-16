@@ -1,3 +1,10 @@
+import AccountIcon from '@components/icons/account';
+import FacebookIcon from '@components/icons/facebook';
+import InstagramIcon from '@components/icons/instagram';
+import SearchIcon from '@components/icons/search-icon';
+import ShoppingBag from '@components/icons/shopping-bag';
+import YoutubeIcon from '@components/icons/youtube';
+
 export const navigationLink = [
   { id: 'home', label: 'Trang chủ', href: '/' },
   { id: 'shop', label: 'Cửa hàng', href: '/shop' },
@@ -8,33 +15,33 @@ export const navigationIcon = [
   {
     id: 'search',
     label: 'Tìm kiếm',
-    svg: '/interfaceoutlinesearch-02.svg'
+    Component: SearchIcon
   },
   {
     id: 'account',
-    label: 'Tài khonar',
-    svg: '/interfaceoutlineusercircle.svg'
+    label: 'Tài khoản',
+    Component: AccountIcon
   },
   {
     id: 'bag',
     label: 'Giỏ hàng',
-    svg: '/outlineshopping-bag.svg'
+    Component: ShoppingBag
   }
 ];
-export const listSocial = [
+export const listSocialIcon = [
   {
     id: 'instagram',
     href: '/instagram',
-    svg: '/socialoutlineinstagram.svg'
+    Component: InstagramIcon
   },
   {
     id: 'facebook',
     href: '/facebook',
-    svg: '/socialoutlinefacebook.svg'
+    Component: FacebookIcon
   },
   {
     id: 'youtube',
     href: '/youtube',
-    svg: '/youtube.svg'
+    Component: YoutubeIcon
   }
 ];

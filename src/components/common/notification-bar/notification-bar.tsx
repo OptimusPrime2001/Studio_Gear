@@ -1,17 +1,24 @@
+'use client';
 import React from 'react';
 import styles from './notification-bar.module.scss';
-import { clsx } from 'clsx';
-import Image from 'next/image';
 import Link from 'next/link';
+import ArrowRightIcon from '@components/icons/arrow-right';
+import VoucherIcon from '@components/icons/voucher';
+import CloseIcon from '@components/icons/close';
+import { cn } from '@lib/utils';
+
 const NotificationBar = () => {
+  const [renderVoucher, setRenderVoucher] = React.useState<boolean>(true);
+  if (!renderVoucher) return null;
   return (
-    <section className={clsx(styles.notificationBar, 'iu-d-flexcenter gap-x-3')}>
-      <Image alt='voucher' height={24} width={24} src='/ticketpercent.svg' />
-      <span>30% off storewide — Limited time! </span>
-      <Link className='shop_now' href='/shop'>
-        <span>Shop Now</span>
-        <Image alt='voucher' height={18} width={18} src='/iconarrowright.svg' />
+    <section className={cn(styles.notificationBar, 'iu-d-flexcenter gap-x-3 flex dark:bg-slate-900 relative')}>
+      <VoucherIcon />
+      <span>Giảm giá 30% trên toàn cửa hàng — Thời gian có hạn! </span>
+      <Link className='shop_now' href='/product'>
+        <span>Mua ngay</span>
+        <ArrowRightIcon />
       </Link>
+      <CloseIcon onClick={() => setRenderVoucher(false)} className='md:absolute md:right-4 relative cursor-pointer' />
     </section>
   );
 };
