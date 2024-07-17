@@ -2,10 +2,6 @@
   height: 3.75rem;
   width: 80vw;
   margin: auto;
-  @include media-breakpoint-down(sm){
-    padding: 0 $s32;
-    width:100vw;
-  }
   :global {
     .header-logo>button{
       @include media-breakpoint-up(ipadair){

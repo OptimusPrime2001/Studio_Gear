@@ -172,3 +172,9 @@
 .iu-fw-600 {
   font-weight: $fw600;
 }
+.media_width_sm{
+  @include media-breakpoint-down(sm){
+    padding: 0 $s32!important;
+    width:100vw!important;
+  }
+}

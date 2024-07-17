@@ -18,7 +18,7 @@ const Header = () => {
     return pathname === label ? 'menu_active dark:text-white' : 'menu_link';
   };
   return (
-    <header className={cn(styles.headerWrapper, 'iu-d-flexbetween')}>
+    <header className={cn(styles.headerWrapper, 'iu-d-flexbetween media_width_sm')}>
       <section className='iu-d-flexcenter header-logo gap-x-2'>
         <Sheet>
           <SheetTrigger>

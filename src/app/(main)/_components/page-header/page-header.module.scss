@@ -1,4 +1,50 @@
 .pageHeaderWrapper{
   width:80vw;
-  height: 392px;
+  height: 33.5rem;
+  :global{
+  
+    button{
+      background: $main-bg-color;
+      height: 2.5rem;
+      width: 2.5rem;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.0364);
+      border:none;
+      color:#6C7275;
+      svg{
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+      &:hover{
+        background: $main-bg-color;
+        color:#6C7275;
+      }
+    }
+    .slider-navigation{
+      position: absolute;
+      bottom: $s32;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      gap: $s16; 
+      .slider-dot{
+        height: $s8;
+        width: $s8;
+        background: $main-bg-color;
+        border-radius: 100%;
+        display: inline-block;
+        transition: all ease 0.4s;
+        cursor: pointer;
+      }
+      .slide-active{
+        width: $s32;
+        border-radius: 6.25rem;
+      }
+
+    }
+    @include media-breakpoint-down(md){
+      button{
+        display: none;
+      }
+    }
+  }
 }
