@@ -58,46 +58,44 @@
           gap:0 $s24;
         }
       }
-    }
-  }
-@include media-breakpoint-down(md){
-    .footerWrapper{
-      background-color: #232627;
-      padding: 3rem calc((100vw - 80vw)/2);
-      :global{
-        .footer_top{
-          flex-direction: column;
-          justify-content: center;
-          margin-bottom: 2.5rem;
-          gap:$s16 0;
-          a{
-            font-size: $f24;
+      @include media-breakpoint-down(md){
+          &{
+            background-color: #232627;
+            padding: 3rem $s32;
+              .footer_top{
+                flex-direction: column;
+                justify-content: center;
+                margin-bottom: 2.5rem;
+                gap:$s16 0;
+                a{
+                  font-size: $f24;
+                }
+                .line{
+                  width: 1.5rem!important;
+                  height: .0625rem!important;
+                }
+                ul{
+                  flex-direction: column;
+                  text-align: center;
+                }
+              }
+              .footer_bottom{
+                gap:1.75rem 0;
+                padding:$s24 0  ;
+                flex-wrap: wrap-reverse;
+                flex-direction: column-reverse;
+                align-items: center;
+                ul{
+                  gap: 0 1.75rem;
+                }
+                .list_social{
+                  flex: 1;
+                  display: flex;
+                  justify-content: right;
+                  gap:0 $s24;
+                }
+            }
           }
-          .line{
-            width: 1.5rem!important;
-            height: .0625rem!important;
-          }
-          ul{
-            flex-direction: column;
-            text-align: center;
-          }
-        }
-        .footer_bottom{
-          gap:1.75rem 0;
-          padding:$s24 0  ;
-          flex-wrap: wrap-reverse;
-          flex-direction: column-reverse;
-          align-items: center;
-          ul{
-            gap: 0 1.75rem;
-          }
-          .list_social{
-            flex: 1;
-            display: flex;
-            justify-content: right;
-            gap:0 $s24;
-          }
-        }
       }
     }
   }

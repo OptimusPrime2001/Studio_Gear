@@ -67,7 +67,6 @@ module.exports = {
         'accordion-up': 'accordion-up 0.2s ease-out'
       },
       screens: {
-        ipadmini: '769px',
         ipadair: '821px',
         '3xl': '1536px'
       }
