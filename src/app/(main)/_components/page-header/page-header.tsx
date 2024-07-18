@@ -8,14 +8,12 @@ import {
   CarouselNext,
   CarouselPrevious
 } from '@components/ui/carousel';
+import { listSlider } from '@lib/constant';
+import { cn } from '@lib/utils';
 import Image from 'next/image';
 import styles from './page-header.module.scss';
-import { Span } from 'next/dist/trace';
-import { cn } from '@lib/utils';
-import { listSlider } from '@lib/constant';
-type HomeSliderProps = {};
 
-const HomeSlider: React.FC<HomeSliderProps> = props => {
+const HomeSlider: React.FC = () => {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   React.useEffect(() => {

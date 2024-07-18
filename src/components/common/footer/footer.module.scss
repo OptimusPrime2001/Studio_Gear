@@ -1,9 +1,8 @@
 .footerWrapper{
-  background-color: #141718;
-  align-items: flex-start;
-  padding: 5rem calc((100vw - 80vw)/2) 3.25rem;
-    gap: 3.062rem;
-    overflow: hidden;
+  background-color: $text-primary-dark;;
+   align-items: flex-start;
+  padding: 5rem calc((100% - 80%)/2) 3.25rem;
+  overflow: hidden;
     color: #fff;
     :global{
       .footer_top{
@@ -29,7 +28,7 @@
         }
       }
       .footer_line{
-        height: .0625rem;
+                height: .0625rem;
         width: 100%;
         background:$text-primary-blur;
       }

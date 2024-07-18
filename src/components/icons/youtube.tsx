@@ -1,8 +1,6 @@
 import React from 'react';
 
-type YoutubeIconProps = {};
-
-const YoutubeIcon: React.FC<YoutubeIconProps> = _props => {
+const YoutubeIcon: React.FC = () => {
   return (
     <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
       <rect x='2' y='3' width='20' height='18' rx='4' stroke='currentColor' strokeWidth='1.5' />

@@ -17,10 +17,10 @@ $f38: $font-base * 2.375 !default;
 
 //font weight variables
 $fw300: 300 !default;
-$fw400: 400 !default;
-$fw500: 500 !default;
-$fw600: 600 !default;
-$fw700: 700 !default;
+$normal: 400 !default;
+$medium: 500 !default;
+$semibold: 600 !default;
+$bold: 700 !default;
 
 //line height variables
 $lh1: 1 !default;
@@ -56,7 +56,7 @@ $br20: 1.25rem !default;
 
 // resonsive breakpoints
 $grid-breakpoints: (
-  xs: 0,
+  xs: 410px,
   sm: 640px,
   md: 768px,
   ipadair: 821px,
@@ -79,7 +79,8 @@ $main-bg-color: #FFF !default;
 $hover-bg-color: #E8E9EA !default;
 
 // font color-variables
-$text-primary: #141718 !default;
+$text-primary-dark: #141718 !default;
+$text-primary-light: #E8E9EA !default;
 $text-primary-blur:#6C7275 !default;
 $link-color: #df1820 !default;
 $text-default: #222;

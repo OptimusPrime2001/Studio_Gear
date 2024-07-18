@@ -1,6 +1,6 @@
 .headerWrapper{
   height: 3.75rem;
-  width: 80vw;
+  width: 80%;
   margin: auto;
   :global {
     .header-logo>button{
@@ -17,24 +17,23 @@
       &>li>a{
         font-size: $f16;
         line-height: $lh125;
-        font-weight:$fw600;
+        font-weight:$semibold;
         text-wrap: nowrap;
       }
     }
     .menu_active{
-      color: $text-primary;
     }
     .menu_link{
       color:$text-primary-blur;
     }
     .index_ellipseParent{
-      background-color: $text-primary;
+      background-color: $text-primary-dark;
+      color:$text-primary-light;
       width: 1.25rem;
       height: 1.25rem;
       border-radius: 50%;
-      color: white;
       font-size: $f12;
-      font-weight: $fw700;
+      font-weight: $bold;
     }
   }
 }

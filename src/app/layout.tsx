@@ -1,6 +1,6 @@
+import { ThemeProvider } from '@components/provider/theme-provider';
 import type { Metadata } from 'next';
 import './index.scss';
-import { ThemeProvider } from '@components/provider/theme-provider';
 
 export const metadata: Metadata = {
   title: 'Studio Gear',

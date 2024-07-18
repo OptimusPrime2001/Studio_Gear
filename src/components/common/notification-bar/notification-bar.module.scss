@@ -3,7 +3,7 @@
   background-color: $neutral02;
   :global{
     span{
-      font-weight: $fw600;
+      font-weight: $semibold;
       line-height: 1.375rem;
     }
     .shop_now{
@@ -14,7 +14,6 @@
       border-bottom: 1px solid $information;
     }
     @include media-breakpoint-down(sm){
-      padding: $s12 $s15;
       box-sizing: content-box;
       span{
         font-size: $f12;
@@ -23,6 +22,9 @@
       .shop_now{
         display:none;
       }
+    }
+    @include media-breakpoint-down(xs){
+      padding: $s12 $s15;
     }
   }
 }

@@ -1,16 +1,16 @@
 'use client';
-import Link from 'next/link';
 import React from 'react';
-import styles from './header.module.scss';
-import { navigationIcon, navigationLink } from '@lib/constant';
-import { usePathname } from 'next/navigation';
-import { inter } from '@lib/fonts';
 import Logo from '@common/logo/logo';
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@components/ui/sheet';
 import { ModeToggle } from '@common/mode-toggle/ModeToggle';
 import MenuIcon from '@components/icons/menu-bars';
 import ShoppingBag from '@components/icons/shopping-bag';
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@components/ui/sheet';
+import { navigationIcon, navigationLink } from '@lib/constant';
+import { inter } from '@lib/fonts';
 import { cn } from '@lib/utils';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import styles from './header.module.scss';
 
 const Header = () => {
   const pathname = usePathname();
@@ -52,7 +52,10 @@ const Header = () => {
               <div key={navItem.id} className='iu-d-flexbetween gap-x-1'>
                 <ShoppingBag />
                 <span
-                  className={cn('index_ellipseParent iu-d-flexcenter dark:bg-white dark:text-black', inter.className)}
+                  className={cn(
+                    'index_ellipseParent iu-d-flexcenter dark:!bg-primary_light dark:!text-primary_dark',
+                    inter.className
+                  )}
                 >
                   3
                 </span>

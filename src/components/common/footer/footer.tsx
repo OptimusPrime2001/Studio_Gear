@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { cn } from '@lib/utils';
 const Footer = () => {
   return (
-    <footer className={cn(styles.footerWrapper, inter.className, 'dark:bg-white dark:text-black')}>
+    <footer className={cn(styles.footerWrapper, inter.className, 'dark:bg-white dark:text-black media_width_sm')}>
       <section className='footer_top'>
         <Logo />
         <span className='line' />

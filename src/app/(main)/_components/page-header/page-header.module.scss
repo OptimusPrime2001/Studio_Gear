@@ -1,5 +1,5 @@
 .pageHeaderWrapper{
-  width:80vw;
+  width:80%;
   height: 33.5rem;
   :global{
   
@@ -9,14 +9,14 @@
       width: 2.5rem;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.0364);
       border:none;
-      color:#6C7275;
+      color:$text-primary-blur;
       svg{
         width: 1.5rem;
         height: 1.5rem;
       }
       &:hover{
         background: $main-bg-color;
-        color:#6C7275;
+        color:$text-primary-blur;
       }
     }
     .slider-navigation{
@@ -42,9 +42,15 @@
 
     }
     @include media-breakpoint-down(md){
+    &{
+      height:19.0625rem;
+    }
       button{
         display: none;
       }
     }
+    // @include media-breakpoint-up(ipadair){
+    //   height: 45rem;
+    // }
   }
 }

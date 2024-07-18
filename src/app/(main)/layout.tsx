@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '@common/header/header';
 import Footer from '@common/footer/footer';
+import Header from '@common/header/header';
 import NotificationBar from '@common/notification-bar/notification-bar';
 
 const MainLyout = ({

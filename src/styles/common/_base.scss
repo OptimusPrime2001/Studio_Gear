@@ -170,11 +170,22 @@
 }
 
 .iu-fw-600 {
-  font-weight: $fw600;
+  font-weight: $semibold;
 }
 .media_width_sm{
   @include media-breakpoint-down(sm){
-    padding: 0 $s32!important;
-    width:100vw!important;
+    padding-right: $s32!important;
+    padding-left: $s32!important;
+    width:100%!important;
+  }
+}
+.reset_btn{
+  border: none !important;
+  box-shadow: none!important;
+  width: fit-content!important;
+  height: fit-content!important;
+  outline: none!important;
+  &:hover{
+    background: transparent!important;
   }
 }
