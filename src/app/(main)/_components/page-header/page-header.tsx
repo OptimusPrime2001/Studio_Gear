@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { Button } from '@components/ui/button';
 import {
   Carousel,
   CarouselApi,
@@ -45,7 +46,7 @@ const HomeSlider: React.FC = () => {
         <CarouselNext className='right-8 bg-white' />
         <section className='iu-d-flexcenter slider-navigation'>
           {listSlider.map(item => (
-            <span
+            <Button reset variant={'outline'} size={'icon'}
               key={item.id}
               onClick={() => onClickIndexSlider(item.id)}
               className={cn('slider-dot', current === item.id ? 'slide-active' : '')}

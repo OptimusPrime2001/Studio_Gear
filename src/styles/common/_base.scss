@@ -179,13 +179,22 @@
     width:100%!important;
   }
 }
-.reset_btn{
-  border: none !important;
-  box-shadow: none!important;
-  width: fit-content!important;
-  height: fit-content!important;
-  outline: none!important;
+button.reset_btn{
+  border: none ;
+  box-shadow: none;
+  width: fit-content;
+  height: fit-content;
+  outline: none;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
   &:hover{
-    background: transparent!important;
+    background: transparent;
+    padding: 0 $s32;
+    width:100%;
+    padding: 0;
+    width: fit-content;
+    border-radius: 0;
+    text-decoration-line: none;
   }
 }

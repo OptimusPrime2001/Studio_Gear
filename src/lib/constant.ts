@@ -63,3 +63,23 @@ export const listSlider = [
     img: 'https://ucarecdn.com/f0e41f40-7fe9-4e97-9cc5-7b4f333cb7e6/image_2023_03_28T14_00_17_383Z.png'
   }
 ];
+export const listMainProduct = [
+  {
+    id:1,
+    label:'Living Room',
+    link:'',
+    img:'https://ucarecdn.com/2df20e1d-9205-4395-9666-2027672517fa/imageplaceholder12x.png'
+  },
+  {
+    id:2,
+    label:'Bedroom',
+    link:'',
+    img:'https://ucarecdn.com/1e835bea-18d4-469f-a982-b252082485b9/bedroom.png'
+  },
+  {
+    id:3,
+    label:'Kitchen',
+    link:'',
+    img:'https://ucarecdn.com/0238fcd0-b4c4-456a-9802-e746ad110233/sietoc.png'
+  },
+]

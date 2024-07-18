@@ -1,10 +1,11 @@
 import React from 'react';
-import styles from './footer.module.scss';
-import { inter } from '@lib/fonts';
-import { listSocialIcon, navigationLink } from '@lib/constant';
 import Logo from '@common/logo/logo';
-import Link from 'next/link';
+import { listSocialIcon, navigationLink } from '@lib/constant';
+import { inter } from '@lib/fonts';
 import { cn } from '@lib/utils';
+import Link from 'next/link';
+import styles from './footer.module.scss';
+
 const Footer = () => {
   return (
     <footer className={cn(styles.footerWrapper, inter.className, 'dark:bg-white dark:text-black media_width_sm')}>

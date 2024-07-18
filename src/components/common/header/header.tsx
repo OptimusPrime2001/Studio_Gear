@@ -2,7 +2,7 @@
 import React from 'react';
 import Logo from '@common/logo/logo';
 import { ModeToggle } from '@common/mode-toggle/ModeToggle';
-import MenuIcon from '@components/icons/menu-bars';
+import MenuBars from '@components/icons/menu-bars';
 import ShoppingBag from '@components/icons/shopping-bag';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@components/ui/sheet';
 import { navigationIcon, navigationLink } from '@lib/constant';
@@ -22,7 +22,7 @@ const Header = () => {
       <section className='iu-d-flexcenter header-logo gap-x-2'>
         <Sheet>
           <SheetTrigger>
-            <MenuIcon />
+            <MenuBars />
           </SheetTrigger>
           <SheetContent datatype='menu_mobile' side='left' className='ipadair:hidden w-[300px]'>
             <SheetHeader>

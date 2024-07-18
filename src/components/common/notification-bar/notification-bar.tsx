@@ -1,11 +1,11 @@
 'use client';
 import React from 'react';
-import styles from './notification-bar.module.scss';
-import Link from 'next/link';
 import ArrowRightIcon from '@components/icons/arrow-right';
-import VoucherIcon from '@components/icons/voucher';
 import CloseIcon from '@components/icons/close';
+import VoucherIcon from '@components/icons/voucher';
 import { cn } from '@lib/utils';
+import Link from 'next/link';
+import styles from './notification-bar.module.scss';
 
 const NotificationBar = () => {
   const [renderVoucher, setRenderVoucher] = React.useState<boolean>(true);
