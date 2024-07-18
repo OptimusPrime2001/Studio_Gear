@@ -48,9 +48,9 @@
       button{
         display: none;
       }
+      .slider-navigation{
+        bottom: $s8;
+      }
     }
-    // @include media-breakpoint-up(ipadair){
-    //   height: 45rem;
-    // }
   }
 }

@@ -1,8 +1,8 @@
-import { poppins } from '@lib/fonts';
-import Link from 'next/link';
 import React from 'react';
-import styles from './logo.module.scss';
+import { poppins } from '@lib/fonts';
 import { cn } from '@lib/utils';
+import Link from 'next/link';
+import styles from './logo.module.scss';
 
 const Logo = () => {
   return (

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '@components/ui/button';
 
 type CloseIconProps = {
   className?: string;
@@ -7,7 +8,7 @@ type CloseIconProps = {
 
 const CloseIcon: React.FC<CloseIconProps> = props => {
   return (
-    <span className={props.className} onClick={props.onClick}>
+    <Button reset variant={'outline'} size={'icon'} className={props.className} onClick={props.onClick}>
       <svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
         <path
           fillRule='evenodd'
@@ -16,7 +17,7 @@ const CloseIcon: React.FC<CloseIconProps> = props => {
           fill='currentColor'
         />
       </svg>
-    </span>
+    </Button>
   );
 };
 
