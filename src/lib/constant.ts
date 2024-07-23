@@ -83,3 +83,20 @@ export const listMainProduct = [
     img:'https://ucarecdn.com/0238fcd0-b4c4-456a-9802-e746ad110233/sietoc.png'
   },
 ]
+export const listArticles = [
+  {
+    id:1,
+    img:'https://ucarecdn.com/a052bf04-e600-445e-a7c9-dbf6c0a4988d/imgcontainer.png',
+    label:'7 ways to decor your home'
+  },
+  {
+    id:1,
+    img:'https://ucarecdn.com/4e3845ad-8530-4cb7-9211-a3d2cd3c744d/imgcontainer2.png',
+    label:'Kitchen organization'
+  },
+  {
+    id:1,
+    img:'https://ucarecdn.com/c00c23a9-e5fe-4939-a006-a90e93832a36/imgcontainer3.png',
+    label:'Decor your bedroom'
+  }
+]
