@@ -1,28 +1,28 @@
-.articleWrapper{
+.articleWrapper {
   width: 80%;
   padding: 5rem 0;
   margin: auto;
-  
-  :global{
-    .article-title{
+
+  :global {
+    .article-title {
       padding-bottom: $s40;
 
-    h3{
+      h3 {
         font-size: 2.5rem;
         font-weight: $medium;
         line-height: 2.75rem;
       }
     }
 
-    .article-content{
+    .article-content {
       gap: 0 25px;
       align-items: flex-start;
 
-      div{
+      div {
         aspect-ratio: 1.098;
       }
 
-      p{
+      p {
         padding-top: $s24;
         padding-bottom: $s8;
         font-size: $f20;
@@ -30,29 +30,29 @@
         line-height: 1.75rem;
       }
     }
-    @include media-breakpoint-down(sm){
-      &{
+    @include media-breakpoint-down(sm) {
+      & {
         padding: $s40 0;
         flex-wrap: wrap;
       }
 
-      .article-title{
-        h3{
+      .article-title {
+        h3 {
           font-size: 2.125rem;
           font-weight: $medium;
           line-height: 2.375rem;
         }
       }
 
-      .article-content{
+      .article-content {
         flex-flow: column wrap;
-        gap:$s24 0;
+        gap: $s24 0;
 
-        div{
+        div {
           aspect-ratio: 1.098;
         }
 
-        p{
+        p {
           padding-top: $s16;
           padding-bottom: 0;
           font-size: $f16;
