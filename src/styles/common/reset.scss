@@ -6,38 +6,38 @@ form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,
 canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,
 ruby,section,summary,time,mark,audio,video,main
 {
-  margin: 0;
+   max-height: 999999999px;
   padding: 0;
+  margin: 0;
   vertical-align: baseline;
   border: 0;
-  box-sizing: border-box;
-  // fix responsive: Chrome (Font Autosize / Font Bosting)
-  max-height: 999999999px;
+  box-sizing: border-box
 }
-// HTML5 display-role reset for older browsers
+
+/*   HTML5 display-role reset for older browsers */
+
 /* prettier-ignore */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-body {
-  line-height: 1;
+ body {
   font-size: $font-base;
-  -webkit-text-size-adjust: 100%;
+  line-height: 1;
   text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
 }
 
 a {
-  text-decoration: none;
   color: $link-color;
+  text-decoration: none;
   cursor: pointer;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
@@ -48,19 +48,16 @@ table {
   border-spacing: 0;
 }
 
-//// button {
-////   color: rgba(0, 0, 0, 0.88);
-//// }
 
 html {
   font-size: 16px;
 }
 
 html, body {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
-html, body, #root, .app, .allure-theme {
+html, body, #root, .app {
   height: 100%;
 }

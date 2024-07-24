@@ -12,7 +12,11 @@ type LinkButtonProps = {
 
 const LinkButton: React.FC<LinkButtonProps> = ({ children, className }) => {
   return (
-    <Button reset variant='link' className={cn(className, styles.linkButtonWrapper,'dark:hover:border-primary_light')}>
+    <Button
+      reset
+      variant='link'
+      className={cn(className, styles.linkButtonWrapper, 'dark:hover:!border-primary_light')}
+    >
       <span className={cn(inter.className, 'dark:!text-primary_light')}>{children}</span>
       <ArrowRightIcon />
     </Button>

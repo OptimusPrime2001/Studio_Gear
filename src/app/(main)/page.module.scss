@@ -1,26 +1,30 @@
 .headingHomeWrapper{
   display: flex;
+  width: 80%;
+  padding: $s32 0 $s40;
+  margin: auto;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
-  margin: auto;
-  padding: $s32 0 $s40;
+
   div{
     display: flex;
     flex-direction: column;
+
     span{
       font-size: 4.5rem;
-      line-height: 5.5rem;
-      text-wrap: nowrap;
       font-weight:$medium ;
+      line-height: 5.5rem;
       letter-spacing: -0.125rem;
+      text-wrap: nowrap;
     }
   }
+
   p{
+    max-width: 28.3125rem;
     font-size: $f16;
     line-height: 1.625rem;
     color:$text-primary-blur ;
-    max-width: 28.3125rem;
+
     b{
       font-weight: $semibold;
       color:$text-primary-dark;
@@ -30,14 +34,16 @@
     flex-direction: column;
     gap: $s16 0;
     align-items: flex-start;
+
     div{
       span{
         font-size:2.5rem;
         font-weight: $semibold;
-        letter-spacing: -0.025rem;
         line-height: 3rem;
+        letter-spacing: -0.025rem;
       }
     }
+
     p{
       font-size:$f14;
       line-height: 1.375rem;
@@ -50,6 +56,7 @@
     }
   }
 }
+
 .mainProduct{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -57,44 +64,53 @@
   width: 80%;
   margin: auto;
   gap: $s24 $s24;
+
   :global{
     .product-card{
       position: relative;
       grid-column:span 1;
       grid-row:span 1;
+
       .product-content{
         position: absolute;
-        left: $s48;
         bottom: $s48;
+        left: $s48;
+
         h3{
           font-size: 2.125rem;
           font-weight: $semibold;
           line-height: 2.375rem;
         }
+        
         .shop-now{
           display: flex;
           align-items: center;
           gap: 0 $s4;
           border-bottom: 1px solid transparent;
+
           span{
             font-size: $f16;
             font-weight: $medium;
             line-height: 1.75rem;
             letter-spacing: -0.025rem;
           }
+
           &:hover{
             border-bottom: 1px solid $text-primary-dark;
           }
         }
       }
+
       img{
         object-fit: cover;
         z-index: -1;
       }
+
       &:first-child{
         grid-column:span 1;
         grid-row:span 2;
         aspect-ratio: 1.6529 /2!important ;
+
         .product-content{
           top: $s48;
         }
@@ -105,18 +121,22 @@
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         gap: $s16;
+
         .product-card{
           grid-column:span 1;
           grid-row:auto;
           aspect-ratio:3.4364/2 ;
+
           .product-content{
-            left: $s32;
             bottom: $s32;
+            left: $s32;
+
             h3{
               font-size: 1.75rem;
               font-weight: $medium;
               line-height: 2.125rem;
             }
+
             .shop-now{
               span{
                 font-size: $f14;
@@ -124,9 +144,11 @@
               }
             }
           }
+
           &:first-child{
             grid-column: span 1;
             grid-row: 1 / 2;
+
             .product-content{
               top: $s32;
             }

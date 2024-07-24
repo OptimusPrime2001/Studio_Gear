@@ -12,7 +12,7 @@ import styles from './page.module.scss';
 
 export default function HomePage() {
   return (
-    <main className='flex  flex-col items-center justify-between'>
+    <main className='flex flex-col items-center justify-between'>
       <HomeSlider />
       <section className={cn(styles.headingHomeWrapper, 'media_width_sm')}>
         <div className={cn(poppins.className, 'dark:!text-primary_light')}>
@@ -29,7 +29,7 @@ export default function HomePage() {
           <div className='product-card' key={item.id}>
             <section className='product-content'>
               <h3 className={cn(poppins.className, 'dark:!text-primary_dark')}>{item.label}</h3>
-              <Button reset variant='link' className='shop-now md:mt-3 mt-2'>
+              <Button reset variant='link' className='shop-now mt-2 md:mt-3'>
                 <span className={cn(inter.className, 'dark:!text-primary_dark')}>Shop now</span>
                 <ArrowRightIcon />
               </Button>

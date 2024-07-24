@@ -14,9 +14,9 @@ const ArticlesPart = () => {
         <LinkButton>More Articles</LinkButton>
       </div>
       <div className='iu-d-flexbetween article-content'>
-        {listArticles.map(item=>(
-          <div className='w-full flex-1 relative' key={item.id}>
-            <Image className='object-cover !h-auto !relative' alt={item.label} fill src={item.img} />
+        {listArticles.map(item => (
+          <div className='w-full flex-1' key={item.id}>
+            <Image className='!relative !h-auto object-cover' alt={item.label} fill src={item.img} />
             <p className={poppins.className}>{item.label}</p>
             <LinkButton>Read More</LinkButton>
           </div>

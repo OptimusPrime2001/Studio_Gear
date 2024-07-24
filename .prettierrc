@@ -14,9 +14,9 @@
   "endOfLine": "auto",
   "overrides": [
     {
-      "files": ".prettierrc",
+      "files": ["*.css", "*.scss"],
       "options": {
-        "parser": "json"
+        "parser": "scss"
       }
     }
   ],

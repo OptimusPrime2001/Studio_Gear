@@ -1,9 +1,10 @@
 .footerWrapper{
-  background-color: $text-primary-dark;;
-   align-items: flex-start;
   padding: 5rem calc((100% - 80%)/2) 3.25rem;
   overflow: hidden;
     color: #fff;
+  background-color: $text-primary-dark;;
+   align-items: flex-start;
+
     :global{
       .footer_top{
         display: flex;
@@ -12,11 +13,13 @@
         gap:0 $s32;
         margin-bottom: 3.5625rem;
         flex-wrap: wrap;
+
         .line{
-          height: 1.5rem;
           width: 1px;
+          height: 1.5rem;
           background:$text-primary-blur;
         }
+
         ul{
           display: flex;
           justify-content: right;
@@ -27,22 +30,26 @@
 
         }
       }
+
       .footer_line{
-                height: .0625rem;
         width: 100%;
+                height: .0625rem;
         background:$text-primary-blur;
       }
-      .footer_bottom{
-        padding: 1rem 0;
-        font-size: 0.75rem; 
+
+      .footer_bottom{ 
         display: flex;
+        padding: 1rem 0;
+        font-size: 0.75rem;
         gap:0 1.75rem ;
         text-wrap: nowrap;
         flex-wrap: wrap;
+
         .copy_right{
           text-align: center;
           text-wrap: wrap;
         }
+
         ul{
           display: flex;
           gap: 0 1.75rem;
@@ -50,6 +57,7 @@
           flex-wrap: wrap;
           justify-content: center;
         }
+
         .list_social{
           flex: 1;
           display: flex;
@@ -59,34 +67,40 @@
       }
       @include media-breakpoint-down(md){
           &{
-            background-color: #232627;
             padding: 3rem $s32;
+            background-color: #232627;
+
               .footer_top{
                 flex-direction: column;
                 justify-content: center;
                 margin-bottom: 2.5rem;
                 gap:$s16 0;
+
                 a{
                   font-size: $f24;
                 }
+
                 .line{
                   width: 1.5rem!important;
                   height: .0625rem!important;
                 }
+
                 ul{
                   flex-direction: column;
                   text-align: center;
                 }
               }
+
               .footer_bottom{
                 gap:1.75rem 0;
                 padding:$s24 0  ;
-                flex-wrap: wrap-reverse;
-                flex-direction: column-reverse;
+                flex-flow: column-reverse wrap-reverse;
                 align-items: center;
+
                 ul{
                   gap: 0 1.75rem;
                 }
+
                 .list_social{
                   flex: 1;
                   display: flex;
