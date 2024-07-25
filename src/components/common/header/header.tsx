@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
 import Logo from '@common/logo/logo';
-import { ModeToggle } from '@common/mode-toggle/ModeToggle';
 import MenuBars from '@components/icons/menu-bars';
 import ShoppingBag from '@components/icons/shopping-bag';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@components/ui/sheet';
@@ -10,6 +9,7 @@ import { inter } from '@lib/fonts';
 import { cn } from '@lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { ModeToggle } from '../mode-toggle/mode-toggle';
 import styles from './header.module.scss';
 
 const Header = () => {
@@ -24,7 +24,7 @@ const Header = () => {
           <SheetTrigger>
             <MenuBars />
           </SheetTrigger>
-          <SheetContent datatype='menu_mobile' side='left' className='ipadair:hidden w-[300px]'>
+          <SheetContent datatype='menu_mobile' side='left' className='w-[300px] ipadair:hidden'>
             <SheetHeader>
               <SheetTitle>Are you absolutely sure?</SheetTitle>
               <SheetDescription>
@@ -36,7 +36,7 @@ const Header = () => {
         </Sheet>
         <Logo />
       </section>
-      <ul className='iu-d-flexbetween xl:gap-x-10 md:gap-x-6 hidden'>
+      <ul className='iu-d-flexbetween hidden md:gap-x-6 xl:gap-x-10'>
         {navigationLink.map(item => (
           <li key={item.id}>
             <Link className={checkMenuActive(item.href)} href={item.href}>
@@ -45,7 +45,7 @@ const Header = () => {
           </li>
         ))}
       </ul>
-      <section className='iu-d-flexbetween gap-x-4 cursor-pointer relative'>
+      <section className='iu-d-flexbetween relative cursor-pointer gap-x-4'>
         {navigationIcon.map(navItem => {
           if (navItem.id === 'bag')
             return (

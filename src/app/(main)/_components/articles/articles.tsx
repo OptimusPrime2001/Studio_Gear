@@ -15,8 +15,14 @@ const ArticlesPart = () => {
       </div>
       <div className='iu-d-flexbetween article-content'>
         {listArticles.map(item => (
-          <div className='w-full flex-1' key={item.id}>
-            <Image className='!relative !h-auto object-cover' alt={item.label} fill src={item.img} />
+          <div className='relative w-full flex-1' key={item.id}>
+            <Image
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+              className='!relative !h-auto object-cover'
+              alt={item.label}
+              fill
+              src={item.img}
+            />
             <p className={poppins.className}>{item.label}</p>
             <LinkButton>Read More</LinkButton>
           </div>

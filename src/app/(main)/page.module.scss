@@ -1,4 +1,4 @@
-.headingHomeWrapper{
+.headingHomeWrapper {
   display: flex;
   width: 80%;
   padding: $s32 0 $s40;
@@ -6,58 +6,58 @@
   justify-content: space-between;
   align-items: center;
 
-  div{
+  div {
     display: flex;
     flex-direction: column;
 
-    span{
+    span {
       font-size: 4.5rem;
-      font-weight:$medium ;
+      font-weight: $medium;
       line-height: 5.5rem;
       letter-spacing: -0.125rem;
       text-wrap: nowrap;
     }
   }
 
-  p{
+  p {
     max-width: 28.3125rem;
     font-size: $f16;
     line-height: 1.625rem;
-    color:$text-primary-blur ;
+    color: $text-primary-blur;
 
-    b{
+    b {
       font-weight: $semibold;
-      color:$text-primary-dark;
+      color: $text-primary-dark;
     }
   }
-  @include media-breakpoint-down(md){
+  @include media-breakpoint-down(md) {
     flex-direction: column;
     gap: $s16 0;
     align-items: flex-start;
 
-    div{
-      span{
-        font-size:2.5rem;
+    div {
+      span {
+        font-size: 2.5rem;
         font-weight: $semibold;
         line-height: 3rem;
         letter-spacing: -0.025rem;
       }
     }
 
-    p{
-      font-size:$f14;
+    p {
+      font-size: $f14;
       line-height: 1.375rem;
     }
   }
-  @include media-breakpoint-between(md,lg){
-    div>span{
+  @include media-breakpoint-between(md, lg) {
+    div > span {
       font-size: 3rem;
-      line-height:4rem
+      line-height: 4rem;
     }
   }
 }
 
-.mainProduct{
+.mainProduct {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -65,97 +65,186 @@
   margin: auto;
   gap: $s24 $s24;
 
-  :global{
-    .product-card{
+  :global {
+    .product-card {
       position: relative;
-      grid-column:span 1;
-      grid-row:span 1;
+      grid-column: span 1;
+      grid-row: span 1;
 
-      .product-content{
+      .product-content {
         position: absolute;
         bottom: $s48;
         left: $s48;
 
-        h3{
+        h3 {
           font-size: 2.125rem;
           font-weight: $semibold;
           line-height: 2.375rem;
         }
-        
-        .shop-now{
+
+        .shop-now {
           display: flex;
           align-items: center;
           gap: 0 $s4;
           border-bottom: 1px solid transparent;
 
-          span{
+          span {
             font-size: $f16;
             font-weight: $medium;
             line-height: 1.75rem;
             letter-spacing: -0.025rem;
           }
 
-          &:hover{
+          &:hover {
             border-bottom: 1px solid $text-primary-dark;
           }
         }
       }
 
-      img{
+      img {
         object-fit: cover;
         z-index: -1;
       }
 
-      &:first-child{
-        grid-column:span 1;
-        grid-row:span 2;
-        aspect-ratio: 1.6529 /2!important ;
+      &:first-child {
+        grid-column: span 1;
+        grid-row: span 2;
+        aspect-ratio: 1.6529 /2 !important ;
 
-        .product-content{
+        .product-content {
           top: $s48;
         }
       }
     }
-    @include media-breakpoint-down(md){
-      &{
+    @include media-breakpoint-down(md) {
+      & {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         gap: $s16;
 
-        .product-card{
-          grid-column:span 1;
-          grid-row:auto;
-          aspect-ratio:3.4364/2 ;
+        .product-card {
+          grid-column: span 1;
+          grid-row: auto;
+          aspect-ratio: 3.4364/2;
 
-          .product-content{
+          .product-content {
             bottom: $s32;
             left: $s32;
 
-            h3{
+            h3 {
               font-size: 1.75rem;
               font-weight: $medium;
               line-height: 2.125rem;
             }
 
-            .shop-now{
-              span{
+            .shop-now {
+              span {
                 font-size: $f14;
                 line-height: $s24;
               }
             }
           }
 
-          &:first-child{
+          &:first-child {
             grid-column: span 1;
             grid-row: 1 / 2;
 
-            .product-content{
+            .product-content {
               top: $s32;
             }
           }
-
-        }
         }
       }
+    }
+  }
+}
+.bannerBestSeller {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  background: $neutral02;
+  position: relative;
+
+  :global {
+    img {
+      width: 50% !important;
+      position: relative !important;
+      object-fit: contain;
+    }
+    .banner-content {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 50%;
+      padding-left: 4.5rem;
+      gap: $s16 0;
+      & > span {
+        font-size: $f16;
+        line-height: 1rem;
+        color: $information;
+        font-weight: $bold;
+      }
+      h3 {
+        font-size: 2.5rem;
+        font-weight: $medium;
+        line-height: 2.75rem;
+        color: $text-primary-dark;
+      }
+      p {
+        font-size: 1.25rem;
+        line-height: 2rem;
+        color: $text-primary-dark;
+        padding-bottom: $s8;
+      }
+    }
+    @include media-breakpoint-between(md, lg) {
+      .banner-content {
+        & > span {
+          line-height: 1rem;
+        }
+        h3 {
+          font-size: 2rem;
+        }
+        p {
+          font-size: $f16;
+          padding-bottom: $s4;
+        }
+      }
+    }
+    @include media-breakpoint-down(md) {
+      & {
+        flex-direction: row;
+        img {
+          width: 100% !important;
+        }
+        .banner-content {
+          width: 100%;
+          padding: 3.75rem 10%;
+        }
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      & {
+        flex-direction: column;
+        img {
+          width: 100% !important;
+        }
+        .banner-content {
+          padding-left: $s32;
+          width: 100%;
+          padding: 3.75rem 2.5rem;
+          h3 {
+            font-size: 2.125rem;
+            font-weight: $medium;
+            line-height: 2.375rem;
+          }
+          p {
+            font-size: $f16;
+            line-height: 1.625rem;
+          }
+        }
+      }
+    }
   }
 }

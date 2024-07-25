@@ -1,5 +1,4 @@
-import ArrowRightIcon from '@components/icons/arrow-right';
-import { Button } from '@components/ui/button';
+import LinkButton from '@components/common/link-button/link-button';
 import { listMainProduct } from '@lib/constant';
 import { inter, poppins } from '@lib/fonts';
 import { cn } from '@lib/utils';
@@ -29,14 +28,23 @@ export default function HomePage() {
           <div className='product-card' key={item.id}>
             <section className='product-content'>
               <h3 className={cn(poppins.className, 'dark:!text-primary_dark')}>{item.label}</h3>
-              <Button reset variant='link' className='shop-now mt-2 md:mt-3'>
-                <span className={cn(inter.className, 'dark:!text-primary_dark')}>Shop now</span>
-                <ArrowRightIcon />
-              </Button>
+              <LinkButton>Shop Now</LinkButton>
             </section>
-            <Image fill alt={item.label} src={item.img} />
+            <Image priority fill alt={item.label} src={item.img} />
           </div>
         ))}
+      </section>
+      <section className={cn(styles.bannerBestSeller, inter.className)}>
+        {/* <section className='banner-img'> */}
+        <Image alt='image' src='https://ucarecdn.com/69358f7c-7e08-47b9-908e-e27b249f2be8/ImagePlaceholder3.png' fill />
+        {/* </section> */}
+        <section className='banner-content'>
+          <span>SALE UP TO 35% OFF</span>
+          <h3 className={poppins.className}>HUNDREDS of New lower prices!</h3>
+          <p>It’s more affordable than ever to give every room in your home a stylish </p>
+          <LinkButton className='dark:!text-primary_dark'>Show Now</LinkButton>
+        </section>
+        <section />
       </section>
       <ArticlesPart />
       <Newsleetter />
