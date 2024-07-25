@@ -28,21 +28,23 @@ export default function HomePage() {
           <div className='product-card' key={item.id}>
             <section className='product-content'>
               <h3 className={cn(poppins.className, 'dark:!text-primary_dark')}>{item.label}</h3>
-              <LinkButton>Shop Now</LinkButton>
+              <LinkButton className='dark:hover:!border-primary_dark' classNameSpan='dark:!text-primary_dark'>
+                Shop Now
+              </LinkButton>
             </section>
             <Image priority fill alt={item.label} src={item.img} />
           </div>
         ))}
       </section>
       <section className={cn(styles.bannerBestSeller, inter.className)}>
-        {/* <section className='banner-img'> */}
         <Image alt='image' src='https://ucarecdn.com/69358f7c-7e08-47b9-908e-e27b249f2be8/ImagePlaceholder3.png' fill />
-        {/* </section> */}
         <section className='banner-content'>
           <span>SALE UP TO 35% OFF</span>
           <h3 className={poppins.className}>HUNDREDS of New lower prices!</h3>
           <p>It’s more affordable than ever to give every room in your home a stylish </p>
-          <LinkButton className='dark:!text-primary_dark'>Show Now</LinkButton>
+          <LinkButton className='dark:hover:!border-primary_dark' classNameSpan='dark:!text-primary_dark'>
+            Show Now
+          </LinkButton>
         </section>
         <section />
       </section>
