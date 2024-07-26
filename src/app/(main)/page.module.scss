@@ -266,7 +266,7 @@
         font-weight: $medium;
         line-height: 1.75rem;
         color: $text-primary-dark;
-        text-wrap: nowrap;
+        text-wrap: wrap;
       }
       span {
         color: $text-primary-blur;
@@ -274,10 +274,10 @@
         font-size: $f14;
       }
     }
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(lg) {
       & {
         grid: repeat(2, 12.375rem) / repeat(2, 1fr);
-        gap: $s24 $s8;
+        gap: $s24;
         padding: $s32 0;
         section {
           padding: $s32 $s16;

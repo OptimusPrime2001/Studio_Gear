@@ -28,7 +28,7 @@ export default function HomePage() {
           <div className='product-card' key={item.id}>
             <section className='product-content'>
               <h3 className={cn(poppins.className, 'dark:!text-primary_dark')}>{item.label}</h3>
-              <LinkButton>Shop Now</LinkButton>
+              <LinkButton className='dark:hover:!border-primary_dark'>Shop Now</LinkButton>
             </section>
             <Image priority fill alt={item.label} src={item.img} />
           </div>
