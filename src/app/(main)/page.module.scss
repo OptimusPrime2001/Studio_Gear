@@ -56,7 +56,6 @@
     }
   }
 }
-
 .mainProduct {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -242,6 +241,47 @@
           p {
             font-size: $f16;
             line-height: 1.625rem;
+          }
+        }
+      }
+    }
+  }
+}
+.supportWrapper {
+  display: grid;
+  column-gap: $s24;
+  grid: 13.75rem / repeat(4, 1fr);
+  width: 80%;
+  margin: auto;
+  :global {
+    section {
+      background: $neutral02;
+      padding: $s48 $s32;
+      svg {
+        padding-bottom: $s16;
+      }
+      p {
+        font-size: 1.25rem;
+        font-weight: $medium;
+        line-height: 1.75rem;
+        color: $text-primary-dark;
+        text-wrap: nowrap;
+      }
+      span {
+        color: $text-primary-blur;
+        line-height: 1.5rem;
+        font-size: $f14;
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      & {
+        grid: repeat(2, 12.375rem) / repeat(2, 1fr);
+        gap: $s24 $s8;
+        padding: $s32 0;
+        section {
+          padding: $s32 $s16;
+          p {
+            text-wrap: wrap;
           }
         }
       }

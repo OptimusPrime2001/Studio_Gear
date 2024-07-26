@@ -1,7 +1,11 @@
 import AccountIcon from '@components/icons/account';
+import CallSupport from '@components/icons/call-support';
 import FacebookIcon from '@components/icons/facebook';
+import FastDelevery from '@components/icons/fast-delivery';
 import InstagramIcon from '@components/icons/instagram';
+import MoneyBack from '@components/icons/money-back';
 import SearchIcon from '@components/icons/search-icon';
+import SecurePayment from '@components/icons/secure-payment';
 import ShoppingBag from '@components/icons/shopping-bag';
 import YoutubeIcon from '@components/icons/youtube';
 
@@ -98,5 +102,31 @@ export const listArticles = [
     id: 3,
     img: 'https://ucarecdn.com/c00c23a9-e5fe-4939-a006-a90e93832a36/imgcontainer3.png',
     label: 'Decor your bedroom'
+  }
+];
+export const listSupportCustomer = [
+  {
+    id: 1,
+    title: 'Free Shipping',
+    label: 'Order above $200',
+    icon: FastDelevery
+  },
+  {
+    id: 1,
+    title: 'Money-back',
+    label: '30 days guarantee',
+    icon: MoneyBack
+  },
+  {
+    id: 1,
+    title: 'Secure Payments',
+    label: 'Secured by Stripe',
+    icon: SecurePayment
+  },
+  {
+    id: 1,
+    title: '24/7 Support',
+    label: 'Phone and Email support',
+    icon: CallSupport
   }
 ];

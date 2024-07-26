@@ -1,5 +1,5 @@
 import LinkButton from '@components/common/link-button/link-button';
-import { listMainProduct } from '@lib/constant';
+import { listMainProduct, listSupportCustomer } from '@lib/constant';
 import { inter, poppins } from '@lib/fonts';
 import { cn } from '@lib/utils';
 import Image from 'next/image';
@@ -11,7 +11,7 @@ import styles from './page.module.scss';
 
 export default function HomePage() {
   return (
-    <main className='flex flex-col items-center justify-between'>
+    <main className='fl`ex flex-col items-center justify-between'>
       <HomeSlider />
       <section className={cn(styles.headingHomeWrapper, 'media_width_sm')}>
         <div className={cn(poppins.className, 'dark:!text-primary_light')}>
@@ -28,12 +28,19 @@ export default function HomePage() {
           <div className='product-card' key={item.id}>
             <section className='product-content'>
               <h3 className={cn(poppins.className, 'dark:!text-primary_dark')}>{item.label}</h3>
-              <LinkButton className='dark:hover:!border-primary_dark' classNameSpan='dark:!text-primary_dark'>
-                Shop Now
-              </LinkButton>
+              <LinkButton>Shop Now</LinkButton>
             </section>
             <Image priority fill alt={item.label} src={item.img} />
           </div>
+        ))}
+      </section>
+      <section className={cn(styles.supportWrapper, 'media_width_sm')}>
+        {listSupportCustomer.map(item => (
+          <section key={item.id}>
+            <item.icon />
+            <p className={poppins.className}>{item.title}</p>
+            <span>{item.label}</span>
+          </section>
         ))}
       </section>
       <section className={cn(styles.bannerBestSeller, inter.className)}>
@@ -42,9 +49,7 @@ export default function HomePage() {
           <span>SALE UP TO 35% OFF</span>
           <h3 className={poppins.className}>HUNDREDS of New lower prices!</h3>
           <p>It’s more affordable than ever to give every room in your home a stylish </p>
-          <LinkButton className='dark:hover:!border-primary_dark' classNameSpan='dark:!text-primary_dark'>
-            Show Now
-          </LinkButton>
+          <LinkButton className='dark:!text-primary_dark'>Show Now</LinkButton>
         </section>
         <section />
       </section>

@@ -1,32 +1,32 @@
-.pageHeaderWrapper{
-  width:80%;
+.pageHeaderWrapper {
+  width: 80%;
   height: 33.5rem;
-  :global{
-  
-    button{
+  margin: auto;
+  :global {
+    button {
       background: $main-bg-color;
       height: 2.5rem;
       width: 2.5rem;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.0364);
-      border:none;
-      color:$text-primary-blur;
-      svg{
+      border: none;
+      color: $text-primary-blur;
+      svg {
         width: 1.5rem;
         height: 1.5rem;
       }
-      &:hover{
+      &:hover {
         background: $main-bg-color;
-        color:$text-primary-blur;
+        color: $text-primary-blur;
       }
     }
-    .slider-navigation{
+    .slider-navigation {
       position: absolute;
       bottom: $s32;
       left: 50%;
       transform: translate(-50%, -50%);
       display: flex;
-      gap: $s16; 
-      .slider-dot{
+      gap: $s16;
+      .slider-dot {
         height: $s8;
         width: $s8;
         background: $main-bg-color;
@@ -35,20 +35,19 @@
         transition: all ease 0.4s;
         cursor: pointer;
       }
-      .slide-active{
+      .slide-active {
         width: $s32;
         border-radius: 6.25rem;
       }
-
     }
-    @include media-breakpoint-down(md){
-    &{
-      height:19.0625rem;
-    }
-      button{
+    @include media-breakpoint-down(md) {
+      & {
+        height: 19.0625rem;
+      }
+      button {
         display: none;
       }
-      .slider-navigation{
+      .slider-navigation {
         bottom: $s8;
       }
     }
