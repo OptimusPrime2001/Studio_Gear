@@ -253,6 +253,7 @@
   grid: 13.75rem / repeat(4, 1fr);
   width: 80%;
   margin: auto;
+  padding: $s48 0;
   :global {
     section {
       background: $neutral02;
