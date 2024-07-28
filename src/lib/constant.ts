@@ -112,19 +112,19 @@ export const listSupportCustomer = [
     icon: FastDelevery
   },
   {
-    id: 1,
+    id: 2,
     title: 'Money-back',
     label: '30 days guarantee',
     icon: MoneyBack
   },
   {
-    id: 1,
+    id: 3,
     title: 'Secure Payments',
     label: 'Secured by Stripe',
     icon: SecurePayment
   },
   {
-    id: 1,
+    id: 4,
     title: '24/7 Support',
     label: 'Phone and Email support',
     icon: CallSupport

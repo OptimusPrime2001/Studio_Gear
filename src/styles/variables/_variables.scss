@@ -63,31 +63,38 @@ $grid-breakpoints: (
   lg: 1024px,
   xl: 1280px,
   2xl: 1440px,
-  3xl: 1536px) !default;
+  3xl: 1536px
+) !default;
 
 // color variables
 $red: #df1820 !default;
-$information: #377DFF;
+$information: #377dff;
 $warning: #e5681f;
 $error: #d01b1b;
 $successful: #00a84e;
 
 //background color-variables
 $gray: #e6e7e8 !default;
-$neutral02:#F3F5F7;
-$main-bg-color: #FFF !default;
-$hover-bg-color: #E8E9EA !default;
+$neutral02: #f3f5f7;
+$main-bg-color: #fff !default;
+$hover-bg-color: #e8e9ea !default;
 
 // font color-variables
 $text-primary-dark: #141718 !default;
-$text-primary-light: #E8E9EA !default;
-$text-primary-blur:#6C7275 !default;
+$text-primary-light: #e8e9ea !default;
+$text-primary-blur: #6c7275 !default;
 $link-color: #df1820 !default;
 $text-default: #222;
 $text-secondary: #4b5566;
-$text-bold: #12161B !default;
+$text-bold: #12161b !default;
 
 // border color-variables
 $border-color-base: #8d8f94 !default;
-$border-color-1: #E8E9EA !default;
+$border-color-1: #e8e9ea !default;
 $border-color-2: #f3f2f1 !default;
+
+// width and height variables
+$w10: 10%;
+$w40: 40%;
+$w80: 80%;
+$w100: 100%;

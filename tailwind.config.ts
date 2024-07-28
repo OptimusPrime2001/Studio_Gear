@@ -13,9 +13,9 @@ module.exports = {
     },
     extend: {
       colors: {
-          primary_dark:'#141718',
-          primary_light:'#E8E9EA',
-          primary_blur:'#6C7275',
+        primary_dark: '#141718',
+        primary_light: '#E8E9EA',
+        primary_blur: '#6C7275',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

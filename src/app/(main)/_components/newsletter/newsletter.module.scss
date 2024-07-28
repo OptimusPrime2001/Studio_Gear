@@ -1,6 +1,6 @@
-.newsletterWrapper{
+.newsletterWrapper {
   background: url(https://ucarecdn.com/5ef60bb0-c4a0-491b-82b8-099b28fbbd00/imageplaceholder122x.png) no-repeat center;
-  width: 100%;
+  width: $w100;
   min-height: 22.5rem;
   overflow: hidden;
   background-size: cover;
@@ -10,39 +10,39 @@
   align-items: center;
   justify-content: center;
   background-origin: padding-box;
-    gap: 1rem 0rem;
-  :global{
-    h2{
+  gap: 1rem 0rem;
+  :global {
+    h2 {
       font-size: 2.5rem;
       font-weight: 600;
       line-height: 2.75rem;
       text-align: center;
     }
-    p{
+    p {
       font-size: $f18;
       line-height: 1.875rem;
       text-align: center;
     }
-    @include media-breakpoint-down(sm){
-      &{
+    @include media-breakpoint-down(sm) {
+      & {
         padding: 0 $s32;
-        h2{
+        h2 {
           font-size: $f28;
           line-height: 34px;
         }
-        p{
+        p {
           font-size: $f14;
           line-height: 1.375rem;
           padding: 0 1rem;
         }
-        form{
+        form {
           position: relative;
-          span{
+          span {
             position: absolute;
           }
-          button{
+          button {
             background: transparent;
-            color:$text-primary-blur;
+            color: $text-primary-blur;
             border: none;
             box-shadow: none;
             position: absolute;
@@ -51,26 +51,26 @@
             padding: 0;
             line-height: 1.75rem;
             font-weight: 600;
-            &:hover{
+            &:hover {
               background: transparent;
             }
           }
-          input{
-            width: 100%;
-            border:none;
-            box-shadow:none;
-            border-bottom:1px solid $text-primary-blur;
+          input {
+            width: $w100;
+            border: none;
+            box-shadow: none;
+            border-bottom: 1px solid $text-primary-blur;
             border-radius: 0;
             padding: 0;
-            margin:0!important;
+            margin: 0 !important;
             padding-left: 30px;
-            &::placeholder{
+            &::placeholder {
               color: $text-primary-blur;
               font-size: $f16;
               line-height: 1.75rem;
               font-weight: 600;
             }
-            &:focus-visible{
+            &:focus-visible {
               outline: none;
               box-shadow: none;
             }

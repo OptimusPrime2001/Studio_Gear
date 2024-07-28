@@ -1,41 +1,40 @@
-.headerWrapper{
-  width: 80%;
+.headerWrapper {
+  width: $w80;
   height: 3.75rem;
   margin: auto;
 
   :global {
-    .header-logo>button{
-      @include media-breakpoint-up(ipadair){
+    .header-logo > button {
+      @include media-breakpoint-up(ipadair) {
         display: none;
       }
     }
 
-    ul{
-      @include media-breakpoint-up(ipadair){
-        &{
+    ul {
+      @include media-breakpoint-up(ipadair) {
+        & {
           display: flex;
         }
       }
 
-      &>li>a{
+      & > li > a {
         font-size: $f16;
-        font-weight:$semibold;
+        font-weight: $semibold;
         line-height: $lh125;
         text-wrap: nowrap;
       }
     }
 
-
-    .menu_link{
-      color:$text-primary-blur;
+    .menu_link {
+      color: $text-primary-blur;
     }
 
-    .index_ellipseParent{
+    .index_ellipseParent {
       width: 1.25rem;
       height: 1.25rem;
       font-size: $f12;
       font-weight: $bold;
-      color:$text-primary-light;
+      color: $text-primary-light;
       background-color: $text-primary-dark;
       border-radius: 50%;
     }

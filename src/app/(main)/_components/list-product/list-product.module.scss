@@ -1,0 +1,29 @@
+.listProductWrapper {
+  width: $w100;
+  :global {
+    .list-product_title {
+      margin: $s48 auto;
+      width: $w80;
+      h3 {
+        font-weight: $medium;
+        font-size: 2.5rem;
+        line-height: 2.75rem;
+      }
+    }
+    .swipper-product {
+      margin-left: $w10;
+      .swiper-wrapper {
+        width: 90%;
+      }
+    }
+    .swiper-scrollbar {
+      background-color: #e8ecef;
+      position: static !important;
+      width: calc(80vw - 14px) !important;
+      margin-top: $s48;
+      .swiper-scrollbar-drag {
+        background-color: #343839;
+      }
+    }
+  }
+}

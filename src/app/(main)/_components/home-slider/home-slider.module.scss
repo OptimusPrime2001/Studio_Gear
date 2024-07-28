@@ -1,7 +1,6 @@
 .pageHeaderWrapper {
-  width: 80%;
+  width: $w80;
   height: 33.5rem;
-  margin: auto;
   :global {
     button {
       background: $main-bg-color;

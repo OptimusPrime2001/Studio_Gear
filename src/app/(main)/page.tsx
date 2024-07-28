@@ -4,14 +4,15 @@ import { inter, poppins } from '@lib/fonts';
 import { cn } from '@lib/utils';
 import Image from 'next/image';
 import ArticlesPart from './_components/articles/articles';
+import HomeSlider from './_components/home-slider/home-slider';
+import ListProduct from './_components/list-product/list-product';
 import Newsleetter from './_components/newsletter/newsletter';
-import HomeSlider from './_components/page-header/page-header';
 import '@styles/global.scss';
 import styles from './page.module.scss';
 
 export default function HomePage() {
   return (
-    <main className='fl`ex flex-col items-center justify-between'>
+    <main className='iu-d-flexcolumn'>
       <HomeSlider />
       <section className={cn(styles.headingHomeWrapper, 'media_width_sm')}>
         <div className={cn(poppins.className, 'dark:!text-primary_light')}>
@@ -28,12 +29,13 @@ export default function HomePage() {
           <div className='product-card' key={item.id}>
             <section className='product-content'>
               <h3 className={cn(poppins.className, 'dark:!text-primary_dark')}>{item.label}</h3>
-              <LinkButton className='dark:hover:!border-primary_dark'>Shop Now</LinkButton>
+              <LinkButton reverseMode>Shop Now</LinkButton>
             </section>
             <Image priority fill alt={item.label} src={item.img} />
           </div>
         ))}
       </section>
+      <ListProduct />
       <section className={cn(styles.supportWrapper, 'media_width_sm')}>
         {listSupportCustomer.map(item => (
           <section key={item.id}>
@@ -49,7 +51,7 @@ export default function HomePage() {
           <span>SALE UP TO 35% OFF</span>
           <h3 className={poppins.className}>HUNDREDS of New lower prices!</h3>
           <p>It’s more affordable than ever to give every room in your home a stylish </p>
-          <LinkButton className='dark:!text-primary_dark'>Show Now</LinkButton>
+          <LinkButton reverseMode>Show Now</LinkButton>
         </section>
         <section />
       </section>

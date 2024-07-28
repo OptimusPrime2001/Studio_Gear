@@ -1,0 +1,58 @@
+.productCardWrapper {
+  max-width: 16.375rem;
+  aspect-ratio: 0.75;
+  :global {
+    a {
+      height: 100%;
+      width: $w100;
+      display: block;
+      padding: $s16;
+    }
+    img {
+      z-index: -1;
+    }
+    .product-label {
+      position: absolute;
+      top: $s15;
+      left: $s16;
+      right: $s16;
+      display: flex;
+      justify-content: space-between;
+    }
+    .add-cart_btn {
+      background-color: $text-primary-dark;
+      color: $text-primary-light;
+      font-size: $f16;
+      line-height: 1.75rem;
+      font-weight: $medium;
+      border-radius: $s8;
+      box-shadow: 0 $s8 16px 0 rgba(0, 0, 0, 0.0364);
+      position: absolute;
+      bottom: $s16;
+      left: $s16;
+      right: $s16;
+    }
+    .product-infor {
+      padding-top: 0.75rem;
+      &_name {
+        font-size: $f16;
+        line-height: 1.625rem;
+        font-weight: $semibold;
+        padding: 0 $s4;
+      }
+      &_price {
+        display: flex;
+        gap: 0 0.75rem;
+        & > span {
+          font-size: $f14;
+          font-weight: $semibold;
+          line-height: 1.375rem;
+        }
+        .discount-price {
+          color: $text-primary-blur;
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}

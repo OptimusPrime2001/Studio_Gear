@@ -1,4 +1,5 @@
 import { ThemeProvider } from '@components/provider/theme-provider';
+import { inter } from '@lib/fonts';
 import type { Metadata } from 'next';
 import './index.scss';
 
@@ -14,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body>
+      <body className={inter.className}>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>

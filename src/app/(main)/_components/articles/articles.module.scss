@@ -1,7 +1,6 @@
 .articleWrapper {
-  width: 80%;
+  width: $w80;
   padding: 5rem 0;
-  margin: auto;
 
   :global {
     .article-title {

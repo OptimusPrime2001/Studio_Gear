@@ -6,7 +6,7 @@ form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,
 canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,
 ruby,section,summary,time,mark,audio,video,main
 {
-   max-height: 999999999px;
+  max-height: 999999999px;
   padding: 0;
   margin: 0;
   vertical-align: baseline;
@@ -21,7 +21,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
- body {
+body {
   font-size: $font-base;
   line-height: 1;
   text-size-adjust: 100%;
@@ -48,16 +48,20 @@ table {
   border-spacing: 0;
 }
 
-
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
 }
 
-html, body, #root, .app {
+html,
+body,
+#root,
+.app {
   height: 100%;
 }

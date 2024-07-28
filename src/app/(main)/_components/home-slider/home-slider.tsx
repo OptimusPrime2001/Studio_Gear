@@ -12,7 +12,7 @@ import {
 import { listSlider } from '@lib/constant';
 import { cn } from '@lib/utils';
 import Image from 'next/image';
-import styles from './page-header.module.scss';
+import styles from './home-slider.module.scss';
 
 const HomeSlider: React.FC = () => {
   const [api, setApi] = React.useState<CarouselApi>();
@@ -34,8 +34,8 @@ const HomeSlider: React.FC = () => {
   };
   return (
     <section className={cn(styles.pageHeaderWrapper, 'media_width_sm')}>
-      <Carousel setApi={setApi} className='w-full h-full'>
-        <CarouselContent className='w-full h-full m-0'>
+      <Carousel setApi={setApi} className='h-full w-full'>
+        <CarouselContent className='m-0 h-full w-full'>
           {listSlider.map(({ id, img }) => (
             <CarouselItem className='relative p-0' key={id}>
               <Image priority className='object-cover' fill src={img} alt='img_slide' />
@@ -46,7 +46,10 @@ const HomeSlider: React.FC = () => {
         <CarouselNext className='right-8 bg-white' />
         <section className='iu-d-flexcenter slider-navigation'>
           {listSlider.map(item => (
-            <Button reset variant={'outline'} size={'icon'}
+            <Button
+              reset
+              variant={'outline'}
+              size={'icon'}
               key={item.id}
               onClick={() => onClickIndexSlider(item.id)}
               className={cn('slider-dot', current === item.id ? 'slide-active' : '')}

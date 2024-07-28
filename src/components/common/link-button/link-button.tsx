@@ -9,17 +9,25 @@ type LinkButtonProps = {
   children: React.ReactNode;
   className?: string;
   currentColor?: string;
-  classNameSpan?: string;
+  reverseMode?: boolean;
 };
 
-const LinkButton: React.FC<LinkButtonProps> = ({ children, className, currentColor, classNameSpan }) => {
+const LinkButton: React.FC<LinkButtonProps> = ({ children, className, currentColor, reverseMode }) => {
   return (
     <Button
       reset
       variant='link'
-      className={cn(styles.linkButtonWrapper, 'dark:hover:!border-primary_light', className)}
+      className={cn(
+        styles.linkButtonWrapper,
+        className,
+        reverseMode ? 'dark:hover:!border-primary_dark' : 'dark:hover:!border-primary_light'
+      )}
     >
-      <span className={cn(inter.className, 'dark:!text-primary_light', classNameSpan)}>{children}</span>
+      <span
+        className={cn(inter.className, reverseMode ? 'dark:text-primary_dark' : 'dark:hover:!border-primary_light')}
+      >
+        {children}
+      </span>
       <ArrowRightIcon currentColor={currentColor} />
     </Button>
   );
