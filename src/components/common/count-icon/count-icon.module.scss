@@ -1,0 +1,16 @@
+.countIconWrapper {
+  display: flex;
+  gap: 0 $s4;
+  align-items: center;
+  :global {
+    .index_ellipse {
+      width: 1.25rem;
+      height: 1.25rem;
+      font-size: $f12;
+      font-weight: $bold;
+      color: $text-primary-light;
+      background-color: $text-primary-dark;
+      border-radius: 50%;
+    }
+  }
+}
