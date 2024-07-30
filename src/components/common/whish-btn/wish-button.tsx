@@ -10,7 +10,7 @@ type WhishButtonProps = {
 const WhishButton: React.FC<WhishButtonProps> = ({ handleClick }) => {
   return (
     <Button onClick={handleClick} className={styles.whishButtonWrapper}>
-      <HeartIcon />
+      <HeartIcon className='!text-primary_blur' />
     </Button>
   );
 };

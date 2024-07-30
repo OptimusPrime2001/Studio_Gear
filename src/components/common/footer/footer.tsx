@@ -8,7 +8,7 @@ import styles from './footer.module.scss';
 
 const Footer = () => {
   return (
-    <footer className={cn(styles.footerWrapper, inter.className, 'dark:bg-white dark:text-black media_width_sm')}>
+    <footer className={cn(styles.footerWrapper, inter.className, 'media_width_sm dark:bg-white dark:text-black')}>
       <section className='footer_top'>
         <Logo />
         <span className='line' />

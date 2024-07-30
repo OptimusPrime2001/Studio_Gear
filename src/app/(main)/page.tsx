@@ -3,11 +3,10 @@ import { listMainProduct, listSupportCustomer } from '@lib/constant';
 import { inter, poppins } from '@lib/fonts';
 import { cn } from '@lib/utils';
 import Image from 'next/image';
-import ArticlesPart from './_components/articles/articles';
-import HomeSlider from './_components/home-slider/home-slider';
-import ListProduct from './_components/list-product/list-product';
-import Newsleetter from './_components/newsletter/newsletter';
-import '@styles/global.scss';
+import ArticlesPart from './_modules/articles/articles';
+import HomeSlider from './_modules/home-slider/home-slider';
+import ListProduct from './_modules/list-product/list-product';
+import Newsleetter from './_modules/newsletter/newsletter';
 import styles from './page.module.scss';
 
 export default function HomePage() {

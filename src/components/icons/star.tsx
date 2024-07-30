@@ -1,12 +1,12 @@
 import React from 'react';
-import { uniqueArray } from '@lib/utils';
+import { cn, uniqueArray } from '@lib/utils';
 
 type StarIconProp = {
   numberStars: number;
 };
 const StarIcon: React.FC<StarIconProp> = ({ numberStars }) => {
   return (
-    <div className='flex gap-x-1'>
+    <div className={cn('flex gap-x-1')}>
       {uniqueArray(5).map((item, index) => {
         return index < numberStars ? (
           <svg

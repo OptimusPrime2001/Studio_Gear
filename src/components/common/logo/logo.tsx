@@ -4,9 +4,9 @@ import { cn } from '@lib/utils';
 import Link from 'next/link';
 import styles from './logo.module.scss';
 
-const Logo = () => {
+const Logo = ({ className = '' }) => {
   return (
-    <Link className={cn('iu-d-flexcenter', poppins.className, styles.logo)} href='/'>
+    <Link className={cn('iu-d-flexcenter', poppins.className, styles.logo, className)} href='/'>
       Darwin Le
     </Link>
   );

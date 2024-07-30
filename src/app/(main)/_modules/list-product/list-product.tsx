@@ -37,28 +37,28 @@ const ListProduct: React.FC = () => {
             spaceBetween: 16
           },
           410: {
-            slidesPerView: 2.5,
+            slidesPerView: 2,
             spaceBetween: 18
           },
           768: {
-            slidesPerView: 3.5,
+            slidesPerView: 2.5,
             spaceBetween: 20
           },
           1024: {
+            slidesPerView: 3.5,
+            spaceBetween: 22
+          },
+          1280: {
             slidesPerView: 4.5,
             spaceBetween: 24
           },
-          1280: {
-            slidesPerView: 5.5,
+          1440: {
+            slidesPerView: 4.5,
             spaceBetween: 28
           },
-          1440: {
+          1536: {
             slidesPerView: 6.5,
             spaceBetween: 32
-          },
-          1536: {
-            slidesPerView: 7.5,
-            spaceBetween: 36
           }
         }}
         modules={[Scrollbar]}

@@ -1,5 +1,5 @@
 .productCardWrapper {
-  max-width: 16.375rem;
+  // width: 16.375rem;
   aspect-ratio: 0.75;
   :global {
     a {
@@ -31,6 +31,7 @@
       bottom: $s16;
       left: $s16;
       right: $s16;
+      height: 2.5625rem;
     }
     .product-infor {
       padding-top: 0.75rem;
@@ -52,6 +53,11 @@
           color: $text-primary-blur;
           text-decoration: line-through;
         }
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      & {
+        // min-width: 14.4375rem;
       }
     }
   }

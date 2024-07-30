@@ -1,0 +1,101 @@
+.signInPageWrapper {
+  display: flex;
+  height: 100vh;
+  :global {
+    .sign-background {
+      background: url(https://ucarecdn.com/c93673d5-c345-4b1b-a9e5-55b241ee6b6b/0e9eaf5….jpg);
+      width: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-origin: content-box;
+      background-position: center;
+      a {
+        margin-top: $s32;
+      }
+    }
+    .sign-form {
+      flex: 1;
+      padding-top: 10rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-left: 5%;
+      padding-right: 10%;
+      width: 50%;
+      &_title {
+        font-size: 2.5rem;
+        line-height: 2.75rem;
+        padding-bottom: $s24;
+        text-align: left;
+        width: $w100;
+      }
+      &_question {
+        font-size: $f16;
+        line-height: 1.625rem;
+      }
+      &_link {
+        font-size: $f16;
+        line-height: 1.625rem;
+        font-weight: $semibold;
+        color: $successful;
+      }
+      form {
+        width: 100%;
+        min-width: 19.4375rem;
+        input {
+          border: 0px solid $border-color-base;
+          outline: none;
+          box-shadow: none;
+          border-bottom: 1px solid;
+          border-radius: 0px;
+          margin-top: 32px;
+          padding: 0px 0 14px 0;
+        }
+        input[error-message='true']::placeholder {
+          color: $red;
+        }
+        .form-remember {
+          label {
+            font-size: $f16;
+            line-height: 1.625rem;
+            color: $text-primary-blur;
+          }
+          a {
+            font-size: $f16;
+            line-height: 1.625rem;
+            font-weight: $semibold;
+          }
+        }
+        button.button-submit {
+          margin-top: $s32;
+          width: 100%;
+          padding: 0.625rem 0;
+          font-size: $f16;
+          line-height: 1.75rem;
+          font-weight: $medium;
+          height: $s48;
+        }
+      }
+    }
+    @include media-breakpoint-down(md) {
+      & {
+        flex-direction: column;
+        height: auto;
+        .sign-background {
+          width: 100%;
+          aspect-ratio: 0.872;
+        }
+        .sign-form {
+          width: 100%;
+          padding: 2.5rem $s32;
+
+          align-items: flex-start;
+          .form-remember > a {
+            font-size: $f12 !important;
+            line-height: 1.25rem !important;
+          }
+        }
+      }
+    }
+  }
+}

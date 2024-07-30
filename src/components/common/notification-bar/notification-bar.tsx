@@ -11,14 +11,14 @@ const NotificationBar = () => {
   const [renderVoucher, setRenderVoucher] = React.useState<boolean>(true);
   if (!renderVoucher) return null;
   return (
-    <section className={cn(styles.notificationBar, 'iu-d-flexcenter gap-x-3 flex dark:bg-slate-900 relative')}>
+    <section className={cn(styles.notificationBar, 'iu-d-flexcenter relative flex gap-x-3 dark:!bg-slate-900')}>
       <VoucherIcon />
       <span className='text-center'>Giảm giá 30% trên toàn cửa hàng — Thời gian có hạn! </span>
       <Link className='shop_now' href='/product'>
         <span>Mua ngay</span>
         <ArrowRightIcon />
       </Link>
-      <CloseIcon onClick={() => setRenderVoucher(false)} className='md:absolute md:right-4 relative cursor-pointer' />
+      <CloseIcon onClick={() => setRenderVoucher(false)} className='relative cursor-pointer md:absolute md:right-4' />
     </section>
   );
 };

@@ -24,6 +24,7 @@ export const navigationIcon = [
   {
     id: 'account',
     label: 'Tài khoản',
+    href: '/sign-in',
     Component: AccountIcon
   },
   {
