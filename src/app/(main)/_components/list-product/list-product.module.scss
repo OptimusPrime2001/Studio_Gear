@@ -25,5 +25,24 @@
         background-color: #343839;
       }
     }
+    @include media-breakpoint-down(sm) {
+      .list-product_title {
+        margin: $s32 auto $s40;
+        padding: 0 $s32;
+        width: auto;
+        h3 {
+          font-weight: $medium;
+          font-size: 2.125rem;
+          line-height: 2.375rem;
+        }
+      }
+      .swipper-product {
+        margin-left: $s32;
+      }
+      .swiper-scrollbar {
+        width: calc(100vw - $s64 - 17px) !important;
+        margin-top: $s40;
+      }
+    }
   }
 }
