@@ -10,19 +10,26 @@
         line-height: 2.75rem;
       }
     }
-    .swipper-product {
+    .swiper-darkmode > .swiper-scrollbar {
+      background-color: #343839;
+    }
+    .swiper-product {
       margin-left: $w10;
       .swiper-wrapper {
         width: 90%;
       }
     }
     .swiper-scrollbar {
-      background-color: #e8ecef;
+      background-color: $border-color-base;
       position: static !important;
       width: calc(80vw - 14px) !important;
       margin-top: $s48;
       .swiper-scrollbar-drag {
         background-color: #343839;
+        cursor: pointer;
+      }
+      .scroll-bar_dark {
+        background: $border-color-base;
       }
     }
     @include media-breakpoint-down(sm) {

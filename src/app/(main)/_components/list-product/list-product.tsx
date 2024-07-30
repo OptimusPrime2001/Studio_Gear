@@ -3,7 +3,8 @@ import React from 'react';
 import LinkButton from '@components/common/link-button/link-button';
 import ProductCard from '@components/common/product-card/product-card';
 import { poppins } from '@lib/fonts';
-import { uniqueArray } from '@lib/utils';
+import { cn, uniqueArray } from '@lib/utils';
+import { useTheme } from 'next-themes';
 import { Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -14,6 +15,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 const ListProduct: React.FC = () => {
+  const { theme } = useTheme();
   return (
     <section className={styles.listProductWrapper}>
       <div className='list-product_title iu-d-flexbetween'>
@@ -21,11 +23,13 @@ const ListProduct: React.FC = () => {
         <LinkButton>More Products</LinkButton>
       </div>
       <Swiper
+        key={theme}
         slidesPerView={4.5}
         spaceBetween={24}
         scrollbar={{
           hide: false,
-          draggable: true
+          draggable: true,
+          dragClass: `swiper-scrollbar-drag ${theme === 'dark' ? 'scroll-bar_dark' : ''}`
         }}
         breakpoints={{
           0: {
@@ -58,7 +62,7 @@ const ListProduct: React.FC = () => {
           }
         }}
         modules={[Scrollbar]}
-        className='swipper-product'
+        className={cn('swiper-product', theme === 'dark' ? 'swiper-darkmode' : '')}
       >
         {uniqueArray(10).map(item => (
           <SwiperSlide key={item}>

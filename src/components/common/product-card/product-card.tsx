@@ -1,6 +1,6 @@
 import React from 'react';
 import Badge from '@common/badge/badge';
-import HeartIcon from '@common/heart-icon/heart-icon';
+import WhishButton from '@common/whish-btn/wish-button';
 import StarIcon from '@components/icons/star';
 import { Button } from '@components/ui/button';
 import { inter } from '@lib/fonts';
@@ -40,7 +40,7 @@ const ProductCard: React.FC<ProductCardProps> = props => {
             {isNew && <Badge label='NEW' />}
             {discount && <Badge className='bg-[#38CB89] text-primary_light' label={`${discount}%`} />}
           </div>
-          <HeartIcon handleClick={handleAddToFavarite} />
+          <WhishButton handleClick={handleAddToFavarite} />
         </div>
       </Link>
       <div className='product-infor'>
