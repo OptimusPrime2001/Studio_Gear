@@ -1,9 +1,9 @@
-.signInPageWrapper {
+.signUpPageWrapper {
   display: flex;
   height: 100vh;
   :global {
     .sign-background {
-      background: url(https://ucarecdn.com/c93673d5-c345-4b1b-a9e5-55b241ee6b6b/0e9eaf5….jpg);
+      background: url(https://ucarecdn.com/fefffdc2-a4e7-4590-a8eb-3805648f7821/e4116bbec61f2224bc95dd2233dcdf16.jpg);
       width: 50%;
       background-repeat: no-repeat;
       background-size: cover;
@@ -42,7 +42,6 @@
       form {
         width: 100%;
         min-width: 12.5rem;
-
         input {
           border: 0px solid $border-color-base;
           outline: none;
@@ -53,9 +52,6 @@
           padding: 0px 0 0.875rem 0;
           font-size: $f16;
           line-height: 1.625rem;
-        }
-        input[error-message='true']::placeholder {
-          color: $red;
         }
         .form-remember {
           label {

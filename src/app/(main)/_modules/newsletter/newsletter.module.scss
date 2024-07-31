@@ -23,6 +23,11 @@
       line-height: 1.875rem;
       text-align: center;
     }
+    input {
+      font-size: $f16;
+      line-height: 1.75rem;
+      font-weight: $medium;
+    }
     @include media-breakpoint-down(sm) {
       & {
         padding: 0 $s32;
@@ -50,7 +55,7 @@
             font-size: $f16;
             padding: 0;
             line-height: 1.75rem;
-            font-weight: 600;
+            font-weight: $medium;
             &:hover {
               background: transparent;
             }
@@ -68,7 +73,7 @@
               color: $text-primary-blur;
               font-size: $f16;
               line-height: 1.75rem;
-              font-weight: 600;
+              font-weight: $medium;
             }
             &:focus-visible {
               outline: none;

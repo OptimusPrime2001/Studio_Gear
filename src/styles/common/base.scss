@@ -177,7 +177,12 @@
     padding-left: $s32 !important;
   }
 }
-
+.error-message {
+  color: $red;
+  font-size: $f14;
+  margin-top: $s4;
+  display: block;
+}
 button.reset_btn {
   width: fit-content;
   height: fit-content;

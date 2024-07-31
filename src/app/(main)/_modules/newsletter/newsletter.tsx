@@ -6,7 +6,6 @@ import { inter, poppins } from '@lib/fonts';
 import { cn } from '@lib/utils';
 import styles from './newsletter.module.scss';
 
-
 const Newsleetter: React.FC = () => {
   return (
     <section className={styles.newsletterWrapper}>
@@ -14,7 +13,7 @@ const Newsleetter: React.FC = () => {
       <p className={cn(inter.className, 'dark:text-black')}>Sign up for deals, new products and promotions</p>
       <form className='flex w-full max-w-md items-center space-x-2' action=''>
         <EmailIcon className='sm:hidden' />
-        <Input className='dark:text-black' type="email" placeholder='Email address' />
+        <Input className='dark:text-black' type='email' placeholder='Email address' />
         <Button type='submit'>Signup</Button>
       </form>
     </section>

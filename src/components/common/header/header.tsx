@@ -13,7 +13,7 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTr
 import { listSocialIcon, navigationLink } from '@lib/constant';
 import { cn } from '@lib/utils';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import CountIcon from '../count-icon/count-icon';
 import { ModeToggle } from '../mode-toggle/mode-toggle';
 import styles from './header.module.scss';
@@ -24,7 +24,10 @@ const Header = () => {
   const checkMenuActive = (label: string) => {
     return pathname === label ? 'menu_active' : 'menu_link';
   };
-  const handleSignIn = () => {};
+  const router = useRouter();
+  const handleSignIn = () => {
+    router.push('sign-in');
+  };
   return (
     <header className={cn(styles.headerWrapper, 'iu-d-flexbetween media_width_sm')}>
       <section className='iu-d-flexcenter header-logo gap-x-2'>
