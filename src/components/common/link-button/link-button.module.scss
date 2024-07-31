@@ -1,23 +1,23 @@
-.linkButtonWrapper{
-    display: flex;
-    align-items: center;
-    gap: 0 $s4;
-    border-bottom: 1px solid transparent!important;
+.linkButtonWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0 $s4;
+  border-bottom: 1px solid transparent;
+  width: fit-content;
+  span {
+    font-size: $f16;
+    font-weight: $medium;
+    line-height: 1.75rem;
+    letter-spacing: -0.025rem;
+  }
 
-    span{
-      font-size: $f16;
-      font-weight: $medium;
-      line-height: 1.75rem;
-      letter-spacing: -0.025rem;
+  &:hover {
+    border-bottom: 1px solid $text-primary-dark;
+  }
+  @include media-breakpoint-down(md) {
+    span {
+      font-size: $f14;
+      line-height: $s24;
     }
-
-    &:hover{
-      border-bottom: 1px solid $text-primary-dark!important;
-    }
-    @include media-breakpoint-down(md){
-      span{
-        font-size: $f14;
-        line-height: $s24;
-      }
-    }
+  }
 }

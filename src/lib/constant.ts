@@ -131,3 +131,13 @@ export const listSupportCustomer = [
     icon: CallSupport
   }
 ];
+export const listQuotes = [
+  {
+    title: 'Make your workday more comfortable',
+    id: 1
+  },
+  { title: 'Selling is about solving problems.', id: 2 },
+  { title: 'Great service creates loyal customers.', id: 3 },
+  { title: 'Understand needs, then offer solutions.', id: 4 },
+  { title: 'Build relationships, not just sales.', id: 5 }
+];

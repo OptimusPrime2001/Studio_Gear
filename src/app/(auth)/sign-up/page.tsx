@@ -50,10 +50,16 @@ const SignUpPage: React.FC = () => {
   const {
     control,
     handleSubmit,
+    trigger,
     formState: { errors }
   } = form;
 
-  const handleSignUp: SubmitHandler<z.infer<typeof formSchema>> = data => console.log(data);
+  const handleSignUp: SubmitHandler<z.infer<typeof formSchema>> = async data => {
+    const usernameValid = await trigger('username');
+    console.log('🚀 ~ usernameValid:', usernameValid);
+    if (!usernameValid) return;
+    console.log('data', data);
+  };
   return (
     <section className={styles.signUpPageWrapper}>
       <div className='sign-background text-primary_light'>
@@ -96,20 +102,20 @@ const SignUpPage: React.FC = () => {
             />
             {errors.password && <span className='error-message'>{errors.password?.message}</span>}
 
-            <div className='form-remember mt-8 flex items-center space-x-2'>
+            <div className='mt-8 flex items-center space-x-2'>
               <FormField
                 name='agreepolicy'
                 control={control}
                 rules={{ required: 'Vui lòng đồng ý điều khoản và chính sách' }}
                 render={({ field }) => (
                   <FormItem className='flex flex-col'>
-                    <div className='flex items-center gap-x-2'>
+                    <div className='privacy_security flex items-center gap-x-2'>
                       <FormControl>
                         <Checkbox checked={field.value} onCheckedChange={field.onChange} id='terms' />
                       </FormControl>
                       <label
                         htmlFor='terms'
-                        className='dark:text-primaryflex flex-wrap gap-x-1 text-base font-normal text-[#E8ECEF]'
+                        className='dark:text-primaryflex flex flex-wrap gap-x-2 text-base font-normal text-[#E8ECEF]'
                       >
                         Tôi đồng ý với
                         <Link href='term-of-use' className='text-primary_dark dark:!text-primary_light'>
@@ -121,7 +127,9 @@ const SignUpPage: React.FC = () => {
                         </Link>
                       </label>
                     </div>
-                    {errors.agreepolicy && <span className='error-message'>{errors.agreepolicy?.message}</span>}
+                    {!errors.username && !errors.email && !errors.password && errors.agreepolicy && (
+                      <span className='error-message'>{errors.agreepolicy?.message}</span>
+                    )}
                   </FormItem>
                 )}
               />

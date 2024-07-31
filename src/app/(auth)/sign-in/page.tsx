@@ -14,9 +14,14 @@ import { z } from 'zod';
 import styles from './page.module.scss';
 
 const formSchema = z.object({
-  username: z.string().min(1, {
-    message: 'Vui lòng điền tên người dùng hoặc email'
-  }),
+  username: z
+    .string()
+    .min(1, {
+      message: 'Vui lòng điền tên người dùng hoặc email'
+    })
+    .min(4, {
+      message: 'Tên người dùng phải tối thiểu 4 kí tự'
+    }),
   password: z
     .string()
     .min(1, { message: 'Vui lòng điền mật khẩu' })
@@ -62,7 +67,7 @@ const SignInPage: React.FC = () => {
             <FormField
               name='username'
               control={control}
-              render={({ field }) => <Input {...field} type='email' placeholder='Tên tài khoản hoặc địa chỉ email' />}
+              render={({ field }) => <Input {...field} placeholder='Tên tài khoản hoặc địa chỉ email' />}
             />
             {errors.username && <span className='error-message'>{errors.username?.message}</span>}
             <FormField
@@ -72,7 +77,7 @@ const SignInPage: React.FC = () => {
               render={({ field }) => <Input {...field} type='password' placeholder='Mật khẩu' />}
             />
             {errors.password && <span className='error-message'>{errors.password?.message}</span>}
-            <div className='form-remember mt-8 flex items-center'>
+            <div className='form-remember mt-8 flex flex-wrap items-center justify-between'>
               <FormField
                 name='rememberAccount'
                 control={control}
@@ -88,8 +93,7 @@ const SignInPage: React.FC = () => {
                   </FormItem>
                 )}
               />
-
-              <Link href='/forgot-password' className='flex-1 text-end'>
+              <Link href='/forgot-password' className=''>
                 Quên mật khẩu ?
               </Link>
             </div>

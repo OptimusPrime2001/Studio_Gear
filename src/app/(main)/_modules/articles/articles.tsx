@@ -11,7 +11,7 @@ const ArticlesPart = () => {
     <section className={cn(styles.articleWrapper, 'media_width_sm')}>
       <div className='iu-d-flexbetween article-title'>
         <h3 className={poppins.className}>Articles</h3>
-        <LinkButton>More Articles</LinkButton>
+        <LinkButton href='/products'>More Articles</LinkButton>
       </div>
       <div className='iu-d-flexbetween article-content'>
         {listArticles.map(item => (
@@ -24,7 +24,7 @@ const ArticlesPart = () => {
               src={item.img}
             />
             <p className={poppins.className}>{item.label}</p>
-            <LinkButton>Read More</LinkButton>
+            <LinkButton href='/products'>Read More</LinkButton>
           </div>
         ))}
       </div>

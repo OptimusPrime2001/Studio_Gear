@@ -1,22 +1,22 @@
 import React from 'react';
 import ArrowRightIcon from '@components/icons/arrow-right';
-import { Button } from '@components/ui/button';
 import { inter } from '@lib/fonts';
 import { cn } from '@lib/utils';
+import Link from 'next/link';
 import styles from './link-button.module.scss';
 
 type LinkButtonProps = {
+  href: string;
   children: React.ReactNode;
   className?: string;
   currentColor?: string;
   reverseMode?: boolean;
 };
 
-const LinkButton: React.FC<LinkButtonProps> = ({ children, className, currentColor, reverseMode }) => {
+const LinkButton: React.FC<LinkButtonProps> = ({ children, className, currentColor, reverseMode, href = '' }) => {
   return (
-    <Button
-      reset
-      variant='link'
+    <Link
+      href={href}
       className={cn(
         styles.linkButtonWrapper,
         className,
@@ -29,7 +29,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({ children, className, currentCol
         {children}
       </span>
       <ArrowRightIcon currentColor={currentColor} />
-    </Button>
+    </Link>
   );
 };
 export default LinkButton;
