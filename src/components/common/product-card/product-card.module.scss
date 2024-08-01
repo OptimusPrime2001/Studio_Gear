@@ -1,6 +1,7 @@
 .productCardWrapper {
   // width: 16.375rem;
   aspect-ratio: 0.75;
+  overflow: hidden;
   :global {
     a {
       height: 100%;

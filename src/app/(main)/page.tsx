@@ -61,25 +61,82 @@ export default function HomePage() {
       <ListProduct />
       <section className={cn(styles.supportWrapper, 'media_width_sm')}>
         {listSupportCustomer.map(item => (
-          <section className='relative overflow-hidden bg-primary_dark dark:bg-primary_light' key={item.id}>
+          <motion.section
+            whileInView={{
+              y: [150, 0],
+              opacity: [0, 1]
+            }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className='relative overflow-hidden bg-primary_dark dark:bg-primary_light'
+            key={item.id}
+          >
             <item.icon />
             <p className={poppins.className}>{item.title}</p>
             <span>{item.label}</span>
             <Meteors number={20} />
-          </section>
+          </motion.section>
         ))}
       </section>
       <section className={cn(styles.bannerBestSeller, inter.className)}>
-        <Image alt='image' src='https://ucarecdn.com/69358f7c-7e08-47b9-908e-e27b249f2be8/ImagePlaceholder3.png' fill />
-        <section className='banner-content'>
-          <span>SALE UP TO 35% OFF</span>
-          <h3 className={poppins.className}>HUNDREDS of New lower prices!</h3>
-          <p>It’s more affordable than ever to give every room in your home a stylish </p>
-          <LinkButton href='/products' reverseMode>
-            Show Now
-          </LinkButton>
-        </section>
-        <section />
+        <Image
+          className='support-img'
+          alt='image'
+          src='https://ucarecdn.com/69358f7c-7e08-47b9-908e-e27b249f2be8/ImagePlaceholder3.png'
+          fill
+        />
+        <motion.section
+          viewport={{ once: true }}
+          whileInView={{
+            x: [150, 0]
+          }}
+          transition={{ duration: 0.5 }}
+          className='banner-content'
+        >
+          <motion.span
+            viewport={{ once: true }}
+            whileInView={{
+              y: [50, 0],
+              opacity: [0, 1]
+            }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
+            SALE UP TO 35% OFF
+          </motion.span>
+          <motion.h3
+            viewport={{ once: true }}
+            whileInView={{
+              y: [50, 0],
+              opacity: [0, 1]
+            }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className={poppins.className}
+          >
+            HUNDREDS of New lower prices!
+          </motion.h3>
+          <motion.p
+            viewport={{ once: true }}
+            whileInView={{
+              y: [50, 0],
+              opacity: [0, 1]
+            }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+          >
+            It’s more affordable than ever to give every room in your home a stylish{' '}
+          </motion.p>
+          <motion.div
+            viewport={{ once: true }}
+            whileInView={{
+              y: [50, 0],
+              opacity: [0, 1]
+            }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+          >
+            <LinkButton href='/products' reverseMode>
+              Show Now
+            </LinkButton>
+          </motion.div>
+        </motion.section>
       </section>
       <div className='w-full'>
         <InfiniteMovingCards pauseOnHover={false} items={listQuotes} direction='left' speed='slow' />

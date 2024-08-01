@@ -41,7 +41,11 @@ const Header = () => {
           <SheetTrigger>
             <MenuBars />
           </SheetTrigger>
-          <SheetContent datatype='menu_mobile' side='left' className={cn('w-[90%] ipadair:hidden', styles.menu_mobile)}>
+          <SheetContent
+            datatype='menu_mobile'
+            side='left'
+            className={cn('w-[90%] overflow-y-auto pb-0 ipadair:hidden', styles.menu_mobile)}
+          >
             <SheetHeader className='h-full'>
               <SheetTitle className='menu_mobile-header'>
                 <Logo />
@@ -84,9 +88,11 @@ const Header = () => {
                       </Link>
                     ))}
                   </div>
+                  <SheetDescription className='pb-6 text-center'>
+                    Shopping is not just buying things, it&apos;s an experience.
+                  </SheetDescription>
                 </section>
               </section>
-              <SheetDescription>Shopping is not just buying things, it&apos;s an experience.</SheetDescription>
             </SheetHeader>
           </SheetContent>
         </Sheet>

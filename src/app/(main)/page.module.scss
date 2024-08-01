@@ -160,11 +160,10 @@
   flex-direction: row;
   flex-wrap: wrap;
   width: $w100;
-  background: $neutral02;
   position: relative;
 
   :global {
-    img {
+    .support-img {
       width: 50% !important;
       position: relative !important;
       object-fit: contain;
@@ -175,6 +174,7 @@
       flex-direction: column;
       width: 50%;
       padding-left: 4.5rem;
+      background: $neutral02;
       gap: $s16 0;
       & > span {
         font-size: $f16;
