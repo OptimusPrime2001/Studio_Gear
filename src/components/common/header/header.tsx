@@ -29,7 +29,13 @@ const Header = () => {
     router.push('sign-in');
   };
   return (
-    <header className={cn(styles.headerWrapper, 'iu-d-flexbetween media_width_sm')}>
+    <header
+      className={cn(
+        styles.headerWrapper,
+        // eslint-disable-next-line max-len
+        'iu-d-flexbetween media_width_sm supports-backdrop-blur:bg-white/95 sticky bottom-1 top-0 z-50 w-full flex-none border-b border-solid border-slate-900/10 bg-white backdrop-blur transition-colors duration-500 dark:border-slate-50/[0.06] dark:bg-slate-900/75'
+      )}
+    >
       <section className='iu-d-flexcenter header-logo gap-x-2'>
         <Sheet open={openMenuMobile} onOpenChange={setOpenMenuMobile}>
           <SheetTrigger>

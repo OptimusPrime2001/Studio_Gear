@@ -97,7 +97,9 @@ const SignInPage: React.FC = () => {
                 Quên mật khẩu ?
               </Link>
             </div>
-            {errors.rememberAccount && <span className='error-message'>{errors.rememberAccount?.message}</span>}
+            {!errors.username && !errors.password && errors.rememberAccount && (
+              <span className='error-message'>{errors.rememberAccount?.message}</span>
+            )}
             <Button className='button-submit' type='submit'>
               Đăng nhập
             </Button>

@@ -6,7 +6,7 @@ import { Meteors } from '@components/ui/meteors';
 import { listMainProduct, listQuotes, listSupportCustomer } from '@lib/constant';
 import { inter, poppins } from '@lib/fonts';
 import { cn } from '@lib/utils';
-import { animate, ElementOrSelector, useInView } from 'framer-motion';
+import { animate, ElementOrSelector, motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import ArticlesPart from './_modules/articles/articles';
 import HomeSlider from './_modules/home-slider/home-slider';
@@ -16,24 +16,34 @@ import styles from './page.module.scss';
 
 export default function HomePage() {
   const headingHomeref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(headingHomeref);
+  const isHeadingHomeInView = useInView(headingHomeref);
   React.useEffect(() => {
-    if (isInView) {
+    if (isHeadingHomeInView) {
       animate(headingHomeref.current as ElementOrSelector, { x: [-100, 0] }, { duration: 0.5 });
     }
-  }, [isInView]);
+  }, [isHeadingHomeInView]);
   return (
     <main className='iu-d-flexcolumn'>
       <HomeSlider />
       <section className={cn(styles.headingHomeWrapper, 'media_width_sm')}>
-        <div ref={headingHomeref} className={cn(poppins.className, 'dark:!text-primary_light')}>
+        <motion.div
+          whileInView={{ x: [-100, 0] }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className={cn(poppins.className, 'dark:!text-primary_light')}
+        >
           <span>Simply Unique/</span>
           <span>Simply Better.</span>{' '}
-        </div>
-        <p className={cn(inter.className, 'dark:!text-primary_blur')}>
+        </motion.div>
+        <motion.div
+          className={cn(inter.className, 'dark:!text-primary_blur')}
+          whileInView={{ x: [100, 0] }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
           <b className='dark:!text-primary_light'>Ben Beckman</b> is a gift & decorations store based in HCMC, Vietnam.
           Est since 2019.{' '}
-        </p>
+        </motion.div>
       </section>
       <section className={cn(styles.mainProduct, 'media_width_sm')}>
         {listMainProduct.map(item => (

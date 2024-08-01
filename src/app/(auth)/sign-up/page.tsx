@@ -56,7 +56,6 @@ const SignUpPage: React.FC = () => {
 
   const handleSignUp: SubmitHandler<z.infer<typeof formSchema>> = async data => {
     const usernameValid = await trigger('username');
-    console.log('🚀 ~ usernameValid:', usernameValid);
     if (!usernameValid) return;
     console.log('data', data);
   };

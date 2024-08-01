@@ -1,7 +1,8 @@
 .headerWrapper {
-  width: $w80;
+  width: $w100;
+  padding-left: 10%;
+  padding-right: 10%;
   height: 3.75rem;
-  margin: auto;
 
   :global {
     .header-logo > button {
