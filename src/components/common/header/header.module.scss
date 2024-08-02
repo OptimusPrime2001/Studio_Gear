@@ -96,3 +96,100 @@
     }
   }
 }
+.panelCart {
+  padding: $s40 $s24;
+  padding-bottom: 0;
+  overflow-y: auto;
+  & > button {
+    display: none;
+  }
+  :global {
+    .cart-title {
+      @include flex-between();
+      h2 {
+        font-size: 1.75rem;
+        line-height: 2.125rem;
+      }
+    }
+    .cart-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      &_list {
+        .cart-content_item {
+          margin-top: $f16;
+          display: flex;
+          gap: 0 $s16;
+          padding: $s24 0;
+          border-bottom: 1px solid $border-color-base;
+          .content-left {
+            flex: 1;
+            div {
+              @include flex-between();
+            }
+            .title-price {
+              * {
+                font-size: $f14;
+                line-height: 1.375rem;
+                font-weight: $semibold;
+                color: $text-primary-dark;
+              }
+              span {
+                color: #121212;
+              }
+            }
+            .color-close {
+              margin: $s8 0;
+              span {
+                font-size: 0.75rem;
+                line-height: 1.25rem;
+                color: $text-primary-blur;
+              }
+            }
+          }
+        }
+      }
+      &_amount {
+        padding: $s12 0;
+        border-bottom: 1px solid $border-color-base;
+        * {
+          font-size: $f16;
+          line-height: 1.625rem;
+          color: $text-primary-dark;
+        }
+        b {
+          font-weight: $semibold;
+        }
+      }
+      &_total {
+        margin: $s12 0;
+        * {
+          font-size: 1.25rem;
+          line-height: 1.75rem;
+          font-weight: $medium;
+          color: $text-primary-dark;
+        }
+      }
+      .btn-pay {
+        width: 100%;
+        height: 3.25rem;
+        font-size: 1.125rem;
+        line-height: 2rem;
+        font-weight: $medium;
+        margin-bottom: $s16;
+      }
+      a {
+        color: #121;
+        font-size: $f14;
+        line-height: 1.375rem;
+        font-weight: $semibold;
+        display: block;
+        text-align: center;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

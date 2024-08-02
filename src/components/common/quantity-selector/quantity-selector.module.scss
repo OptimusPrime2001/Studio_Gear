@@ -1,0 +1,17 @@
+.quantitySelectorWrapper {
+  border-radius: $s4;
+  border: 0.0625rem solid $text-primary-blur;
+  padding: $s8;
+  gap: 0 $s12;
+  width: fit-content;
+  @include flex-center();
+  span {
+    font-size: $f12;
+    line-height: 1.25rem;
+    font-weight: $semibold;
+    color: #121212;
+  }
+  svg {
+    cursor: pointer;
+  }
+}

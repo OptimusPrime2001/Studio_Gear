@@ -4,12 +4,13 @@ import { Button } from '@components/ui/button';
 type CloseIconProps = {
   className?: string;
   onClick?: () => void;
+  size?: number;
 };
 
-const CloseIcon: React.FC<CloseIconProps> = props => {
+const CloseIcon: React.FC<CloseIconProps> = ({ className, onClick, size = 20 }) => {
   return (
-    <Button reset variant={'outline'} size={'icon'} className={props.className} onClick={props.onClick}>
-      <svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <Button reset variant={'outline'} size={'icon'} className={className} onClick={onClick}>
+      <svg width={size} height={size} viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
         <path
           fillRule='evenodd'
           clipRule='evenodd'

@@ -79,12 +79,7 @@ export default function HomePage() {
         ))}
       </section>
       <section className={cn(styles.bannerBestSeller, inter.className)}>
-        <Image
-          className='support-img'
-          alt='image'
-          src='https://ucarecdn.com/69358f7c-7e08-47b9-908e-e27b249f2be8/ImagePlaceholder3.png'
-          fill
-        />
+        <Image alt='image' src='https://ucarecdn.com/69358f7c-7e08-47b9-908e-e27b249f2be8/ImagePlaceholder3.png' fill />
         <motion.section
           viewport={{ once: true }}
           whileInView={{
