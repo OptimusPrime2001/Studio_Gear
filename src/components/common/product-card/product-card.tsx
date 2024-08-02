@@ -31,7 +31,7 @@ const ProductCard: React.FC<ProductCardProps> = props => {
         }}
         className='product-image relative'
       >
-        <Image alt={name} src={imgProduct} fill />
+        <Image sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' alt={name} src={imgProduct} fill />
         <Button className='add-cart_btn hover:!bg-primary_blur' onClick={handleAddToCart}>
           Add to cart
         </Button>

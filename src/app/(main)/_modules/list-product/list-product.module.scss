@@ -12,9 +12,7 @@
         line-height: 2.75rem;
       }
     }
-    .swiper-darkmode > .swiper-scrollbar {
-      background-color: #343839;
-    }
+
     .swiper-product {
       width: 90%;
       margin-left: 10%;
@@ -23,18 +21,21 @@
         width: $w100;
       }
     }
+    .swiper-darkmode > .swiper-scrollbar {
+      background-color: $neutral_04;
+      .swiper-scrollbar-drag {
+        background: $neutral_00;
+      }
+    }
     .swiper-scrollbar {
-      background-color: #e8ecef;
+      background-color: $neutral_03;
       position: absolute !important;
       width: 80% !important;
       left: 10% !important;
       z-index: 10 !important;
       .swiper-scrollbar-drag {
-        background-color: #343839;
+        background-color: $neutral_05;
         cursor: pointer;
-      }
-      .scroll-bar_dark {
-        background: $neutral_03;
       }
     }
     @include media-breakpoint-down(sm) {

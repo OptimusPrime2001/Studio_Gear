@@ -69,7 +69,7 @@ const Header = () => {
                 <CountIcon count={3} iconElement={<HeartIcon size='24' />} />
               </li>
             </ul>
-            <Button className='sign-btn w-full hover:!bg-primary_blur' onClick={handleSignIn}>
+            <Button className='sign-btn hover:!bg-primary_blur w-full' onClick={handleSignIn}>
               Đăng nhập
             </Button>
             <div className='list_social'>
@@ -128,7 +128,7 @@ const Header = () => {
               <b className='dark:!text-neutral_00'>{formatVnd(29000000)}</b>
             </div>
             <Button className='btn-pay'>Thanh toán</Button>
-            <Link className='dark:!text-neutral_03 dark:!border-neutral_03' href='cart-detail'>
+            <Link className='dark:!text-neutral_03 dark:hover:!border-neutral_03' href='cart-detail'>
               Xem giỏ hàng
             </Link>
           </section>
@@ -164,7 +164,7 @@ const Header = () => {
       </ul>
       <section className='iu-d-flexbetween relative cursor-pointer gap-x-4'>
         <SearchIcon />
-        <Link className='hidden md:block' href={'/sign-in'}>
+        <Link className='hidden h-6 md:block' href={'/sign-in'}>
           <AccountIcon />
         </Link>
         <Sheet>

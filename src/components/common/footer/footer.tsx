@@ -1,15 +1,17 @@
+'use client';
 import React from 'react';
 import Logo from '@common/logo/logo';
 import { listSocialIcon, navigationLink } from '@lib/constant';
 import { inter } from '@lib/fonts';
 import { cn } from '@lib/utils';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import styles from './footer.module.scss';
 
 const Footer = () => {
   return (
     <footer className={cn(styles.footerWrapper, inter.className, 'media_width_sm dark:bg-white dark:text-black')}>
-      <section className='footer_top'>
+      <motion.section whileInView={{ y: [100, 0] }} transition={{ duration: 0.5 }} className='footer_top'>
         <Logo />
         <span className='line' />
         <span>Gift & Decoration Store</span>
@@ -18,9 +20,9 @@ const Footer = () => {
             <li key={item.id}>{item.label}</li>
           ))}
         </ul>
-      </section>
-      <section className='footer_line' />
-      <section className='footer_bottom'>
+      </motion.section>
+      <motion.section whileInView={{ y: [100, 0] }} transition={{ duration: 0.5 }} className='footer_line' />
+      <motion.section whileInView={{ y: [100, 0] }} transition={{ duration: 0.5 }} className='footer_bottom'>
         <span className='copy_right'>Copyright © 2023 3legant. All rights reserved</span>
         <ul className=''>
           <li>Privacy Policy</li>
@@ -33,7 +35,7 @@ const Footer = () => {
             </Link>
           ))}
         </div>
-      </section>
+      </motion.section>
     </footer>
   );
 };

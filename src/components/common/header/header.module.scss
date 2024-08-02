@@ -184,7 +184,10 @@
         font-size: $f14;
         line-height: 1.375rem;
         font-weight: $semibold;
-        text-align: center;
+        margin: auto;
+        display: block;
+        width: fit-content;
+        border-bottom: 1px solid transparent;
         &:hover {
           border-bottom: 1px solid $neutral_07;
         }

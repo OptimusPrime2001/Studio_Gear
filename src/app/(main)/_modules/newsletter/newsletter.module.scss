@@ -2,14 +2,18 @@
   background: url(https://ucarecdn.com/5ef60bb0-c4a0-491b-82b8-099b28fbbd00/imageplaceholder122x.png) no-repeat center;
   width: $w100;
   min-height: 22.5rem;
-  overflow: hidden;
   background-size: cover;
   background-position: center;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-origin: padding-box;
+  width: $w100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 1rem 0rem;
   :global {
     h2 {
