@@ -22,11 +22,11 @@
     max-width: 28.3125rem;
     font-size: $f16;
     line-height: 1.625rem;
-    color: $text-primary-blur;
+    color: $neutral_04;
 
     b {
       font-weight: $semibold;
-      color: $text-primary-dark;
+      color: $neutral_07;
     }
   }
   @include media-breakpoint-down(md) {
@@ -93,7 +93,7 @@
           }
 
           &:hover {
-            border-bottom: 1px solid $text-primary-dark;
+            border-bottom: 1px solid $neutral_07;
           }
         }
       }
@@ -174,24 +174,24 @@
       flex-direction: column;
       width: 50%;
       padding-left: 4.5rem;
-      background: $neutral02;
+      background: $neutral_02;
       gap: $s16 0;
       & > span {
         font-size: $f16;
         line-height: 1rem;
-        color: $information;
+        color: $secondary_color;
         font-weight: $bold;
       }
       h3 {
         font-size: 2.5rem;
         font-weight: $medium;
         line-height: 2.75rem;
-        color: $text-primary-dark;
+        color: $neutral_07;
       }
       p {
         font-size: 1.25rem;
         line-height: 2rem;
-        color: $text-primary-dark;
+        color: $neutral_07;
         padding-bottom: $s8;
       }
     }
@@ -253,7 +253,7 @@
   padding: $s48 0;
   :global {
     section {
-      background: $neutral02;
+      background: $neutral_02;
       padding: $s48 $s32;
       svg {
         padding-bottom: $s16;
@@ -262,11 +262,11 @@
         font-size: 1.25rem;
         font-weight: $medium;
         line-height: 1.75rem;
-        color: $text-primary-dark;
+        color: $neutral_07;
         text-wrap: wrap;
       }
       span {
-        color: $text-primary-blur;
+        color: $neutral_04;
         line-height: 1.5rem;
         font-size: $f14;
       }

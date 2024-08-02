@@ -18,7 +18,7 @@ export function ModeToggle() {
           setTheme('dark');
         }
       }}
-      className={cn('h-6 w-6 rounded-full border-none shadow-none hover:bg-transparent', styles.modeToggleWrapper)}
+      className={cn('h-6 w-6 rounded-full border-none bg-transparent shadow-none', styles.modeToggleWrapper)}
       variant='outline'
       size='icon'
     >

@@ -30,7 +30,7 @@ export default function HomePage() {
           whileInView={{ x: [-100, 0] }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className={cn(poppins.className, 'dark:!text-primary_light')}
+          className={cn(poppins.className, 'dark:!text-neutral_00')}
         >
           <span>Simply Unique/</span>
           <span>Simply Better.</span>{' '}
@@ -41,15 +41,15 @@ export default function HomePage() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <b className='dark:!text-primary_light'>Ben Beckman</b> is a gift & decorations store based in HCMC, Vietnam.
-          Est since 2019.{' '}
+          <b className='dark:!text-neutral_00'>Ben Beckman</b> is a gift & decorations store based in HCMC, Vietnam. Est
+          since 2019.{' '}
         </motion.div>
       </section>
       <section className={cn(styles.mainProduct, 'media_width_sm')}>
         {listMainProduct.map(item => (
           <div className='product-card' key={item.id}>
             <section className='product-content'>
-              <h3 className={cn(poppins.className, 'dark:!text-primary_dark')}>{item.label}</h3>
+              <h3 className={cn(poppins.className, 'dark:!text-neutral_07')}>{item.label}</h3>
               <LinkButton href='/products' reverseMode>
                 Shop Now
               </LinkButton>
@@ -68,7 +68,7 @@ export default function HomePage() {
             }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className='relative overflow-hidden bg-primary_dark dark:bg-primary_light'
+            className='bg-neutral_07 dark:bg-neutral_00 relative overflow-hidden'
             key={item.id}
           >
             <item.icon />

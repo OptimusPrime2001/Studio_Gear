@@ -47,7 +47,7 @@
           }
           button {
             background: transparent;
-            color: $text-primary-blur;
+            color: $neutral_04;
             border: none;
             box-shadow: none;
             position: absolute;
@@ -64,13 +64,13 @@
             width: $w100;
             border: none;
             box-shadow: none;
-            border-bottom: 1px solid $text-primary-blur;
+            border-bottom: 1px solid $neutral_04;
             border-radius: 0;
             padding: 0;
             margin: 0 !important;
             padding-left: 30px;
             &::placeholder {
-              color: $text-primary-blur;
+              color: $neutral_04;
               font-size: $f16;
               line-height: 1.75rem;
               font-weight: $medium;

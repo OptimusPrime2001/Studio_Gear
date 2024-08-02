@@ -51,7 +51,7 @@ const SignInPage: React.FC = () => {
   const handleSignIn: SubmitHandler<z.infer<typeof formSchema>> = data => console.log(data);
   return (
     <section className={styles.signInPageWrapper}>
-      <div className='sign-background text-primary_light'>
+      <div className='sign-background text-neutral_00'>
         <Logo className='!text-2xl' />
       </div>
       <div className='sign-form'>

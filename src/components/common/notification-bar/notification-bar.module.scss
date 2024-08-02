@@ -1,29 +1,29 @@
-.notificationBar{
+.notificationBar {
   height: 2.5rem;
-  background-color: $neutral02;
-  :global{
-    span{
+  background-color: $neutral_02;
+  :global {
+    span {
       font-weight: $semibold;
       line-height: 1.375rem;
     }
-    .shop_now{
-      color: $information;
+    .shop_now {
+      color: $secondary_color;
       display: flex;
       align-items: center;
       gap: 0 $s4;
-      border-bottom: 1px solid $information;
+      border-bottom: 1px solid $secondary_color;
     }
-    @include media-breakpoint-down(sm){
+    @include media-breakpoint-down(sm) {
       box-sizing: content-box;
-      span{
+      span {
         font-size: $f12;
         line-height: 1rem;
       }
-      .shop_now{
-        display:none;
+      .shop_now {
+        display: none;
       }
     }
-    @include media-breakpoint-down(xs){
+    @include media-breakpoint-down(xs) {
       padding: $s12 $s15;
     }
   }

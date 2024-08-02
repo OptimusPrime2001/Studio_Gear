@@ -16,11 +16,18 @@ import 'swiper/css/scrollbar';
 
 const ListProduct: React.FC = () => {
   const { theme } = useTheme();
+  const [classSwiper, setClassSwiper] = React.useState<string>('');
+  React.useEffect(() => {
+    if (theme === 'dark') {
+      setClassSwiper('swiper-scrollbar-drag swiper-darkmode');
+    }
+    setClassSwiper('swiper-scrollbar-drag');
+  }, [theme]);
   return (
     <section className={styles.listProductWrapper}>
       <div className='list-product_title iu-d-flexbetween'>
         <h3 className={poppins.className}>New Arrivals</h3>
-        <LinkButton>More Products</LinkButton>
+        <LinkButton href='products'>More Products</LinkButton>
       </div>
       <Swiper
         key={theme}
@@ -29,7 +36,7 @@ const ListProduct: React.FC = () => {
         scrollbar={{
           hide: false,
           draggable: true,
-          dragClass: `swiper-scrollbar-drag ${theme === 'dark' ? 'scroll-bar_dark' : ''}`
+          dragClass: classSwiper
         }}
         breakpoints={{
           0: {

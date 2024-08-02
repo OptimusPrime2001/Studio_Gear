@@ -11,9 +11,9 @@ type QuantitySelectorProps = {
 
 const QuantitySelector: React.FC<QuantitySelectorProps> = ({ className, count }) => {
   return (
-    <div className={cn(styles.quantitySelectorWrapper, className)}>
+    <div className={cn(styles.quantitySelectorWrapper, className, 'dark:!border-neutral_03 dark:!text-neutral_03')}>
       <Minus />
-      <span>{count}</span>
+      <span className='dark:!text-neutral_03'>{count}</span>
       <Plus />
     </div>
   );

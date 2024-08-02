@@ -21,8 +21,8 @@
       justify-content: space-between;
     }
     .add-cart_btn {
-      background-color: $text-primary-dark;
-      color: $text-primary-light;
+      background-color: $neutral_07;
+      color: $neutral_00;
       font-size: $f16;
       line-height: 1.75rem;
       font-weight: $medium;
@@ -51,7 +51,7 @@
           line-height: 1.375rem;
         }
         .discount-price {
-          color: $text-primary-blur;
+          color: $neutral_04;
           text-decoration: line-through;
         }
       }

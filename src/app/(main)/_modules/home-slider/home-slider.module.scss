@@ -3,19 +3,19 @@
   height: 33.5rem;
   :global {
     button {
-      background: $main-bg-color;
+      background: $neutral_01;
       height: 2.5rem;
       width: 2.5rem;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.0364);
       border: none;
-      color: $text-primary-blur;
+      color: $neutral_04;
       svg {
         width: 1.5rem;
         height: 1.5rem;
       }
       &:hover {
-        background: $main-bg-color;
-        color: $text-primary-blur;
+        background: $neutral_01;
+        color: $neutral_04;
       }
     }
     .slider-navigation {
@@ -28,7 +28,7 @@
       .slider-dot {
         height: $s8;
         width: $s8;
-        background: $main-bg-color;
+        background: $neutral_01;
         border-radius: 100%;
         display: inline-block;
         transition: all ease 0.4s;

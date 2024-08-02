@@ -10,7 +10,7 @@ type BadgeProps = {
 
 const Badge: React.FC<BadgeProps> = ({ label, className }) => {
   return (
-    <span className={cn('bg-white text-primary_dark', className, styles.badgeWrapper, inter.className)}>{label}</span>
+    <span className={cn('text-neutral_07 bg-white', className, styles.badgeWrapper, inter.className)}>{label}</span>
   );
 };
 

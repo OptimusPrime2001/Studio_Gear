@@ -37,14 +37,14 @@
         font-size: $f16;
         line-height: 1.625rem;
         font-weight: $semibold;
-        color: $successful;
+        color: $secondary_green;
       }
       form {
         width: 100%;
         min-width: 12.5rem;
 
         input {
-          border: 0px solid $border-color-base;
+          border: 0px solid$neutral_03;
           outline: none;
           box-shadow: none;
           border-bottom: 1px solid;
@@ -55,13 +55,13 @@
           line-height: 1.625rem;
         }
         input[error-message='true']::placeholder {
-          color: $red;
+          color: $secondary_red;
         }
         .form-remember {
           label {
             font-size: $f16;
             line-height: 1.625rem;
-            color: $text-primary-blur;
+            color: $neutral_04;
           }
           a {
             font-size: $f16;

@@ -28,12 +28,13 @@
       position: absolute !important;
       width: 80% !important;
       left: 10% !important;
+      z-index: 10 !important;
       .swiper-scrollbar-drag {
         background-color: #343839;
         cursor: pointer;
       }
       .scroll-bar_dark {
-        background: $border-color-base;
+        background: $neutral_03;
       }
     }
     @include media-breakpoint-down(sm) {

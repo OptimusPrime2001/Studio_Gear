@@ -61,7 +61,7 @@ const SignUpPage: React.FC = () => {
   };
   return (
     <section className={styles.signUpPageWrapper}>
-      <div className='sign-background text-primary_light'>
+      <div className='sign-background text-neutral_00'>
         <Logo className='!text-2xl' />
       </div>
       <div className='sign-form'>
@@ -114,14 +114,14 @@ const SignUpPage: React.FC = () => {
                       </FormControl>
                       <label
                         htmlFor='terms'
-                        className='dark:text-primaryflex flex flex-wrap gap-x-2 text-base font-normal text-[#E8ECEF]'
+                        className='dark:text-primaryflex text-neutral_04 dark:text-neutral_03 flex flex-wrap gap-x-2 text-base font-normal'
                       >
                         Tôi đồng ý với
-                        <Link href='term-of-use' className='text-primary_dark dark:!text-primary_light'>
+                        <Link href='term-of-use' className='dark:!text-neutral_00'>
                           Điều khoản sử dụng
                         </Link>
                         và
-                        <Link href='privacy-policy' className='text-primary_dark dark:!text-primary_light'>
+                        <Link href='privacy-policy' className='dark:!text-neutral_00'>
                           Chính sách bảo mật
                         </Link>
                       </label>

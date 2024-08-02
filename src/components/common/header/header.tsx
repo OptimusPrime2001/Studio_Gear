@@ -94,7 +94,7 @@ const Header = () => {
           <h2 className={poppins.className}>Cart</h2>
           <CloseIcon className='md:hidden' />
         </SheetTitle>
-        <SheetDescription className='cart-content'>
+        <section className='cart-content'>
           <section className='cart-content_list'>
             {uniqueArray(10).map(item => (
               <div key={item} className='cart-content_item'>
@@ -106,11 +106,11 @@ const Header = () => {
                 />
                 <div className='content-left'>
                   <div className='title-price'>
-                    <b>Tray Table</b>
-                    <span>{formatVnd(900000)}</span>
+                    <b className='dark:!text-neutral_00'>Tray Table</b>
+                    <span className='dark:!text-neutral_00'>{formatVnd(900000)}</span>
                   </div>
                   <div className='color-close'>
-                    <span>Color: Black</span>
+                    <span className='dark:!text-neutral_03'>Color: Black</span>
                     <CloseIcon size={24} />
                   </div>
                   <QuantitySelector count={3} />
@@ -120,17 +120,19 @@ const Header = () => {
           </section>
           <section className='pb-10'>
             <div className='cart-content_amount iu-d-flexbetween'>
-              <span>Subtotal</span>
-              <b>{formatVnd(900000)}</b>
+              <span className='dark:!text-neutral_00'>Subtotal</span>
+              <b className='dark:!text-neutral_00'>{formatVnd(900000)}</b>
             </div>
             <div className={cn('cart-content_total iu-d-flexbetween', poppins.className)}>
-              <b>Total</b>
-              <b>{formatVnd(29000000)}</b>
+              <b className='dark:!text-neutral_00'>Total</b>
+              <b className='dark:!text-neutral_00'>{formatVnd(29000000)}</b>
             </div>
             <Button className='btn-pay'>Thanh toán</Button>
-            <Link href='cart-detail'>Xem giỏ hàng</Link>
+            <Link className='dark:!text-neutral_03 dark:!border-neutral_03' href='cart-detail'>
+              Xem giỏ hàng
+            </Link>
           </section>
-        </SheetDescription>
+        </section>
       </SheetHeader>
     </SheetContent>
   );
@@ -139,7 +141,7 @@ const Header = () => {
       className={cn(
         styles.headerWrapper,
         // eslint-disable-next-line max-len
-        'iu-d-flexbetween media_width_sm supports-backdrop-blur:bg-white/95 sticky bottom-1 top-0 z-50 w-full flex-none border-b border-solid border-slate-900/10 bg-white backdrop-blur transition-colors duration-500 dark:border-slate-50/[0.06] dark:bg-slate-900/75'
+        'iu-d-flexbetween media_width_sm supports-backdrop-blur:bg-white/95 sticky bottom-1 top-0 z-50 flex-none border-b border-solid border-slate-900/10 bg-white backdrop-blur transition-colors duration-500 dark:border-slate-50/[0.06] dark:bg-slate-900/75'
       )}
     >
       <section className='iu-d-flexcenter header-logo gap-x-2'>
@@ -167,7 +169,7 @@ const Header = () => {
         </Link>
         <Sheet>
           <SheetTrigger>
-            <CountIcon className='text-primary_dark dark:text-primary_light' count={3} iconElement={<ShoppingBag />} />
+            <CountIcon className='text-neutral_07 dark:text-neutral_00' count={3} iconElement={<ShoppingBag />} />
           </SheetTrigger>
           {renderPanelCart()}
         </Sheet>

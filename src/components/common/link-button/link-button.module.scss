@@ -12,7 +12,7 @@
   }
 
   &:hover {
-    border-bottom: 1px solid $text-primary-dark;
+    border-bottom: 1px solid $neutral_07;
   }
   @include media-breakpoint-down(md) {
     span {

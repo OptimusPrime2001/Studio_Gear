@@ -20,12 +20,10 @@ const LinkButton: React.FC<LinkButtonProps> = ({ children, className, currentCol
       className={cn(
         styles.linkButtonWrapper,
         className,
-        reverseMode ? 'dark:hover:!border-primary_dark' : 'dark:hover:!border-primary_light'
+        reverseMode ? 'dark:hover:!border-neutral_07' : 'dark:hover:!border-neutral_00'
       )}
     >
-      <span
-        className={cn(inter.className, reverseMode ? 'dark:text-primary_dark' : 'dark:hover:!border-primary_light')}
-      >
+      <span className={cn(inter.className, reverseMode ? 'dark:text-neutral_07' : 'dark:hover:!border-neutral_00')}>
         {children}
       </span>
       <ArrowRightIcon currentColor={currentColor} />

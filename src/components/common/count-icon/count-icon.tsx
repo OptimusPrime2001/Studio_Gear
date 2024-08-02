@@ -13,9 +13,7 @@ const CountIcon: React.FC<CountIconProps> = ({ iconElement, count, className }) 
   return (
     <div className={cn(styles.countIconWrapper, className)}>
       {iconElement}
-      <span
-        className={cn('index_ellipse iu-d-flexcenter dark:!bg-primary_light dark:!text-primary_dark', inter.className)}
-      >
+      <span className={cn('index_ellipse iu-d-flexcenter dark:!bg-neutral_00 dark:!text-neutral_07', inter.className)}>
         {count}
       </span>
     </div>

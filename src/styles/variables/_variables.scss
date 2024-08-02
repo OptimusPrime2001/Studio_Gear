@@ -66,26 +66,19 @@ $grid-breakpoints: (
   3xl: 1536px
 ) !default;
 
-// color variables
-$red: #df1820 !default;
-$information: #377dff;
-$warning: #e5681f;
-$error: #d01b1b;
-$successful: #38cb89;
-
-//background color-variables
-$gray: #e6e7e8 !default;
-$neutral02: #f3f5f7;
-$main-bg-color: #fff !default;
-$hover-bg-color: #e8e9ea !default;
-
-// font color-variables
-$text-primary-dark: #141718 !default;
-$text-primary-light: #e8e9ea !default;
-$text-primary-blur: #6c7275 !default;
-
-// border color-variables
-$border-color-base: #e8ecef !default;
+$primary: #000000;
+$secondary_color: #377dff;
+$secondary_green: #38cb89;
+$secondary_orange: #ffab00;
+$secondary_red: #ff5630;
+$neutral_00: #e8e9ea;
+$neutral_01: #fefefe;
+$neutral_02: #f3f5f7;
+$neutral_03: #e8ecef;
+$neutral_04: #6c7275;
+$neutral_05: #343839;
+$neutral_06: #232627;
+$neutral_07: #141718;
 
 // width and height variables
 $w10: 10%;

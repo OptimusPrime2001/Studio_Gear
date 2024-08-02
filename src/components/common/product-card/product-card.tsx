@@ -38,9 +38,9 @@ const ProductCard: React.FC<ProductCardProps> = props => {
         <div className='product-label'>
           <div className='flex flex-col gap-y-2'>
             {isNew && <Badge label='NEW' />}
-            {discount && <Badge className='bg-[#38CB89] text-primary_light' label={`${discount}%`} />}
+            {discount && <Badge className='text-neutral_00 bg-[#38CB89]' label={`${discount}%`} />}
           </div>
-          <WhishButton handleClick={handleAddToFavarite} />
+          <WhishButton className='text-neutral_04' handleClick={handleAddToFavarite} />
         </div>
       </Link>
       <div className='product-infor'>
