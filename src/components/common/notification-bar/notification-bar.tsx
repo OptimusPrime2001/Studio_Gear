@@ -16,7 +16,7 @@ const NotificationBar = () => {
       <span className='text-center'>Giảm giá 30% trên toàn cửa hàng — Thời gian có hạn! </span>
       <Link className='shop_now' href='/product'>
         <span>Mua ngay</span>
-        <ArrowRightIcon />
+        <ArrowRightIcon currentColor='#377DFF' />
       </Link>
       <CloseIcon onClick={() => setRenderVoucher(false)} className='relative cursor-pointer md:absolute md:right-4' />
     </section>

@@ -9,11 +9,13 @@ import MenuBars from '@components/icons/menu-bars';
 import SearchIcon from '@components/icons/search-icon';
 import ShoppingBag from '@components/icons/shopping-bag';
 import { Button } from '@components/ui/button';
+import { Dialog, DialogContent, DialogTrigger } from '@components/ui/dialog';
 import { Input } from '@components/ui/input';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@components/ui/sheet';
 import { listSocialIcon, navigationLink } from '@lib/constant';
 import { poppins } from '@lib/fonts';
 import { cn, formatVnd, uniqueArray } from '@lib/utils';
+import { DialogDescription, DialogTitle } from '@radix-ui/react-dialog';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
@@ -136,6 +138,27 @@ const Header = () => {
       </SheetHeader>
     </SheetContent>
   );
+  const renderSearchBox = () => (
+    <Dialog>
+      <DialogTrigger asChild>
+        <SearchIcon />
+      </DialogTrigger>
+      <DialogContent className={cn('sm:max-w-[425px]', styles.searchBoxUi)}>
+        <DialogTitle className='search-input'>
+          <SearchIcon />
+          <Input type='search' placeholder='Tìm kiếm...' />
+        </DialogTitle>
+        <DialogDescription className='search-result'>
+          <span className='dark:!text-neutral_04'>Kết quả...</span>
+          {uniqueArray(10).map(item => (
+            <Link key={item} className='dark:hover:!bg-neutral_04' href='ketqua'>
+              Kết quả 1
+            </Link>
+          ))}
+        </DialogDescription>
+      </DialogContent>
+    </Dialog>
+  );
   return (
     <header
       className={cn(
@@ -163,7 +186,7 @@ const Header = () => {
         ))}
       </ul>
       <section className='iu-d-flexbetween relative cursor-pointer gap-x-4'>
-        <SearchIcon />
+        {renderSearchBox()}
         <Link className='hidden h-6 md:block' href={'/sign-in'}>
           <AccountIcon />
         </Link>

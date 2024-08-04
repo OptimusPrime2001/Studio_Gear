@@ -4,7 +4,7 @@
   padding: $s32 0 $s40;
   justify-content: space-between;
   align-items: center;
-
+  overflow: hidden;
   div {
     display: flex;
     flex-direction: column;
@@ -61,6 +61,7 @@
   grid-template-rows: 1fr 1fr;
   width: $w80;
   gap: $s24 $s24;
+  overflow: hidden;
 
   :global {
     .product-card {
@@ -161,7 +162,7 @@
   flex-wrap: wrap;
   width: $w100;
   position: relative;
-
+  overflow: hidden;
   :global {
     img {
       width: 50% !important;

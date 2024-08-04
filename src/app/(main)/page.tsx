@@ -48,7 +48,7 @@ export default function HomePage() {
                   opacity: 0
                 }
               : {
-                  x: 150,
+                  x: 100,
                   opacity: 0
                 }
           }

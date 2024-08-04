@@ -10,6 +10,7 @@ import { Input } from '@components/ui/input';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { poppins } from '@lib/fonts';
 import { cn } from '@lib/utils';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { z } from 'zod';
 import styles from './page.module.scss';
@@ -53,7 +54,6 @@ const SignUpPage: React.FC = () => {
     trigger,
     formState: { errors }
   } = form;
-
   const handleSignUp: SubmitHandler<z.infer<typeof formSchema>> = async data => {
     const usernameValid = await trigger('username');
     if (!usernameValid) return;
@@ -61,10 +61,20 @@ const SignUpPage: React.FC = () => {
   };
   return (
     <section className={styles.signUpPageWrapper}>
-      <div className='sign-background text-neutral_00'>
+      <motion.div
+        initial={{ x: -150, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className='sign-background text-neutral_00'
+      >
         <Logo className='!text-2xl' />
-      </div>
-      <div className='sign-form'>
+      </motion.div>
+      <motion.div
+        initial={{ x: 150, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className='sign-form'
+      >
         <h2 className={cn('sign-form_title', poppins.className)}>Đăng ký</h2>
         <div className='flex w-full gap-x-2'>
           <span className='sign-form_question'>Bạn đã có tài khoản ?</span>
@@ -114,7 +124,7 @@ const SignUpPage: React.FC = () => {
                       </FormControl>
                       <label
                         htmlFor='terms'
-                        className='dark:text-primaryflex text-neutral_04 dark:text-neutral_03 flex flex-wrap gap-x-2 text-base font-normal'
+                        className='dark:text-primaryflex flex flex-wrap gap-x-2 text-base font-normal text-neutral_04 dark:text-neutral_03'
                       >
                         Tôi đồng ý với
                         <Link href='term-of-use' className='dark:!text-neutral_00'>
@@ -138,7 +148,7 @@ const SignUpPage: React.FC = () => {
             </Button>
           </form>
         </Form>
-      </div>
+      </motion.div>
     </section>
   );
 };

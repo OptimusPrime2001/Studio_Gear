@@ -9,6 +9,7 @@ import { Input } from '@components/ui/input';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { poppins } from '@lib/fonts';
 import { cn } from '@lib/utils';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { z } from 'zod';
 import styles from './page.module.scss';
@@ -51,10 +52,20 @@ const SignInPage: React.FC = () => {
   const handleSignIn: SubmitHandler<z.infer<typeof formSchema>> = data => console.log(data);
   return (
     <section className={styles.signInPageWrapper}>
-      <div className='sign-background text-neutral_00'>
+      <motion.div
+        initial={{ x: -150, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className='sign-background text-neutral_00'
+      >
         <Logo className='!text-2xl' />
-      </div>
-      <div className='sign-form'>
+      </motion.div>
+      <motion.div
+        initial={{ x: 150, opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        animate={{ x: 0, opacity: 1 }}
+        className='sign-form'
+      >
         <h2 className={cn('sign-form_title', poppins.className)}>Đăng nhập</h2>
         <div className='flex w-full gap-x-2'>
           <span className='sign-form_question'>Bạn chưa có tài khoản ?</span>
@@ -105,7 +116,7 @@ const SignInPage: React.FC = () => {
             </Button>
           </form>
         </Form>
-      </div>
+      </motion.div>
     </section>
   );
 };

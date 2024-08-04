@@ -1,6 +1,7 @@
 .signInPageWrapper {
   display: flex;
   height: 100vh;
+  overflow: hidden;
   :global {
     .sign-background {
       background: url(https://ucarecdn.com/c93673d5-c345-4b1b-a9e5-55b241ee6b6b/0e9eaf5….jpg);

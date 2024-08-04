@@ -1,6 +1,7 @@
 .signUpPageWrapper {
   display: flex;
   height: 100vh;
+  overflow: hidden;
   :global {
     .sign-background {
       background: url(https://ucarecdn.com/fefffdc2-a4e7-4590-a8eb-3805648f7821/e4116bbec61f2224bc95dd2233dcdf16.jpg);
