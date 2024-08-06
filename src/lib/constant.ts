@@ -145,6 +145,7 @@ export type TestType = {
   key: string;
   text: string;
   selected: boolean;
+  disabled?: boolean;
 };
 export const testState = [
   {
@@ -183,5 +184,27 @@ export const testState = [
     text: 'Details',
     selected: true,
     disabled: true
+  }
+];
+export type con = {
+  key: number;
+  number: number;
+  label: string;
+};
+export const testState2 = [
+  {
+    key: 1,
+    number: 1,
+    label: '1111'
+  },
+  {
+    key: 2,
+    number: 2,
+    label: '222'
+  },
+  {
+    key: 3,
+    number: 3,
+    label: '333'
   }
 ];
