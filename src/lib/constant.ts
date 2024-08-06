@@ -141,3 +141,47 @@ export const listQuotes = [
   { title: 'Understand needs, then offer solutions.', id: 4 },
   { title: 'Build relationships, not just sales.', id: 5 }
 ];
+export type TestType = {
+  key: string;
+  text: string;
+  selected: boolean;
+};
+export const testState = [
+  {
+    key: 'type',
+    text: 'Type',
+    selected: true
+  },
+  {
+    key: 'time',
+    text: 'Time',
+    selected: true,
+    disabled: true
+  },
+  {
+    key: 'username',
+    text: 'Username',
+    selected: true
+  },
+  {
+    key: 'ip',
+    text: 'IP address',
+    selected: false
+  },
+  {
+    key: 'operation-component',
+    text: 'Operation',
+    selected: true
+  },
+  {
+    key: 'event',
+    text: 'Event',
+    selected: true
+  },
+  {
+    key: 'details',
+    text: 'Details',
+    selected: true,
+    disabled: true
+  }
+];

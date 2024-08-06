@@ -1,20 +1,2 @@
 .shopPageWrapper {
-  display: grid;
-  column-gap: 1rem;
-  height: 10rem;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 60px 60px;
-  grid-auto-columns: 30px;
-  background-color: wheat;
-
-  :global {
-    .item-a {
-      grid-column: 1 / 2;
-      grid-row: 2 / 3;
-    }
-    .item-d {
-      grid-column: 5 / 6;
-      grid-row: 2 / 3;
-    }
-  }
 }

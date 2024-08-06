@@ -1,13 +1,14 @@
+'use client';
 import React from 'react';
+import { testState } from '@lib/constant';
+import Test from './Test';
 import styles from './page.module.scss';
 
 const ShopPage: React.FC = () => {
+  const [selectedColumn, setSelectedColumn] = React.useState(testState);
   return (
     <section className={styles.shopPageWrapper}>
-      <div className='item-a bg-slate-500'>header</div>
-      {/* <div className="item-b bg-slate-500">main</div>
-      <div className="item-c bg-blue-500">sidebar</div> */}
-      <div className='item-d bg-blue-500'>footer</div>
+      <Test selectedColumn={selectedColumn} />
     </section>
   );
 };
