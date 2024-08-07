@@ -11,14 +11,6 @@ type TestProps = {
 const Test: React.FC<TestProps> = ({ selectedColumn }) => {
   const [test1, setTest1] = useState<TestType[]>([]);
   const [test2, setTest2] = useState<TestType[]>([]);
-  console.log(
-    '🚀 ~ test1:',
-    test1.map(item => item.selected)
-  );
-  console.log(
-    '🚀 ~ test2:',
-    test2.map(item => item.selected)
-  );
 
   React.useEffect(() => {
     setTest1(selectedColumn);

@@ -1,16 +1,25 @@
 'use client';
 import React from 'react';
-import { testState } from '@lib/constant';
-import Test from './Test';
-import Test2 from './Test2';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList } from '@components/ui/breadcrumb';
+import Link from 'next/link';
 import styles from './page.module.scss';
 
 const ShopPage: React.FC = () => {
-  const [selectedColumn] = React.useState(testState);
   return (
     <section className={styles.shopPageWrapper}>
-      <Test selectedColumn={selectedColumn} />
-      <Test2 />
+      <section className='shop-banner'>
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href='/'>Home</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+        <h2>Shop Page</h2>
+        <p>Let’s design the place you always imagined.</p>
+      </section>
     </section>
   );
 };
