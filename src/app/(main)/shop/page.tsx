@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList } from '@components/ui/breadcrumb';
+import { poppins } from '@lib/fonts';
 import Link from 'next/link';
 import styles from './page.module.scss';
 
@@ -17,7 +18,7 @@ const ShopPage: React.FC = () => {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <h2>Shop Page</h2>
+        <h2 className={poppins.className}>Shop Page</h2>
         <p>Let’s design the place you always imagined.</p>
       </section>
     </section>

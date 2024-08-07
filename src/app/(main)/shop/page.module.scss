@@ -2,6 +2,7 @@
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+  color: $neutral_07;
 
   :global {
     .shop-banner {
@@ -9,6 +10,16 @@
       aspect-ratio: 2.85;
       background-size: cover;
       @include flex-col-center();
+      gap: $s24 0;
+      h2 {
+        font-size: 3.375rem;
+        line-height: 3.625rem;
+        font-weight: $medium;
+      }
+      p {
+        font-size: $f20;
+        line-height: 2rem;
+      }
     }
   }
 }
