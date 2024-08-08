@@ -6,6 +6,7 @@ import { Meteors } from '@components/ui/meteors';
 import { listMainProduct, listQuotes, listSupportCustomer } from '@lib/constant';
 import { inter, poppins } from '@lib/fonts';
 import { cn } from '@lib/utils';
+import breadcrumb from '@mobx/store/breadcrumStore';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import ArticlesPart from './_modules/articles/articles';
@@ -162,6 +163,9 @@ export default function HomePage() {
       </motion.section>
     </section>
   );
+  React.useEffect(() => {
+    breadcrumb.resetBreadcrumb();
+  }, []);
   return (
     <main className='iu-d-flexcolumn'>
       <HomeSlider />
