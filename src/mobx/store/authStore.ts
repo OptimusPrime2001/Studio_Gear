@@ -10,10 +10,9 @@ export type accountType = {
 };
 
 export class AuthStore {
-  account: accountType = initialState;
+  @observable account: accountType = initialState;
   constructor() {
     makeAutoObservable(this, {
-      account: observable,
       updateAccount: action
     });
   }

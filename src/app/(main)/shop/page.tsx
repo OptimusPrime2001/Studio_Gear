@@ -15,7 +15,7 @@ const ShopPage = () => {
   return (
     <section className={styles.shopPageWrapper}>
       <section className='shop-banner'>
-        <BreadcrumbPath breadcrumb={breadcrumb} />
+        <BreadcrumbPath />
         <h2 className={poppins.className}>Shop Page</h2>
         <p>Let’s design the place you always imagined.</p>
       </section>

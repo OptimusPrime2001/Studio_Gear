@@ -7,16 +7,14 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator
 } from '@components/ui/breadcrumb';
-import { BreadcrumbStore } from '@mobx/store';
 import { observer } from 'mobx-react-lite';
 import Link from 'next/link';
 import styles from './breadcrumb.module.scss';
 
-type BreadcrumbPathProps = {
-  breadcrumb: BreadcrumbStore;
-};
+type BreadcrumbPathProps = {};
 
 const BreadcrumbPath: React.FC<BreadcrumbPathProps> = observer(({ breadcrumb }) => {
+  console.log('🚀 ~ breadcrumb:', breadcrumb);
   const length = breadcrumb.breadcrumbList.length;
   return (
     <Breadcrumb className={styles.breadcrumbWrapper}>
