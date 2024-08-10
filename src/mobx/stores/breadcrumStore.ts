@@ -28,5 +28,4 @@ export class BreadcrumbStore {
     this.breadcrumbList = initialState;
   }
 }
-const breadcrumb = new BreadcrumbStore();
-export default breadcrumb;
+export const breadcrumb = new BreadcrumbStore();

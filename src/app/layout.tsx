@@ -1,6 +1,6 @@
+import { MobxProvider } from '@components/provider/mobx-provider';
 import { ThemeProvider } from '@components/provider/theme-provider';
 import { inter } from '@lib/fonts';
-import { StoreProvider } from '@mobx/store-provider';
 import type { Metadata } from 'next';
 import './index.scss';
 
@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
-          <StoreProvider>{children}</StoreProvider>
+          <MobxProvider>{children}</MobxProvider>
         </ThemeProvider>
       </body>
     </html>

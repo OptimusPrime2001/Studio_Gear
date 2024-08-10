@@ -2,7 +2,7 @@
 import React from 'react';
 import BreadcrumbPath from '@common/breadcrumb/breadcrumb';
 import { poppins } from '@lib/fonts';
-import breadcrumb from '@mobx/store/breadcrumStore';
+import { breadcrumb } from '@mobx/stores/breadcrumStore';
 import styles from './page.module.scss';
 
 const ShopPage = () => {
@@ -12,6 +12,7 @@ const ShopPage = () => {
       name: 'Shop'
     });
   }, []);
+
   return (
     <section className={styles.shopPageWrapper}>
       <section className='shop-banner'>

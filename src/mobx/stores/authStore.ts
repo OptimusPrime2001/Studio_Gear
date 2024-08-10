@@ -1,4 +1,4 @@
-import { action, makeAutoObservable, observable } from 'mobx';
+import { action, makeAutoObservable } from 'mobx';
 
 const initialState = {
   accountName: '',
@@ -10,7 +10,7 @@ export type accountType = {
 };
 
 export class AuthStore {
-  @observable account: accountType = initialState;
+  account: accountType = initialState;
   constructor() {
     makeAutoObservable(this, {
       updateAccount: action
