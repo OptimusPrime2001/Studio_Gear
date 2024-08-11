@@ -165,6 +165,14 @@ export const filterCatogories = [
   {
     id: 6,
     category: 'Phòng ngoài'
+  },
+  {
+    id: 7,
+    category: 'Phòng tắm'
+  },
+  {
+    id: 8,
+    category: 'Phòng ngoài'
   }
 ];
 export const filterPriceRange = [
