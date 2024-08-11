@@ -24,6 +24,43 @@
         text-align: center;
       }
     }
+    .shop-content {
+      .filter-type {
+        display: flex;
+        flex-direction: column;
+        gap: $s32 0;
+        justify-content: space-between;
+        .filter-title {
+          display: flex;
+          align-items: center;
+          gap: 0 $s4;
+          h2 {
+            font-size: 1.25rem;
+            line-height: $s32;
+            font-weight: $semibold;
+          }
+        }
+        .title-category {
+          font-size: $f16;
+          line-height: 1.625rem;
+          font-weight: $semibold;
+          margin-bottom: $s16;
+        }
+        .filter-categories {
+          div {
+            @include flex-col-between();
+            align-items: start;
+            gap: $s12 0;
+            span {
+              columns: $neutral_04;
+              font-weight: $semibold;
+              font-size: $f12;
+              line-height: 1.375rem;
+            }
+          }
+        }
+      }
+    }
     @include media-breakpoint-down(sm) {
       .shop-banner {
         aspect-ratio: 1.097;

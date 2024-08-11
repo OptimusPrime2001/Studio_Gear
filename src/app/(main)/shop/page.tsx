@@ -1,6 +1,9 @@
 'use client';
 import React from 'react';
 import BreadcrumbPath from '@common/breadcrumb/breadcrumb';
+import FilterIcon from '@components/icons/filter';
+import { Checkbox } from '@components/ui/checkbox';
+import { filterCatogories, filterPriceRange } from '@lib/constant';
 import { poppins } from '@lib/fonts';
 import { cn } from '@lib/utils';
 import { breadcrumb } from '@mobx/stores/breadcrumStore';
@@ -13,14 +16,48 @@ const ShopPage = () => {
       name: 'Shop'
     });
   }, []);
+  const bannerShop = () => (
+    <section className='shop-banner'>
+      <BreadcrumbPath />
+      <h2 className={poppins.className}>Shop Page</h2>
+      <p>Let’s design the place you always imagined.</p>
+    </section>
+  );
+  const filerType = () => (
+    <section className='filter-type'>
+      <div className='filter-title'>
+        <FilterIcon />
+        <h2>Filter</h2>
+      </div>
 
+      <div className='filter-categories'>
+        <h3 className='title-category'>Thẻ loại</h3>
+        <div>
+          {filterCatogories.map(item => (
+            <span key={item.id}>{item.category}</span>
+          ))}
+        </div>
+      </div>
+      <div>
+        <h3 className='title-category'>Giá</h3>
+        {filterPriceRange.map(item => (
+          <div key={item.id}>
+            <label
+              htmlFor={item.price}
+              className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+            >
+              {item.price}
+            </label>
+            <Checkbox id={item.price} />
+          </div>
+        ))}
+      </div>
+    </section>
+  );
   return (
     <section className={cn(styles.shopPageWrapper, 'media_width_sm')}>
-      <section className='shop-banner'>
-        <BreadcrumbPath />
-        <h2 className={poppins.className}>Shop Page</h2>
-        <p>Let’s design the place you always imagined.</p>
-      </section>
+      {bannerShop()}
+      <section className='shop-content'>{filerType()}</section>
     </section>
   );
 };

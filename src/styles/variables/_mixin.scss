@@ -67,7 +67,7 @@
 }
 @mixin flex-col-between {
   display: flex;
-  flex-direction: column;
+  flex-direction: column !important;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;

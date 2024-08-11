@@ -141,3 +141,62 @@ export const listQuotes = [
   { title: 'Understand needs, then offer solutions.', id: 4 },
   { title: 'Build relationships, not just sales.', id: 5 }
 ];
+export const filterCatogories = [
+  {
+    id: 1,
+    category: 'Tất cả phòng'
+  },
+  {
+    id: 2,
+    category: 'Phòng khách'
+  },
+  {
+    id: 3,
+    category: 'Phòng ngủ'
+  },
+  {
+    id: 4,
+    category: 'Phòng bếp'
+  },
+  {
+    id: 5,
+    category: 'Phòng tắm'
+  },
+  {
+    id: 6,
+    category: 'Phòng ngoài'
+  }
+];
+export const filterPriceRange = [
+  {
+    id: 1,
+    price: '0 - 100.000đ',
+    range: {
+      min: 0,
+      max: 100_000
+    }
+  },
+  {
+    id: 2,
+    price: '100.000đ - 500.000đ',
+    range: {
+      min: 100_000,
+      max: 500_000
+    }
+  },
+  {
+    id: 3,
+    price: '500.000đ - 1tr',
+    range: {
+      min: 500_000,
+      max: 100_000_000
+    }
+  },
+  {
+    id: 4,
+    price: 'trên 1tr',
+    range: {
+      min: 100_000_000
+    }
+  }
+];
