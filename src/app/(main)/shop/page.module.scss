@@ -26,10 +26,9 @@
     }
     .shop-content {
       .filter-type {
-        display: flex;
-        flex-direction: column;
+        @include flex-col-between();
+        align-items: start;
         gap: $s32 0;
-        justify-content: space-between;
         .filter-title {
           display: flex;
           align-items: center;
@@ -52,10 +51,29 @@
             align-items: start;
             gap: $s12 0;
             span {
-              columns: $neutral_04;
+              color: #807e7e;
               font-weight: $semibold;
-              font-size: $f12;
+              font-size: $f14;
               line-height: 1.375rem;
+              cursor: pointer;
+              border-bottom: 1px solid transparent;
+              &:hover {
+                color: $neutral_08;
+                border-bottom: 1px solid $neutral_08;
+              }
+            }
+          }
+        }
+        .filter-prices {
+          div {
+            @include flex-between();
+            min-width: 15.875rem;
+            label {
+              color: #807e7e;
+              font-weight: $semibold;
+              font-size: $f14;
+              line-height: 1.375rem;
+              cursor: pointer;
             }
           }
         }

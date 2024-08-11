@@ -38,8 +38,17 @@ const ShopPage = () => {
           ))}
         </div>
       </div>
-      <div>
+      <div className='filter-prices'>
         <h3 className='title-category'>Giá</h3>
+        <div key={0}>
+          <label
+            htmlFor='all price'
+            className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+          >
+            Tất cả giá
+          </label>
+          <Checkbox id='all price' />
+        </div>
         {filterPriceRange.map(item => (
           <div key={item.id}>
             <label
