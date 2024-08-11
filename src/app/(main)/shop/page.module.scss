@@ -21,6 +21,21 @@
         font-size: $f20;
         line-height: 2rem;
         color: $neutral_08;
+        text-align: center;
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      .shop-banner {
+        aspect-ratio: 1.097;
+        gap: $s16 0;
+        h2 {
+          font-size: 2.5rem;
+          line-height: 44px;
+        }
+        p {
+          font-size: $f16;
+          line-height: 1.625rem;
+        }
       }
     }
   }
