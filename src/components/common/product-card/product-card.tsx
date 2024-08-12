@@ -1,10 +1,11 @@
 import React from 'react';
 import Badge from '@common/badge/badge';
 import WhishButton from '@common/whish-btn/wish-button';
-import StarIcon from '@components/icons/star';
 import { Button } from '@components/ui/button';
+import StarIcon from '@icons/star';
 import { inter } from '@lib/fonts';
 import { cn, formatVnd } from '@lib/utils';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './product-card.module.scss';
@@ -25,12 +26,7 @@ const ProductCard: React.FC<ProductCardProps> = props => {
   const { name, price, discount, rating, isNew, imgProduct, href, handleAddToFavarite, handleAddToCart } = props;
   return (
     <section className={styles.productCardWrapper}>
-      <Link
-        href={{
-          pathname: href
-        }}
-        className='product-image relative'
-      >
+      <div className='product-image relative'>
         <Image sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' alt={name} src={imgProduct} fill />
         <Button className='add-cart_btn hover:!bg-primary_blur' onClick={handleAddToCart}>
           Add to cart
@@ -38,11 +34,11 @@ const ProductCard: React.FC<ProductCardProps> = props => {
         <div className='product-label'>
           <div className='flex flex-col gap-y-2'>
             {isNew && <Badge label='NEW' />}
-            {discount && <Badge className='text-neutral_00 bg-[#38CB89]' label={`${discount}%`} />}
+            {discount && <Badge className='bg-[#38CB89] text-neutral_00' label={`${discount}%`} />}
           </div>
           <WhishButton className='text-neutral_04' handleClick={handleAddToFavarite} />
         </div>
-      </Link>
+      </div>
       <div className='product-infor'>
         <StarIcon numberStars={rating} />
         <p className={cn('product-infor_name', inter.className)}>{name}</p>

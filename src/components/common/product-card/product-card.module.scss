@@ -3,11 +3,18 @@
   aspect-ratio: 0.75;
   overflow: hidden;
   :global {
-    a {
+    div.product-image {
       height: 100%;
       width: $w100;
       display: block;
       padding: $s16;
+      &:hover {
+        cursor: pointer;
+      }
+      &:hover .add-cart_btn {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     img {
       z-index: -1;
@@ -33,6 +40,9 @@
       left: $s16;
       right: $s16;
       height: 2.5625rem;
+      transition: all 0.5s ease;
+      opacity: 0;
+      transform: translateY(1rem);
     }
     .product-infor {
       padding-top: 0.75rem;

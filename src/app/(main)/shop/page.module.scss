@@ -135,6 +135,10 @@
           grid-template-columns: repeat(2, 1fr);
           gap: $s32;
         }
+        .two-columns {
+        }
+        .two-rows {
+        }
         &_products {
           display: grid;
         }
