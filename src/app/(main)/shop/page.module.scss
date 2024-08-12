@@ -25,6 +25,9 @@
       }
     }
     .shop-content {
+      margin-top: 3.75rem;
+      display: flex;
+      flex: 1;
       .filter-type {
         @include flex-col-between();
         align-items: start;
@@ -86,6 +89,14 @@
               cursor: pointer;
             }
           }
+        }
+      }
+      .main-content {
+        flex: 1;
+        &_top {
+          @include flex-between();
+        }
+        &_product {
         }
       }
     }
