@@ -1,13 +1,17 @@
-import AccountIcon from '@components/icons/account';
-import CallSupport from '@components/icons/call-support';
-import FacebookIcon from '@components/icons/facebook';
-import FastDelevery from '@components/icons/fast-delivery';
-import InstagramIcon from '@components/icons/instagram';
-import MoneyBack from '@components/icons/money-back';
-import SearchIcon from '@components/icons/search-icon';
-import SecurePayment from '@components/icons/secure-payment';
-import ShoppingBag from '@components/icons/shopping-bag';
-import YoutubeIcon from '@components/icons/youtube';
+import AccountIcon from '@icons/account';
+import CallSupport from '@icons/call-support';
+import FacebookIcon from '@icons/facebook';
+import FastDelevery from '@icons/fast-delivery';
+import { GridSquare } from '@icons/grid-square';
+import InstagramIcon from '@icons/instagram';
+import MoneyBack from '@icons/money-back';
+import SearchIcon from '@icons/search-icon';
+import SecurePayment from '@icons/secure-payment';
+import ShoppingBag from '@icons/shopping-bag';
+import { Square } from '@icons/square';
+import { TwoColumn } from '@icons/two-column';
+import { TwoRow } from '@icons/two-row';
+import YoutubeIcon from '@icons/youtube';
 
 export const navigationLink = [
   { id: 'home', label: 'Trang chủ', href: '/' },
@@ -206,5 +210,23 @@ export const filterPriceRange = [
     range: {
       min: 100_000_000
     }
+  }
+];
+export const listSelectDisplay = [
+  {
+    id: 0,
+    Component: GridSquare
+  },
+  {
+    id: 1,
+    Component: Square
+  },
+  {
+    id: 2,
+    Component: TwoColumn
+  },
+  {
+    id: 3,
+    Component: TwoRow
   }
 ];

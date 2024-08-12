@@ -28,8 +28,10 @@
       margin-top: 3.75rem;
       display: flex;
       flex: 1;
+      gap: 0 $s24;
       .filter-type {
-        @include flex-col-between();
+        @include flex-col-center();
+        justify-content: start;
         align-items: start;
         gap: $s32 0;
         .filter-title {
@@ -95,8 +97,46 @@
         flex: 1;
         &_top {
           @include flex-between();
+          margin-bottom: $s40;
+          h2 {
+            font-size: $f20;
+            line-height: 2rem;
+            font-weight: $semibold;
+          }
+          .content-top_left {
+            display: flex;
+            gap: 0 $s32;
+            align-items: center;
+            .display-type {
+              display: flex;
+              & > button::not(:first-child) {
+                border-left: 0px !important;
+              }
+              button {
+                @include flex-center();
+                border: 1px solid $border_01;
+                color: $neutral_04;
+                height: 40px;
+                width: 46px;
+
+                &.selector-active {
+                  color: $neutral_07;
+                  background-color: $neutral_03;
+                }
+              }
+            }
+          }
         }
-        &_product {
+        .grid-square {
+          grid-template-columns: repeat(3, 1fr);
+          gap: $s24;
+        }
+        .square {
+          grid-template-columns: repeat(2, 1fr);
+          gap: $s32;
+        }
+        &_products {
+          display: grid;
         }
       }
     }

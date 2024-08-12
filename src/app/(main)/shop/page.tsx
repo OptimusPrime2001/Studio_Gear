@@ -2,23 +2,22 @@
 import React from 'react';
 import BreadcrumbPath from '@common/breadcrumb/breadcrumb';
 import ProductCard from '@common/product-card/product-card';
-import FilterIcon from '@components/icons/filter';
+import { Button } from '@components/ui/button';
 import { Checkbox } from '@components/ui/checkbox';
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue
-} from '@components/ui/select';
-import { filterCatogories, filterPriceRange } from '@lib/constant';
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@components/ui/select';
+import FilterIcon from '@icons/filter';
+import { filterCatogories, filterPriceRange, listSelectDisplay } from '@lib/constant';
 import { poppins } from '@lib/fonts';
 import { cn, uniqueArray } from '@lib/utils';
 import { breadcrumb } from '@mobx/stores/breadcrumStore';
 import styles from './page.module.scss';
 
+enum SelectDisplayType {
+  'GridSquare' = 0,
+  'Square' = 1,
+  'TwoColumn' = 2,
+  'TwoRow' = 3
+}
 const ShopPage = () => {
   React.useLayoutEffect(() => {
     if (breadcrumb.breadcrumbList.length === 1) {
@@ -28,6 +27,7 @@ const ShopPage = () => {
       });
     }
   }, []);
+  const [selectDisplay, setSelectDisplay] = React.useState<SelectDisplayType>(SelectDisplayType.GridSquare);
   const bannerShop = () => (
     <section className='shop-banner'>
       <BreadcrumbPath />
@@ -75,6 +75,12 @@ const ShopPage = () => {
       </div>
     </section>
   );
+  const classFormatDisplay = {
+    0: 'grid-square',
+    1: 'square',
+    2: 'two-columns',
+    3: 'two-rows'
+  };
   return (
     <section className={cn(styles.shopPageWrapper, 'media_width_sm')}>
       {bannerShop()}
@@ -83,7 +89,7 @@ const ShopPage = () => {
         <section className='main-content'>
           <div className='main-content_top'>
             <h2>Living room</h2>
-            <div>
+            <div className='content-top_left'>
               <Select>
                 <SelectTrigger className='w-[180px]'>
                   <SelectValue placeholder='Sắp xếp theo' />
@@ -96,10 +102,21 @@ const ShopPage = () => {
                   </SelectGroup>
                 </SelectContent>
               </Select>
-              <div className='display-type'></div>
+              <div className='display-type'>
+                {listSelectDisplay.map(({ id, Component }) => (
+                  <Button
+                    className={cn(selectDisplay === id ? 'selector-active' : '')}
+                    key={id}
+                    onClick={() => setSelectDisplay(id)}
+                    reset
+                  >
+                    <Component />
+                  </Button>
+                ))}
+              </div>
             </div>
           </div>
-          <div className='main-content_product'>
+          <div className={cn('main-content_products', classFormatDisplay[selectDisplay])}>
             {uniqueArray(10).map(item => (
               <ProductCard
                 name='Loveseat Sofa'
