@@ -6,7 +6,7 @@ import { Button } from '@components/ui/button';
 import { Checkbox } from '@components/ui/checkbox';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@components/ui/select';
 import FilterIcon from '@icons/filter';
-import { filterCatogories, filterPriceRange, listSelectDisplay } from '@lib/constant';
+import { filterCatogories, filterPriceRange, listSelectDisplay, PriceOptionType } from '@lib/constant';
 import { poppins } from '@lib/fonts';
 import { accessibleOnClick, cn, uniqueArray } from '@lib/utils';
 import { breadcrumb } from '@mobx/stores/breadcrumStore';
@@ -30,6 +30,18 @@ const ShopPage = () => {
   }, []);
   const [selectDisplay, setSelectDisplay] = React.useState<SelectDisplayType>(SelectDisplayType.GridSquare);
   const [selectedCategory, setSelectedCategory] = React.useState<(typeof filterCatogories)[0]>(filterCatogories[0]);
+  const [priceOptions, setPriceOptions] = React.useState<PriceOptionType[]>(filterPriceRange);
+
+  const handleSelectAll = (isChecked: boolean) => {
+    setPriceOptions(priceOptions.map(option => ({ ...option, isChecked })));
+  };
+
+  const handleCheckboxChange = (isChecked: boolean, optionId: number) => {
+    const updatedPriceOptions = priceOptions.map(option =>
+      option.id === optionId ? { ...option, isChecked } : option
+    );
+    setPriceOptions(updatedPriceOptions);
+  };
   const bannerShop = () => (
     <section className='shop-banner'>
       <BreadcrumbPath />
@@ -70,9 +82,9 @@ const ShopPage = () => {
           >
             Tất cả giá
           </label>
-          <Checkbox id='all price' />
+          <Checkbox onCheckedChange={handleSelectAll} id='all price' />
         </div>
-        {filterPriceRange.map(item => (
+        {priceOptions.map(item => (
           <div key={item.id}>
             <label
               htmlFor={item.price}
@@ -80,7 +92,11 @@ const ShopPage = () => {
             >
               {item.price}
             </label>
-            <Checkbox id={item.price} />
+            <Checkbox
+              onCheckedChange={checked => handleCheckboxChange(checked as boolean, item.id)}
+              checked={item.checked}
+              id={item.price}
+            />
           </div>
         ))}
       </div>

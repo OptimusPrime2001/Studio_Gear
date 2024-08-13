@@ -179,14 +179,24 @@ export const filterCatogories = [
     category: 'Phòng ngoài'
   }
 ];
-export const filterPriceRange = [
+export type PriceOptionType = {
+  id: number;
+  price: string;
+  range: {
+    min: number;
+    max?: number;
+  };
+  checked: boolean;
+};
+export const filterPriceRange: PriceOptionType[] = [
   {
     id: 1,
     price: '0 - 100.000đ',
     range: {
       min: 0,
       max: 100_000
-    }
+    },
+    checked: false
   },
   {
     id: 2,
@@ -194,7 +204,8 @@ export const filterPriceRange = [
     range: {
       min: 100_000,
       max: 500_000
-    }
+    },
+    checked: false
   },
   {
     id: 3,
@@ -202,14 +213,16 @@ export const filterPriceRange = [
     range: {
       min: 500_000,
       max: 100_000_000
-    }
+    },
+    checked: false
   },
   {
     id: 4,
     price: 'trên 1tr',
     range: {
       min: 100_000_000
-    }
+    },
+    checked: false
   }
 ];
 export const listSelectDisplay = [
