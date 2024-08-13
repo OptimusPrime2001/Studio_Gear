@@ -44,13 +44,13 @@
             font-weight: $semibold;
           }
         }
-        .title-category {
-          font-size: $f16;
-          line-height: 1.625rem;
-          font-weight: $semibold;
-          margin-bottom: $s16;
-        }
         .filter-categories {
+          .title-category {
+            font-size: $f16;
+            line-height: 1.625rem;
+            font-weight: $semibold;
+            margin-bottom: $s16;
+          }
           div {
             @include flex-col-between();
             align-items: start;

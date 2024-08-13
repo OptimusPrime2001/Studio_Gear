@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import EmailIcon from '@components/icons/email';
 import { Button } from '@components/ui/button';

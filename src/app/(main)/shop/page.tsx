@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import FilterIcon from '@icons/filter';
 import { filterCatogories, filterPriceRange, listSelectDisplay } from '@lib/constant';
 import { poppins } from '@lib/fonts';
-import { cn, uniqueArray } from '@lib/utils';
+import { accessibleOnClick, cn, uniqueArray } from '@lib/utils';
 import { breadcrumb } from '@mobx/stores/breadcrumStore';
 import styles from './page.module.scss';
 
@@ -18,6 +18,7 @@ enum SelectDisplayType {
   'TwoColumn' = 2,
   'TwoRow' = 3
 }
+
 const ShopPage = () => {
   React.useLayoutEffect(() => {
     if (breadcrumb.breadcrumbList.length === 1) {
@@ -28,6 +29,7 @@ const ShopPage = () => {
     }
   }, []);
   const [selectDisplay, setSelectDisplay] = React.useState<SelectDisplayType>(SelectDisplayType.GridSquare);
+  const [selectedCategory, setSelectedCategory] = React.useState<(typeof filterCatogories)[0]>(filterCatogories[0]);
   const bannerShop = () => (
     <section className='shop-banner'>
       <BreadcrumbPath />
@@ -46,7 +48,16 @@ const ShopPage = () => {
         <h3 className='title-category dark:!text-neutral_00'>Thẻ loại</h3>
         <div>
           {filterCatogories.map(item => (
-            <span key={item.id}>{item.category}</span>
+            <span
+              {...accessibleOnClick(() => setSelectedCategory(item))}
+              className={cn(
+                'hover:!border-neutral_00 hover:!text-neutral_00',
+                item.id === selectedCategory.id ? '!border-neutral_00 !text-neutral_00' : ''
+              )}
+              key={item.id}
+            >
+              {item.category}
+            </span>
           ))}
         </div>
       </div>
@@ -77,7 +88,7 @@ const ShopPage = () => {
   );
   const mainContentTop = () => (
     <div className='main-content_top'>
-      <h2 className='dark:!text-neutral_00'>Living room</h2>
+      <h2 className='dark:!text-neutral_00'>{selectedCategory.category}</h2>
       <div className='content-top_left'>
         <Select>
           <SelectTrigger className='w-[180px] dark:!text-neutral_00'>
@@ -107,8 +118,8 @@ const ShopPage = () => {
     </div>
   );
   const mainContentProducts = () => (
-    <div className={cn('main-content_products', classFormatDisplay[selectDisplay])}>
-      {uniqueArray(10).map(item => (
+    <div className={cn('main-content_products dark:!text-neutral_00', classFormatDisplay[selectDisplay])}>
+      {uniqueArray(9).map(item => (
         <ProductCard
           name='Loveseat Sofa'
           price={299000}

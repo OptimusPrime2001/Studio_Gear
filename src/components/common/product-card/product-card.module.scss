@@ -1,10 +1,10 @@
 .productCardWrapper {
-  aspect-ratio: 0.75;
   :global {
     .product-image {
-      height: 100%;
+      height: auto;
       width: $w100;
       display: block;
+      aspect-ratio: 0.75;
       padding: $s16;
       &:hover {
         cursor: pointer;

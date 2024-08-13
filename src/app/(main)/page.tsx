@@ -12,7 +12,6 @@ import Image from 'next/image';
 import ArticlesPart from './_modules/articles/articles';
 import HomeSlider from './_modules/home-slider/home-slider';
 import ListProduct from './_modules/list-product/list-product';
-import Newsleetter from './_modules/newsletter/newsletter';
 import styles from './page.module.scss';
 
 export default function HomePage() {
@@ -180,7 +179,6 @@ export default function HomePage() {
         <InfiniteMovingCards pauseOnHover={false} items={listQuotes} direction='left' speed='slow' />
       </div>
       <ArticlesPart />
-      <Newsleetter />
     </main>
   );
 }
