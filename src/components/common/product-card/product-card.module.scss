@@ -3,7 +3,7 @@
   aspect-ratio: 0.75;
   overflow: hidden;
   :global {
-    div.product-image {
+    .product-image {
       height: 100%;
       width: $w100;
       display: block;

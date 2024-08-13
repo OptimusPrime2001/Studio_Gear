@@ -37,13 +37,13 @@ const ShopPage = () => {
   );
   const filerType = () => (
     <section className='filter-type'>
-      <div className='filter-title'>
+      <div className='filter-title dark:!text-neutral_00'>
         <FilterIcon />
         <h2>Filter</h2>
       </div>
 
       <div className='filter-categories'>
-        <h3 className='title-category'>Thẻ loại</h3>
+        <h3 className='title-category dark:!text-neutral_00'>Thẻ loại</h3>
         <div>
           {filterCatogories.map(item => (
             <span key={item.id}>{item.category}</span>
@@ -51,7 +51,7 @@ const ShopPage = () => {
         </div>
       </div>
       <div className='filter-prices'>
-        <h3 className='title-category'>Giá</h3>
+        <h3 className='title-category dark:!text-neutral_00'>Giá</h3>
         <div key={0}>
           <label
             htmlFor='all price'
@@ -75,6 +75,53 @@ const ShopPage = () => {
       </div>
     </section>
   );
+  const mainContentTop = () => (
+    <div className='main-content_top'>
+      <h2 className='dark:!text-neutral_00'>Living room</h2>
+      <div className='content-top_left'>
+        <Select>
+          <SelectTrigger className='w-[180px] dark:!text-neutral_00'>
+            <SelectValue placeholder='Sắp xếp theo' />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectItem value='best_seller'>Bán chạy nhất</SelectItem>
+              <SelectItem value='price_highest'>Giá cao nhất</SelectItem>
+              <SelectItem value='price_lowest'>Giá thấp nhất</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+        <div className='display-type'>
+          {listSelectDisplay.map(({ id, Component }) => (
+            <Button
+              className={cn(selectDisplay === id ? 'selector-active' : '', id < 2 ? 'hidden md:block' : 'md:!hidden')}
+              key={id}
+              onClick={() => setSelectDisplay(id)}
+              reset
+            >
+              <Component />
+            </Button>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+  const mainContentProducts = () => (
+    <div className={cn('main-content_products', classFormatDisplay[selectDisplay])}>
+      {uniqueArray(10).map(item => (
+        <ProductCard
+          name='Loveseat Sofa'
+          price={299000}
+          discount={20}
+          rating={3}
+          isNew
+          href={`/ffffffffff`}
+          imgProduct='https://ucarecdn.com/2df20e1d-9205-4395-9666-2027672517fa/imageplaceholder12x.png'
+          key={item}
+        />
+      ))}
+    </div>
+  );
   const classFormatDisplay = {
     0: 'grid-square',
     1: 'square',
@@ -87,49 +134,8 @@ const ShopPage = () => {
       <section className='shop-content'>
         {filerType()}
         <section className='main-content'>
-          <div className='main-content_top'>
-            <h2>Living room</h2>
-            <div className='content-top_left'>
-              <Select>
-                <SelectTrigger className='w-[180px]'>
-                  <SelectValue placeholder='Sắp xếp theo' />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectItem value='best_seller'>Bán chạy nhất</SelectItem>
-                    <SelectItem value='price_highest'>Giá cao nhất</SelectItem>
-                    <SelectItem value='price_lowest'>Giá thấp nhất</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
-              <div className='display-type'>
-                {listSelectDisplay.map(({ id, Component }) => (
-                  <Button
-                    className={cn(selectDisplay === id ? 'selector-active' : '')}
-                    key={id}
-                    onClick={() => setSelectDisplay(id)}
-                    reset
-                  >
-                    <Component />
-                  </Button>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className={cn('main-content_products', classFormatDisplay[selectDisplay])}>
-            {uniqueArray(10).map(item => (
-              <ProductCard
-                name='Loveseat Sofa'
-                price={299000}
-                discount={20}
-                rating={3}
-                isNew
-                href={`/ffffffffff`}
-                imgProduct='https://ucarecdn.com/2df20e1d-9205-4395-9666-2027672517fa/imageplaceholder12x.png'
-                key={item}
-              />
-            ))}
-          </div>
+          {mainContentTop()}
+          {mainContentProducts()}
         </section>
       </section>
     </section>

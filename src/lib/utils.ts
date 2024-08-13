@@ -21,3 +21,18 @@ export const formatVnd = (price: number) => {
   }).format(Math.floor(price));
 };
 export const uniqueId = () => uuidv4();
+export function filterKeyEnter(handler: A) {
+  return (e: A) => {
+    if (e.keyCode === 13) {
+      handler(e);
+    }
+  };
+}
+export function accessibleOnClick(handler: () => void) {
+  return {
+    role: 'button',
+    tabIndex: 0,
+    onKeyDown: filterKeyEnter(handler),
+    onClick: handler
+  };
+}

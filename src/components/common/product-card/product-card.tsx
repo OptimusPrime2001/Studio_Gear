@@ -4,10 +4,9 @@ import WhishButton from '@common/whish-btn/wish-button';
 import { Button } from '@components/ui/button';
 import StarIcon from '@icons/star';
 import { inter } from '@lib/fonts';
-import { cn, formatVnd } from '@lib/utils';
-import { motion } from 'framer-motion';
+import { accessibleOnClick, cn, formatVnd } from '@lib/utils';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import styles from './product-card.module.scss';
 
 type ProductCardProps = {
@@ -24,9 +23,10 @@ type ProductCardProps = {
 
 const ProductCard: React.FC<ProductCardProps> = props => {
   const { name, price, discount, rating, isNew, imgProduct, href, handleAddToFavarite, handleAddToCart } = props;
+  const router = useRouter();
   return (
     <section className={styles.productCardWrapper}>
-      <div className='product-image relative'>
+      <div {...accessibleOnClick(() => router.push(href))} className='product-image relative'>
         <Image sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' alt={name} src={imgProduct} fill />
         <Button className='add-cart_btn hover:!bg-primary_blur' onClick={handleAddToCart}>
           Add to cart
