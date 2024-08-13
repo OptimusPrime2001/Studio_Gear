@@ -136,6 +136,9 @@ const ShopPage = () => {
         <section className='main-content'>
           {mainContentTop()}
           {mainContentProducts()}
+          <Button variant='outline' className='see-more dark:!text-neutral_00'>
+            Xem thêm
+          </Button>
         </section>
       </section>
     </section>

@@ -3,7 +3,7 @@
   margin-left: auto;
   margin-right: auto;
   color: $neutral_07;
-
+  margin-bottom: 6.25rem;
   :global {
     .shop-banner {
       background-image: url('https://ucarecdn.com/5f2e640c-5466-44e5-8905-a780d6f9cfbd/imageplaceholderheader2x.png');
@@ -95,6 +95,7 @@
       }
       .main-content {
         flex: 1;
+
         &_top {
           @include flex-between();
           margin-bottom: $s40;
@@ -139,8 +140,16 @@
         }
         .two-rows {
         }
+        .see-more {
+          margin: auto;
+          display: block;
+          border-radius: 80px;
+          font-size: $f16;
+          font-weight: $medium;
+        }
         &_products {
           display: grid;
+          margin-bottom: 5rem;
         }
       }
     }

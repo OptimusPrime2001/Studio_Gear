@@ -17,6 +17,9 @@ import styles from './page.module.scss';
 
 export default function HomePage() {
   const { breadcrumb } = useStore();
+  React.useEffect(() => {
+    breadcrumb.resetBreadcrumb();
+  }, [breadcrumb]);
   const headingHome = () => (
     <section className={cn(styles.headingHomeWrapper, 'media_width_sm')}>
       <motion.div
@@ -102,7 +105,7 @@ export default function HomePage() {
           <item.icon />
           <p className={poppins.className}>{item.title}</p>
           <span>{item.label}</span>
-          <Meteors number={20} />
+          <Meteors number={100} />
         </motion.section>
       ))}
     </section>
@@ -164,9 +167,7 @@ export default function HomePage() {
       </motion.section>
     </section>
   );
-  React.useEffect(() => {
-    breadcrumb.resetBreadcrumb();
-  }, [breadcrumb]);
+
   return (
     <main className='iu-d-flexcolumn'>
       <HomeSlider />
