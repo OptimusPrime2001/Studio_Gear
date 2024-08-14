@@ -18,7 +18,12 @@ enum SelectDisplayType {
   'TwoColumn' = 2,
   'TwoRow' = 3
 }
-
+const classFormatDisplay = {
+  0: 'grid-square',
+  1: 'square',
+  2: 'two-columns',
+  3: 'two-rows'
+};
 const ShopPage = () => {
   React.useLayoutEffect(() => {
     if (breadcrumb.breadcrumbList.length === 1) {
@@ -29,16 +34,25 @@ const ShopPage = () => {
     }
   }, []);
   const [selectDisplay, setSelectDisplay] = React.useState<SelectDisplayType>(SelectDisplayType.GridSquare);
+  const [selectAll, setSelectAll] = React.useState<boolean>(false);
   const [selectedCategory, setSelectedCategory] = React.useState<(typeof filterCatogories)[0]>(filterCatogories[0]);
   const [priceOptions, setPriceOptions] = React.useState<PriceOptionType[]>(filterPriceRange);
-
+  React.useEffect(() => {
+    const checkListOption = priceOptions.filter(item => !item.checked);
+    if (checkListOption.length > 0) {
+      setSelectAll(false);
+    } else {
+      setSelectAll(true);
+    }
+  }, [priceOptions]);
   const handleSelectAll = (isChecked: boolean) => {
-    setPriceOptions(priceOptions.map(option => ({ ...option, isChecked })));
+    setSelectAll(isChecked);
+    setPriceOptions(priceOptions.map(option => ({ ...option, checked: isChecked })));
   };
 
   const handleCheckboxChange = (isChecked: boolean, optionId: number) => {
     const updatedPriceOptions = priceOptions.map(option =>
-      option.id === optionId ? { ...option, isChecked } : option
+      option.id === optionId ? { ...option, checked: isChecked } : option
     );
     setPriceOptions(updatedPriceOptions);
   };
@@ -55,16 +69,29 @@ const ShopPage = () => {
         <FilterIcon />
         <h2>Filter</h2>
       </div>
-
-      <div className='filter-categories'>
+      <div className='display-type'>
+        {listSelectDisplay.slice(2, 4).map(({ id, Component }) => (
+          <Button
+            className={cn(selectDisplay === id ? 'selector-active' : '', 'md:hidden')}
+            key={id}
+            onClick={() => setSelectDisplay(id)}
+            reset
+          >
+            <Component />
+          </Button>
+        ))}
+      </div>
+      <div className='filter-categories hidden md:block'>
         <h3 className='title-category dark:!text-neutral_00'>Thẻ loại</h3>
         <div>
           {filterCatogories.map(item => (
             <span
               {...accessibleOnClick(() => setSelectedCategory(item))}
               className={cn(
-                'hover:!border-neutral_00 hover:!text-neutral_00',
-                item.id === selectedCategory.id ? '!border-neutral_00 !text-neutral_00' : ''
+                'dark:hover:!border-neutral_00 dark:hover:!text-neutral_00',
+                item.id === selectedCategory.id
+                  ? '!border-neutral_07 !text-neutral_07 dark:!border-neutral_00 dark:!text-neutral_00'
+                  : ''
               )}
               key={item.id}
             >
@@ -73,7 +100,7 @@ const ShopPage = () => {
           ))}
         </div>
       </div>
-      <div className='filter-prices'>
+      <div className='filter-prices hidden md:block'>
         <h3 className='title-category dark:!text-neutral_00'>Giá</h3>
         <div key={0}>
           <label
@@ -82,7 +109,7 @@ const ShopPage = () => {
           >
             Tất cả giá
           </label>
-          <Checkbox onCheckedChange={handleSelectAll} id='all price' />
+          <Checkbox checked={selectAll} onCheckedChange={handleSelectAll} id='all price' />
         </div>
         {priceOptions.map(item => (
           <div key={item.id}>
@@ -118,10 +145,10 @@ const ShopPage = () => {
             </SelectGroup>
           </SelectContent>
         </Select>
-        <div className='display-type'>
-          {listSelectDisplay.map(({ id, Component }) => (
+        <div className='display-type !hidden md:block'>
+          {listSelectDisplay.slice(0, 2).map(({ id, Component }) => (
             <Button
-              className={cn(selectDisplay === id ? 'selector-active' : '', id < 2 ? 'hidden md:block' : 'md:!hidden')}
+              className={cn(selectDisplay === id ? 'selector-active' : '')}
               key={id}
               onClick={() => setSelectDisplay(id)}
               reset
@@ -149,17 +176,44 @@ const ShopPage = () => {
       ))}
     </div>
   );
-  const classFormatDisplay = {
-    0: 'grid-square',
-    1: 'square',
-    2: 'two-columns',
-    3: 'two-rows'
-  };
+  const filterTypeMobile = () => (
+    <section className={styles.filterTypeMobile}>
+      <Select>
+        <SelectTrigger className='w-[180px] dark:!text-neutral_00'>
+          <SelectValue placeholder='Thể loại' />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            {filterCatogories.map(item => (
+              <SelectItem key={item.id} value={item.category}>
+                {item.category}
+              </SelectItem>
+            ))}
+            {/* <SelectItem value='price_highest'>Giá cao nhất</SelectItem>
+            <SelectItem value='price_lowest'>Giá thấp nhất</SelectItem> */}
+          </SelectGroup>
+        </SelectContent>
+      </Select>
+      <Select>
+        <SelectTrigger className='w-[180px] dark:!text-neutral_00'>
+          <SelectValue placeholder='Giá' />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            <SelectItem value='best_seller'>Bán chạy nhất</SelectItem>
+            <SelectItem value='price_highest'>Giá cao nhất</SelectItem>
+            <SelectItem value='price_lowest'>Giá thấp nhất</SelectItem>
+          </SelectGroup>
+        </SelectContent>
+      </Select>
+    </section>
+  );
   return (
     <section className={cn(styles.shopPageWrapper, 'media_width_sm')}>
       {bannerShop()}
       <section className='shop-content'>
         {filerType()}
+        {filterTypeMobile()}
         <section className='main-content'>
           {mainContentTop()}
           {mainContentProducts()}
