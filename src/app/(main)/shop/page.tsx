@@ -189,8 +189,6 @@ const ShopPage = () => {
                 {item.category}
               </SelectItem>
             ))}
-            {/* <SelectItem value='price_highest'>Giá cao nhất</SelectItem>
-            <SelectItem value='price_lowest'>Giá thấp nhất</SelectItem> */}
           </SelectGroup>
         </SelectContent>
       </Select>
@@ -200,9 +198,11 @@ const ShopPage = () => {
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            <SelectItem value='best_seller'>Bán chạy nhất</SelectItem>
-            <SelectItem value='price_highest'>Giá cao nhất</SelectItem>
-            <SelectItem value='price_lowest'>Giá thấp nhất</SelectItem>
+            {filterPriceRange.map(item => (
+              <SelectItem key={item.id} value={item.value}>
+                {item.price}
+              </SelectItem>
+            ))}
           </SelectGroup>
         </SelectContent>
       </Select>
