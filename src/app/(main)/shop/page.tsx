@@ -69,7 +69,7 @@ const ShopPage = () => {
         <FilterIcon />
         <h2>Filter</h2>
       </div>
-      <div className='display-type'>
+      <div className='display-type md:!hidden'>
         {listSelectDisplay.slice(2, 4).map(({ id, Component }) => (
           <Button
             className={cn(selectDisplay === id ? 'selector-active' : '', 'md:hidden')}
@@ -189,8 +189,6 @@ const ShopPage = () => {
                 {item.category}
               </SelectItem>
             ))}
-            {/* <SelectItem value='price_highest'>Giá cao nhất</SelectItem>
-            <SelectItem value='price_lowest'>Giá thấp nhất</SelectItem> */}
           </SelectGroup>
         </SelectContent>
       </Select>
@@ -200,9 +198,11 @@ const ShopPage = () => {
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            <SelectItem value='best_seller'>Bán chạy nhất</SelectItem>
-            <SelectItem value='price_highest'>Giá cao nhất</SelectItem>
-            <SelectItem value='price_lowest'>Giá thấp nhất</SelectItem>
+            {filterPriceRange.map(item => (
+              <SelectItem key={item.id} value={item.value}>
+                {item.price}
+              </SelectItem>
+            ))}
           </SelectGroup>
         </SelectContent>
       </Select>

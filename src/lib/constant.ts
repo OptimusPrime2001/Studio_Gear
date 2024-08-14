@@ -148,35 +148,33 @@ export const listQuotes = [
 export const filterCatogories = [
   {
     id: 1,
-    category: 'Tất cả phòng'
+    category: 'Tất cả phòng',
+    value: 'all room'
   },
   {
     id: 2,
-    category: 'Phòng khách'
+    category: 'Phòng khách',
+    value: 'Living Room'
   },
   {
     id: 3,
-    category: 'Phòng ngủ'
+    category: 'Phòng ngủ',
+    value: 'Bedroom'
   },
   {
     id: 4,
-    category: 'Phòng bếp'
+    category: 'Phòng bếp',
+    value: 'Kitchen'
   },
   {
     id: 5,
-    category: 'Phòng tắm'
+    category: 'Phòng tắm',
+    value: 'Bathroom'
   },
   {
     id: 6,
-    category: 'Phòng ngoài'
-  },
-  {
-    id: 7,
-    category: 'Phòng tắm'
-  },
-  {
-    id: 8,
-    category: 'Phòng ngoài'
+    category: 'Phòng ngoài',
+    value: 'Outdoor'
   }
 ];
 export type PriceOptionType = {
@@ -187,6 +185,7 @@ export type PriceOptionType = {
     max?: number;
   };
   checked: boolean;
+  value: string;
 };
 export const filterPriceRange: PriceOptionType[] = [
   {
@@ -196,7 +195,8 @@ export const filterPriceRange: PriceOptionType[] = [
       min: 0,
       max: 100_000
     },
-    checked: false
+    checked: false,
+    value: 'Dưới 100k'
   },
   {
     id: 2,
@@ -205,24 +205,27 @@ export const filterPriceRange: PriceOptionType[] = [
       min: 100_000,
       max: 500_000
     },
-    checked: false
+    checked: false,
+    value: '100k - 500k'
   },
   {
     id: 3,
-    price: '500.000đ - 1tr',
+    price: '500.000đ - 100.000.000đ',
     range: {
       min: 500_000,
       max: 100_000_000
     },
-    checked: false
+    checked: false,
+    value: '500k - 1tr'
   },
   {
     id: 4,
-    price: 'trên 1tr',
+    price: 'trên 100.000.000đ',
     range: {
       min: 100_000_000
     },
-    checked: false
+    checked: false,
+    value: 'trên 1tr'
   }
 ];
 export const listSelectDisplay = [
