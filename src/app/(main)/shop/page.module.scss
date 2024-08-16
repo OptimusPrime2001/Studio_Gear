@@ -156,7 +156,7 @@
         }
       }
     }
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(lg) {
       .shop-banner {
         aspect-ratio: 1.097;
         gap: $s16 0;
@@ -201,7 +201,7 @@
   @include flex-between();
   padding: $s8 0;
   border-bottom: 1px solid $neutral_03;
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     display: none;
   }
 }

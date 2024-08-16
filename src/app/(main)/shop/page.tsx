@@ -5,6 +5,7 @@ import ProductCard from '@common/product-card/product-card';
 import { Button } from '@components/ui/button';
 import { Checkbox } from '@components/ui/checkbox';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@components/ui/select';
+import useResponsive, { EnumScreenSize } from '@hooks/useResponsive';
 import FilterIcon from '@icons/filter';
 import { filterCatogories, filterPriceRange, listSelectDisplay, PriceOptionType } from '@lib/constant';
 import { poppins } from '@lib/fonts';
@@ -13,6 +14,9 @@ import { breadcrumb } from '@mobx/stores/breadcrumStore';
 import styles from './page.module.scss';
 
 const ShopPage = () => {
+  const { currentView, size } = useResponsive();
+  console.log('🚀 ~ currentView:', { currentView, size });
+
   React.useLayoutEffect(() => {
     if (breadcrumb.breadcrumbList.length === 1) {
       breadcrumb.updateBreadcrumb({
@@ -21,10 +25,12 @@ const ShopPage = () => {
       });
     }
   }, []);
-  const [selectDisplay, setSelectDisplay] = React.useState<A>(listSelectDisplay[0]);
+  const [selectDisplay, setSelectDisplay] = React.useState<number>(0);
+  console.log('🚀 ~ selectDisplay:', selectDisplay);
   const [selectAll, setSelectAll] = React.useState<boolean>(false);
   const [selectedCategory, setSelectedCategory] = React.useState<(typeof filterCatogories)[0]>(filterCatogories[0]);
   const [priceOptions, setPriceOptions] = React.useState<PriceOptionType[]>(filterPriceRange);
+
   React.useEffect(() => {
     const checkListOption = priceOptions.filter(item => !item.checked);
     if (checkListOption.length > 0) {
@@ -33,6 +39,16 @@ const ShopPage = () => {
       setSelectAll(true);
     }
   }, [priceOptions]);
+
+  React.useEffect(() => {
+    if (size < EnumScreenSize.lg && selectDisplay < 2) {
+      setSelectDisplay(state => state + 2);
+    }
+    if (size >= EnumScreenSize.lg && selectDisplay > 1) {
+      setSelectDisplay(state => state - 2);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentView]);
   //Actions
   const handleSelectAll = (isChecked: boolean) => {
     setSelectAll(isChecked);
@@ -45,6 +61,7 @@ const ShopPage = () => {
     );
     setPriceOptions(updatedPriceOptions);
   };
+
   // Component parts
   const bannerShop = () => (
     <section className='shop-banner'>
@@ -59,19 +76,19 @@ const ShopPage = () => {
         <FilterIcon />
         <h2>Filter</h2>
       </div>
-      <div className='display-type md:!hidden'>
+      <div className='display-type lg:!hidden'>
         {listSelectDisplay.slice(2, 4).map(item => (
           <Button
-            className={cn(selectDisplay.id === item.id ? 'selector-active' : '', 'md:hidden')}
+            className={cn(selectDisplay === item.id ? 'selector-active' : '', 'md:hidden')}
             key={item.id}
-            onClick={() => setSelectDisplay(item)}
+            onClick={() => setSelectDisplay(item.id)}
             reset
           >
             <item.Component />
           </Button>
         ))}
       </div>
-      <div className='filter-categories hidden md:block'>
+      <div className='filter-categories hidden lg:block'>
         <h3 className='title-category dark:!text-neutral_00'>Thẻ loại</h3>
         <div>
           {filterCatogories.map(item => (
@@ -90,7 +107,7 @@ const ShopPage = () => {
           ))}
         </div>
       </div>
-      <div className='filter-prices hidden md:block'>
+      <div className='filter-prices hidden lg:block'>
         <h3 className='title-category dark:!text-neutral_00'>Giá</h3>
         <div key={0}>
           <label
@@ -135,12 +152,12 @@ const ShopPage = () => {
             </SelectGroup>
           </SelectContent>
         </Select>
-        <div className='display-type !hidden md:!flex'>
-          {listSelectDisplay.slice(0, 2).map(({ id, Component }, index) => (
+        <div className='display-type !hidden lg:!flex'>
+          {listSelectDisplay.slice(0, 2).map(({ id, Component }) => (
             <Button
-              className={cn(selectDisplay === index ? 'selector-active' : '')}
+              className={cn(selectDisplay === id ? 'selector-active' : '')}
               key={id}
-              onClick={() => setSelectDisplay(index)}
+              onClick={() => setSelectDisplay(id)}
               reset
             >
               <Component />
@@ -151,7 +168,12 @@ const ShopPage = () => {
     </div>
   );
   const mainContentProducts = () => (
-    <div className={cn('main-content_products dark:!text-neutral_00', selectDisplay.class)}>
+    <div
+      className={cn(
+        'main-content_products dark:!text-neutral_00',
+        listSelectDisplay.find(item => item.id === selectDisplay)?.class
+      )}
+    >
       {uniqueArray(9).map(item => (
         <ProductCard
           name='Loveseat Sofa'

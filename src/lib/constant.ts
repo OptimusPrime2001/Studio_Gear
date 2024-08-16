@@ -177,7 +177,7 @@ export const filterCatogories = [
     value: 'Outdoor'
   },
   {
-    id: 6,
+    id: 7,
     category: 'Phòng vệ sinh',
     value: 'WC'
   }
