@@ -15,7 +15,6 @@ import styles from './page.module.scss';
 
 const ShopPage = () => {
   const { currentView, size } = useResponsive();
-  console.log('🚀 ~ currentView:', { currentView, size });
 
   React.useLayoutEffect(() => {
     if (breadcrumb.breadcrumbList.length === 1) {
@@ -26,7 +25,6 @@ const ShopPage = () => {
     }
   }, []);
   const [selectDisplay, setSelectDisplay] = React.useState<number>(0);
-  console.log('🚀 ~ selectDisplay:', selectDisplay);
   const [selectAll, setSelectAll] = React.useState<boolean>(false);
   const [selectedCategory, setSelectedCategory] = React.useState<(typeof filterCatogories)[0]>(filterCatogories[0]);
   const [priceOptions, setPriceOptions] = React.useState<PriceOptionType[]>(filterPriceRange);
@@ -229,7 +227,7 @@ const ShopPage = () => {
         <section className='main-content'>
           {mainContentTop()}
           {mainContentProducts()}
-          <Button variant='outline' className='see-more dark:!text-neutral_00'>
+          <Button variant='outline' className='see-more dark:!text-neutral_03'>
             Xem thêm
           </Button>
         </section>

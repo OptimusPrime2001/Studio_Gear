@@ -195,6 +195,11 @@
         }
       }
     }
+    @include media-breakpoint-down(sm) {
+      .see-more {
+        padding: $s8 $s40;
+      }
+    }
   }
 }
 .filterTypeMobile {
