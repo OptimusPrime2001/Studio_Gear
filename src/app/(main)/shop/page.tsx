@@ -12,18 +12,6 @@ import { accessibleOnClick, cn, uniqueArray } from '@lib/utils';
 import { breadcrumb } from '@mobx/stores/breadcrumStore';
 import styles from './page.module.scss';
 
-enum SelectDisplayType {
-  'GridSquare' = 0,
-  'Square' = 1,
-  'TwoColumn' = 2,
-  'TwoRow' = 3
-}
-const classFormatDisplay = {
-  0: 'grid-square',
-  1: 'square',
-  2: 'two-columns',
-  3: 'two-rows'
-};
 const ShopPage = () => {
   React.useLayoutEffect(() => {
     if (breadcrumb.breadcrumbList.length === 1) {
@@ -33,7 +21,7 @@ const ShopPage = () => {
       });
     }
   }, []);
-  const [selectDisplay, setSelectDisplay] = React.useState<SelectDisplayType>(SelectDisplayType.GridSquare);
+  const [selectDisplay, setSelectDisplay] = React.useState<A>(listSelectDisplay[0]);
   const [selectAll, setSelectAll] = React.useState<boolean>(false);
   const [selectedCategory, setSelectedCategory] = React.useState<(typeof filterCatogories)[0]>(filterCatogories[0]);
   const [priceOptions, setPriceOptions] = React.useState<PriceOptionType[]>(filterPriceRange);
@@ -45,6 +33,7 @@ const ShopPage = () => {
       setSelectAll(true);
     }
   }, [priceOptions]);
+  //Actions
   const handleSelectAll = (isChecked: boolean) => {
     setSelectAll(isChecked);
     setPriceOptions(priceOptions.map(option => ({ ...option, checked: isChecked })));
@@ -56,6 +45,7 @@ const ShopPage = () => {
     );
     setPriceOptions(updatedPriceOptions);
   };
+  // Component parts
   const bannerShop = () => (
     <section className='shop-banner'>
       <BreadcrumbPath />
@@ -70,14 +60,14 @@ const ShopPage = () => {
         <h2>Filter</h2>
       </div>
       <div className='display-type md:!hidden'>
-        {listSelectDisplay.slice(2, 4).map(({ id, Component }) => (
+        {listSelectDisplay.slice(2, 4).map(item => (
           <Button
-            className={cn(selectDisplay === id ? 'selector-active' : '', 'md:hidden')}
-            key={id}
-            onClick={() => setSelectDisplay(id)}
+            className={cn(selectDisplay.id === item.id ? 'selector-active' : '', 'md:hidden')}
+            key={item.id}
+            onClick={() => setSelectDisplay(item)}
             reset
           >
-            <Component />
+            <item.Component />
           </Button>
         ))}
       </div>
@@ -134,7 +124,7 @@ const ShopPage = () => {
       <h2 className='dark:!text-neutral_00'>{selectedCategory.category}</h2>
       <div className='content-top_left'>
         <Select>
-          <SelectTrigger className='w-[180px] dark:!text-neutral_00'>
+          <SelectTrigger className='w-[180px] dark:!border-neutral_03 dark:!text-neutral_00'>
             <SelectValue placeholder='Sắp xếp theo' />
           </SelectTrigger>
           <SelectContent>
@@ -145,12 +135,12 @@ const ShopPage = () => {
             </SelectGroup>
           </SelectContent>
         </Select>
-        <div className='display-type !hidden md:block'>
-          {listSelectDisplay.slice(0, 2).map(({ id, Component }) => (
+        <div className='display-type !hidden md:!flex'>
+          {listSelectDisplay.slice(0, 2).map(({ id, Component }, index) => (
             <Button
-              className={cn(selectDisplay === id ? 'selector-active' : '')}
+              className={cn(selectDisplay === index ? 'selector-active' : '')}
               key={id}
-              onClick={() => setSelectDisplay(id)}
+              onClick={() => setSelectDisplay(index)}
               reset
             >
               <Component />
@@ -161,7 +151,7 @@ const ShopPage = () => {
     </div>
   );
   const mainContentProducts = () => (
-    <div className={cn('main-content_products dark:!text-neutral_00', classFormatDisplay[selectDisplay])}>
+    <div className={cn('main-content_products dark:!text-neutral_00', selectDisplay.class)}>
       {uniqueArray(9).map(item => (
         <ProductCard
           name='Loveseat Sofa'
@@ -179,7 +169,7 @@ const ShopPage = () => {
   const filterTypeMobile = () => (
     <section className={styles.filterTypeMobile}>
       <Select>
-        <SelectTrigger className='w-[180px] dark:!text-neutral_00'>
+        <SelectTrigger className='w-[180px] border-neutral_03 dark:!text-neutral_00'>
           <SelectValue placeholder='Thể loại' />
         </SelectTrigger>
         <SelectContent>
@@ -193,7 +183,7 @@ const ShopPage = () => {
         </SelectContent>
       </Select>
       <Select>
-        <SelectTrigger className='w-[180px] dark:!text-neutral_00'>
+        <SelectTrigger className='w-[180px] border-neutral_03 dark:!text-neutral_00'>
           <SelectValue placeholder='Giá' />
         </SelectTrigger>
         <SelectContent>

@@ -175,6 +175,11 @@ export const filterCatogories = [
     id: 6,
     category: 'Phòng ngoài',
     value: 'Outdoor'
+  },
+  {
+    id: 6,
+    category: 'Phòng vệ sinh',
+    value: 'WC'
   }
 ];
 export type PriceOptionType = {
@@ -210,7 +215,7 @@ export const filterPriceRange: PriceOptionType[] = [
   },
   {
     id: 3,
-    price: '500.000đ - 100.000.000đ',
+    price: '500.000đ - 1.000.000đ',
     range: {
       min: 500_000,
       max: 100_000_000
@@ -220,7 +225,7 @@ export const filterPriceRange: PriceOptionType[] = [
   },
   {
     id: 4,
-    price: 'trên 100.000.000đ',
+    price: 'trên 1.000.000đ',
     range: {
       min: 100_000_000
     },
@@ -228,21 +233,31 @@ export const filterPriceRange: PriceOptionType[] = [
     value: 'trên 1tr'
   }
 ];
+export enum SelectDisplayType {
+  'GridSquare' = 'grid-square',
+  'Square' = 'square',
+  'TwoColumn' = 'two-columns',
+  'TwoRow' = 'two-rows'
+}
 export const listSelectDisplay = [
   {
     id: 0,
-    Component: GridSquare
+    Component: GridSquare,
+    class: SelectDisplayType.GridSquare
   },
   {
     id: 1,
-    Component: Square
+    Component: Square,
+    class: SelectDisplayType.Square
   },
   {
     id: 2,
-    Component: TwoColumn
+    Component: TwoColumn,
+    class: SelectDisplayType.TwoColumn
   },
   {
     id: 3,
-    Component: TwoRow
+    Component: TwoRow,
+    class: SelectDisplayType.TwoRow
   }
 ];

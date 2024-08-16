@@ -136,8 +136,12 @@
           gap: $s32;
         }
         .two-columns {
+          grid-template-columns: repeat(2, 1fr);
+          gap: $s32;
         }
         .two-rows {
+          grid-template-columns: 1;
+          gap: $s32;
         }
         .see-more {
           margin: auto;
