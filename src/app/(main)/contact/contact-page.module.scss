@@ -1,0 +1,26 @@
+.contactPage {
+  width: $w80;
+  margin: auto;
+  h1 {
+    font-size: 3.375rem;
+    line-height: 3.625rem;
+    font-weight: $medium;
+    max-width: 75%;
+  }
+  p {
+    margin-top: $s24;
+    font-size: $f16;
+    line-height: 1.625rem;
+    max-width: 75%;
+  }
+  :global {
+    .contact-image {
+      display: flex;
+      flex-direction: row;
+      img {
+        flex: 1;
+        position: relative;
+      }
+    }
+  }
+}
