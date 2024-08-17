@@ -1,5 +1,7 @@
 import AccountIcon from '@icons/account';
+import Address from '@icons/address';
 import CallSupport from '@icons/call-support';
+import EmailIcon from '@icons/email';
 import FacebookIcon from '@icons/facebook';
 import FastDelevery from '@icons/fast-delivery';
 import { GridSquare } from '@icons/grid-square';
@@ -259,5 +261,26 @@ export const listSelectDisplay = [
     id: 3,
     Component: TwoRow,
     class: SelectDisplayType.TwoRow
+  }
+];
+// Contact page
+export const listContactUs = [
+  {
+    id: 0,
+    title: 'Address',
+    Icon: Address,
+    content: '234 Hai Trieu, Ho Chi Minh City, Viet Nam'
+  },
+  {
+    id: 1,
+    title: 'Contact Us',
+    Icon: CallSupport,
+    content: '+84 234 567 890'
+  },
+  {
+    id: 2,
+    title: 'Email',
+    Icon: EmailIcon,
+    content: 'hello@3legant.com'
   }
 ];
