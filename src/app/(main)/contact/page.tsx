@@ -11,6 +11,7 @@ import Image from 'next/image';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { MapContainer } from './_modules/map-shop';
 import styles from './contact-page.module.scss';
 
 const ContactPage = () => {
@@ -82,7 +83,7 @@ const ContactPage = () => {
     );
   };
   const mapSection = () => {
-    return <div>mapSection</div>;
+    return <MapContainer />;
   };
   return (
     <section className={styles.contactPage}>
