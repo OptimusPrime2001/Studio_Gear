@@ -1,16 +1,19 @@
 import React from 'react';
 import mapboxgl from 'mapbox-gl';
+import { useTheme } from 'next-themes';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 export const MapSection = () => {
   const mapContainerRef = React.useRef<A>();
   const mapRef = React.useRef<A>();
+  const { theme } = useTheme();
+  const [styleLoaded, setStyleLoaded] = React.useState(false);
   React.useEffect(() => {
     mapRef.current = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v12',
+      // style: 'mapbox://styles/mapbox/streets-v12',
       center: [105.828284, 21.000239],
-      zoom: 15,
+      zoom: 13.2,
       attributionControl: false,
       accessToken: process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
     });
@@ -24,8 +27,14 @@ export const MapSection = () => {
     imgMarker.addEventListener('click', () => {
       window.open('https://www.google.com/maps?q=21.000239,105.828284', '_blank');
     });
+    mapRef.current.on('style.load', () => {
+      setStyleLoaded(true);
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  React.useEffect(() => {
+    if (!styleLoaded) return;
+    mapRef.current?.setConfigProperty('basemap', 'lightPreset', theme === 'light' ? 'day' : 'night');
+  }, [theme, styleLoaded]);
   return <div className='h-[404px] w-1/2 overflow-hidden' id='map' ref={mapContainerRef} />;
 };

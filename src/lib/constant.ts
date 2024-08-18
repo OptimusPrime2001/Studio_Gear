@@ -19,7 +19,7 @@ export const navigationLink = [
   { id: 'home', label: 'Trang chủ', href: '/' },
   { id: 'shop', label: 'Cửa hàng', href: '/shop' },
   { id: 'product', label: 'Sản phẩm', href: '/product' },
-  { id: 'contact', label: 'Liên hệ', href: '/contact' }
+  { id: 'contact-us', label: 'Liên hệ', href: '/contact-us' }
 ];
 export const navigationIcon = [
   {

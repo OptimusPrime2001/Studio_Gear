@@ -2,8 +2,7 @@
 import React from 'react';
 import LinkButton from '@components/common/link-button/link-button';
 import { InfiniteMovingCards } from '@components/ui/infinite-moving-cards';
-import { Meteors } from '@components/ui/meteors';
-import { listMainProduct, listQuotes, listSupportCustomer } from '@lib/constant';
+import { listMainProduct, listQuotes } from '@lib/constant';
 import { inter, poppins } from '@lib/fonts';
 import { cn } from '@lib/utils';
 import { useStore } from '@mobx/store';
@@ -12,6 +11,7 @@ import Image from 'next/image';
 import ArticlesPart from './_modules/articles/articles';
 import HomeSlider from './_modules/home-slider/home-slider';
 import ListProduct from './_modules/list-product/list-product';
+import SupportCustomer from './_modules/support-customer/support-customer';
 import styles from './page.module.scss';
 
 export default function HomePage() {
@@ -90,25 +90,7 @@ export default function HomePage() {
       ))}
     </section>
   );
-  const supportCustomer = () => (
-    <section className={cn(styles.supportWrapper, 'media_width_sm')}>
-      {listSupportCustomer.map((item, index) => (
-        <motion.section
-          whileInView={{
-            y: [150, 0]
-          }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-          className='relative overflow-hidden bg-neutral_07 dark:bg-neutral_00'
-          key={item.id}
-        >
-          <item.icon />
-          <p className={poppins.className}>{item.title}</p>
-          <span>{item.label}</span>
-          <Meteors number={100} />
-        </motion.section>
-      ))}
-    </section>
-  );
+
   const bannerBestSell = () => (
     <section className={cn(styles.bannerBestSeller, inter.className)}>
       <Image
@@ -173,7 +155,7 @@ export default function HomePage() {
       {headingHome()}
       {mainProduct()}
       <ListProduct />
-      {supportCustomer()}
+      <SupportCustomer />
       {bannerBestSell()}
       <div className='w-full'>
         <InfiniteMovingCards pauseOnHover={false} items={listQuotes} direction='left' speed='slow' />

@@ -7,19 +7,21 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator
 } from '@components/ui/breadcrumb';
-import { uniqueId } from '@lib/utils';
+import { cn, uniqueId } from '@lib/utils';
 import { useStore } from '@mobx/store';
 import { observer } from 'mobx-react-lite';
 import Link from 'next/link';
 import styles from './breadcrumb.module.scss';
 
-type BreadcrumbPathProps = object;
+type BreadcrumbPathProps = {
+  className?: string;
+};
 
-const BreadcrumbPath: React.FC<BreadcrumbPathProps> = observer(() => {
+const BreadcrumbPath: React.FC<BreadcrumbPathProps> = observer(({ className }) => {
   const { breadcrumb } = useStore();
   const length = breadcrumb.breadcrumbList.length;
   return (
-    <Breadcrumb className={styles.breadcrumbWrapper}>
+    <Breadcrumb className={cn(styles.breadcrumbWrapper, className)}>
       <BreadcrumbList>
         {breadcrumb.breadcrumbList.map((br, index) =>
           index !== length - 1 ? (

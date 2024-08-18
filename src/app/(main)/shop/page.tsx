@@ -10,12 +10,12 @@ import FilterIcon from '@icons/filter';
 import { filterCatogories, filterPriceRange, listSelectDisplay, PriceOptionType } from '@lib/constant';
 import { poppins } from '@lib/fonts';
 import { accessibleOnClick, cn, uniqueArray } from '@lib/utils';
-import { breadcrumb } from '@mobx/stores/breadcrumStore';
+import { useStore } from '@mobx/store';
 import styles from './page.module.scss';
 
 const ShopPage = () => {
   const { currentView, size } = useResponsive();
-
+  const { breadcrumb } = useStore();
   React.useLayoutEffect(() => {
     if (breadcrumb.breadcrumbList.length === 1) {
       breadcrumb.updateBreadcrumb({
@@ -23,6 +23,7 @@ const ShopPage = () => {
         name: 'Shop'
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const [selectDisplay, setSelectDisplay] = React.useState<number>(0);
   const [selectAll, setSelectAll] = React.useState<boolean>(false);

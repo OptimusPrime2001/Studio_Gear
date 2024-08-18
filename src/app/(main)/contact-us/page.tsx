@@ -1,17 +1,20 @@
 'use client';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import LinkButton from '@components/common/link-button/link-button';
+import BreadcrumbPath from '@common/breadcrumb/breadcrumb';
+import LinkButton from '@common/link-button/link-button';
 import { Input } from '@components/ui/input';
 import { Textarea } from '@components/ui/textarea';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { listContactUs } from '@lib/constant';
 import { poppins } from '@lib/fonts';
+import { useStore } from '@mobx/store';
 import Image from 'next/image';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { MapSection } from './_modules/map-section';
+import SupportCustomer from '../_modules/support-customer/support-customer';
 import styles from './contact-page.module.scss';
 
 const ContactPage = () => {
@@ -77,14 +80,24 @@ const ContactPage = () => {
               </FormItem>
             )}
           />
-          <Button type='submit'>Send message</Button>
+          <Button className='dark:!bg-neutral_03' type='submit'>
+            Send message
+          </Button>
         </form>
       </Form>
     );
   };
-
+  const { breadcrumb } = useStore();
+  React.useLayoutEffect(() => {
+    breadcrumb.updateBreadcrumb({
+      href: 'contact-us',
+      name: 'Contact Us'
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <section className={styles.contactPage}>
+      <BreadcrumbPath className='mt-4' />
       <h1 className={poppins.className}>We believe in sustainable decor. We’re passionate about life at home.</h1>
       <p>
         Our features timeless furniture, with natural fabrics, curved lines, plenty of mirrors and classic design, which
@@ -110,11 +123,11 @@ const ContactPage = () => {
         </div>
       </div>
       <div className='contact-us_section'>
-        <h2 className={poppins.className}>Contact us</h2>
+        <h2 className={poppins.className}>Contact uss</h2>
         <div>
           {listContactUs.map(item => (
             <div key={item.id}>
-              <item.Icon className='' />
+              <item.Icon />
               <span>{item.title}</span>
               <b>{item.content}</b>
             </div>
@@ -125,6 +138,7 @@ const ContactPage = () => {
         {formSection()}
         <MapSection />
       </div>
+      <SupportCustomer className='!w-full' />
     </section>
   );
 };

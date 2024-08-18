@@ -1,0 +1,41 @@
+.supportCustomerWrapper {
+  display: grid;
+  column-gap: $s24;
+  grid: 13.75rem / repeat(4, 1fr);
+  width: $w80;
+  padding: $s48 0;
+  :global {
+    section {
+      background: $neutral_02;
+      padding: $s48 $s32;
+      svg {
+        padding-bottom: $s16;
+      }
+      p {
+        font-size: 1.25rem;
+        font-weight: $medium;
+        line-height: 1.75rem;
+        color: $neutral_07;
+        text-wrap: wrap;
+      }
+      span {
+        color: $neutral_04;
+        line-height: 1.5rem;
+        font-size: $f14;
+      }
+    }
+    @include media-breakpoint-down(lg) {
+      & {
+        grid: repeat(2, 12.375rem) / repeat(2, 1fr);
+        gap: $s24;
+        padding: $s32 0;
+        section {
+          padding: $s32 $s16;
+          p {
+            text-wrap: wrap;
+          }
+        }
+      }
+    }
+  }
+}
