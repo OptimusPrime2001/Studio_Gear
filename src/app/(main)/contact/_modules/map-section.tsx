@@ -2,10 +2,9 @@ import React from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-export const MapContainer = () => {
+export const MapSection = () => {
   const mapContainerRef = React.useRef<A>();
   const mapRef = React.useRef<A>();
-
   React.useEffect(() => {
     mapRef.current = new mapboxgl.Map({
       container: 'map',
@@ -13,7 +12,7 @@ export const MapContainer = () => {
       center: [105.828284, 21.000239],
       zoom: 15,
       attributionControl: false,
-      accessToken: 'pk.eyJ1IjoidHJ1bmtzMiIsImEiOiJjbGgzZTEwZ2owYWEyM3RvNTI3ZmN2cXFvIn0.AbtLpKbLi1QGaVQVTs69IA'
+      accessToken: process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
     });
 
     const imgMarker = document.createElement('img');
@@ -28,5 +27,5 @@ export const MapContainer = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <div className='h-[404px] w-1/2 overflow-hidden' id='map' ref={mapContainerRef}></div>;
+  return <div className='h-[404px] w-1/2 overflow-hidden' id='map' ref={mapContainerRef} />;
 };

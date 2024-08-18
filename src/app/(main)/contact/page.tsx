@@ -11,7 +11,7 @@ import Image from 'next/image';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { MapContainer } from './_modules/map-shop';
+import { MapSection } from './_modules/map-section';
 import styles from './contact-page.module.scss';
 
 const ContactPage = () => {
@@ -82,9 +82,7 @@ const ContactPage = () => {
       </Form>
     );
   };
-  const mapSection = () => {
-    return <MapContainer />;
-  };
+
   return (
     <section className={styles.contactPage}>
       <h1 className={poppins.className}>We believe in sustainable decor. We’re passionate about life at home.</h1>
@@ -125,7 +123,7 @@ const ContactPage = () => {
       </div>
       <div className='form-map_section'>
         {formSection()}
-        {mapSection()}
+        <MapSection />
       </div>
     </section>
   );
