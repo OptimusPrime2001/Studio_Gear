@@ -8,6 +8,7 @@ import { Textarea } from '@components/ui/textarea';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { listContactUs } from '@lib/constant';
 import { poppins } from '@lib/fonts';
+import { cn } from '@lib/utils';
 import { useStore } from '@mobx/store';
 import Image from 'next/image';
 import { z } from 'zod';
@@ -96,7 +97,7 @@ const ContactPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <section className={styles.contactPage}>
+    <section className={cn(styles.contactPage, 'media_width_sm')}>
       <BreadcrumbPath className='mt-4' />
       <h1 className={poppins.className}>We believe in sustainable decor. We’re passionate about life at home.</h1>
       <p>
@@ -123,7 +124,7 @@ const ContactPage = () => {
         </div>
       </div>
       <div className='contact-us_section'>
-        <h2 className={poppins.className}>Contact uss</h2>
+        <h2 className={poppins.className}>Contact Us</h2>
         <div>
           {listContactUs.map(item => (
             <div key={item.id}>

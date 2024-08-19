@@ -15,9 +15,10 @@ import styles from './breadcrumb.module.scss';
 
 type BreadcrumbPathProps = {
   className?: string;
+  reverseMode?: boolean;
 };
 
-const BreadcrumbPath: React.FC<BreadcrumbPathProps> = observer(({ className }) => {
+const BreadcrumbPath: React.FC<BreadcrumbPathProps> = observer(({ className, reverseMode }) => {
   const { breadcrumb } = useStore();
   const length = breadcrumb.breadcrumbList.length;
   return (
@@ -28,14 +29,18 @@ const BreadcrumbPath: React.FC<BreadcrumbPathProps> = observer(({ className }) =
             <React.Fragment key={uniqueId()}>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link href={br.href}>{br.name}</Link>
+                  <Link className={cn(reverseMode ? '' : 'dark:hover:!text-neutral_00')} href={br.href}>
+                    {br.name}
+                  </Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
             </React.Fragment>
           ) : (
             <BreadcrumbItem key={uniqueId()}>
-              <BreadcrumbPage className='text-neutral_07'>{br.name}</BreadcrumbPage>
+              <BreadcrumbPage className={cn(reverseMode ? 'text-neutral_07' : 'text-neutral_07 dark:text-neutral_00')}>
+                {br.name}
+              </BreadcrumbPage>
             </BreadcrumbItem>
           )
         )}

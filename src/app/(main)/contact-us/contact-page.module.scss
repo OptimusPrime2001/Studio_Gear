@@ -129,3 +129,111 @@
     }
   }
 }
+@include media-breakpoint-down(sm) {
+  .contactPage {
+    & > h1 {
+      margin-top: $s48;
+      font-size: 1.75rem;
+      line-height: 2.125rem;
+      font-weight: $normal;
+    }
+    :global {
+      .about-us_section {
+        flex-flow: column;
+        @include media-breakpoint-down(xs) {
+          aspect-ratio: 1/2;
+        }
+        .about-us_content {
+          padding: 4rem $s16;
+          color: $neutral_08;
+          gap: $s16 0;
+          h3 {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+          }
+          p {
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+            margin-bottom: $s8;
+          }
+        }
+      }
+      .contact-us_section {
+        h2 {
+          font-size: 1.25rem;
+          line-height: 1.75rem;
+        }
+        & > div {
+          @include flex-col-center();
+          gap: $s16 0;
+          div {
+            padding: $s16 $s32;
+            width: 100%;
+            @include flex-col-center();
+            gap: $s8 0;
+            span {
+              margin-top: $s4;
+              display: block;
+              font-size: $f16;
+              line-height: 1rem;
+              color: $neutral_04;
+              font-weight: $bold;
+            }
+            b {
+              font-weight: $semibold;
+              color: $neutral_07;
+              font-size: $f16;
+              line-height: 1.625rem;
+              text-align: center;
+            }
+            svg {
+              height: $s32;
+              width: $s32;
+            }
+          }
+        }
+      }
+      .form-map_section {
+        display: flex;
+        gap: 0 1.75rem;
+        .form_section {
+          flex: 1;
+          & > div {
+            margin-top: $s24 !important;
+
+            label {
+              font-size: $f12;
+              line-height: 0.75rem;
+              font-weight: $bold;
+              color: $neutral_04;
+              height: 0.75rem;
+              display: block;
+            }
+            input {
+              height: 2.5rem;
+              margin-top: 0.75rem;
+              box-sizing: border-box;
+            }
+            textarea {
+              margin-top: 0.75rem;
+            }
+          }
+          & > div:first-child {
+            margin-top: 0 !important;
+          }
+          button {
+            padding: 0.375rem 2.5rem;
+            background: $neutral_07;
+            margin-top: $s24;
+            line-height: 1.75rem;
+            font-size: $f16;
+            height: 2.5rem;
+          }
+        }
+        .map_section {
+          flex: 1;
+        }
+      }
+    }
+  }
+}

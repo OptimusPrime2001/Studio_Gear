@@ -64,7 +64,7 @@ const ShopPage = () => {
   // Component parts
   const bannerShop = () => (
     <section className='shop-banner'>
-      <BreadcrumbPath />
+      <BreadcrumbPath reverseMode />
       <h2 className={poppins.className}>Shop Page</h2>
       <p>Let’s design the place you always imagined.</p>
     </section>
