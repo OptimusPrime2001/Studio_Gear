@@ -30,8 +30,6 @@ export const MapSection = () => {
     // Set marker into mapbox
     new mapboxgl.Marker({ element: imgMarker }).setLngLat([105.828284, 21.000239]).addTo(mapRef.current);
 
-    new mapboxgl.Marker(el); // Đặt label ở giữa phía trên marker
-
     imgMarker.addEventListener('click', () => {
       window.open('https://www.google.com/maps?q=21.000239,105.828284', '_blank');
     });
