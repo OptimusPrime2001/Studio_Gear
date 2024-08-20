@@ -33,6 +33,12 @@
           padding: $s32 $s16;
           p {
             text-wrap: wrap;
+            font-size: $f14;
+            line-height: 1.375rem;
+            font-weight: $medium;
+          }
+          span {
+            line-height: 1.375rem;
           }
         }
       }

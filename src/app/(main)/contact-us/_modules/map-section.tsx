@@ -46,5 +46,5 @@ export const MapSection = () => {
     if (!styleLoaded) return;
     mapRef.current?.setConfigProperty('basemap', 'lightPreset', theme === 'light' ? 'day' : 'night');
   }, [theme, styleLoaded]);
-  return <div className='h-[404px] w-1/2 overflow-hidden' id='map' ref={mapContainerRef} />;
+  return <div className='h-[404px] overflow-hidden md:w-1/2' id='map' ref={mapContainerRef} />;
 };

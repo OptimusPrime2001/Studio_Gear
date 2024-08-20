@@ -159,6 +159,7 @@
         }
       }
       .contact-us_section {
+        margin: 0 0 $s40 0;
         h2 {
           font-size: 1.25rem;
           line-height: 1.75rem;
@@ -166,36 +167,21 @@
         & > div {
           @include flex-col-center();
           gap: $s16 0;
+          height: auto;
           div {
-            padding: $s16 $s32;
+            padding: $s16 auto;
             width: 100%;
             @include flex-col-center();
             gap: $s8 0;
             span {
-              margin-top: $s4;
-              display: block;
-              font-size: $f16;
-              line-height: 1rem;
-              color: $neutral_04;
-              font-weight: $bold;
-            }
-            b {
-              font-weight: $semibold;
-              color: $neutral_07;
-              font-size: $f16;
-              line-height: 1.625rem;
-              text-align: center;
-            }
-            svg {
-              height: $s32;
-              width: $s32;
+              margin-top: $s8;
             }
           }
         }
       }
       .form-map_section {
-        display: flex;
-        gap: 0 1.75rem;
+        gap: $s24 0;
+        flex-flow: column-reverse;
         .form_section {
           flex: 1;
           & > div {
@@ -232,6 +218,7 @@
         }
         .map_section {
           flex: 1;
+          width: 100%;
         }
       }
     }

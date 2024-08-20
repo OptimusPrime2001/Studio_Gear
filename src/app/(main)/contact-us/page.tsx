@@ -139,7 +139,7 @@ const ContactPage = () => {
         {formSection()}
         <MapSection />
       </div>
-      <SupportCustomer className='!w-full' />
+      <SupportCustomer className='!w-full !px-0 py-8' />
     </section>
   );
 };
