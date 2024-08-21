@@ -8,7 +8,7 @@
   "arrowParens": "avoid",
   "bracketSpacing": true,
   "jsxSingleQuote": true,
-  "jsxBracketSameLine": false,
+   "jsxBracketSameLine": false,
   "parser": "typescript",
   "tabWidth": 2,
   "endOfLine": "auto",
