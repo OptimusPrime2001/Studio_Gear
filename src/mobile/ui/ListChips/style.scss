@@ -1,0 +1,13 @@
+.c-listChip {
+  &__item {
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+
+  &.is-circle {
+    .c-listChip__item {
+      height: 50px;
+      width: 52px;
+    }
+  }
+}
