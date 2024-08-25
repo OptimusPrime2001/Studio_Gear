@@ -14,8 +14,7 @@ pnpm dev
 bun dev
 ```
 Long time to push
-push commit 2
-push commit 3
+
 push commit 4
 push commit 5
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
