@@ -6,7 +6,7 @@ import { cn } from '@lib/utils';
 import { motion } from 'framer-motion';
 import styles from './support-customer.module.scss';
 
-const SupportCustomer: React.FC<{ className: string }> = ({ className }) => {
+const SupportCustomer: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <section className={cn(styles.supportCustomerWrapper, 'media_width_sm', className)}>
       {listSupportCustomer.map((item, index) => (
