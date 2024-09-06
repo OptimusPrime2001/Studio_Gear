@@ -9,6 +9,7 @@ export const MapSection = () => {
   const { theme } = useTheme();
   const [styleLoaded, setStyleLoaded] = React.useState(false);
   React.useEffect(() => {
+    console.log('api key', process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN);
     mapRef.current = new mapboxgl.Map({
       container: 'map',
       center: [105.828284, 21.000239],

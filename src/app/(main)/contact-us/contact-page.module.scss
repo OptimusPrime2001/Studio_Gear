@@ -137,6 +137,9 @@
       line-height: 2.125rem;
       font-weight: $normal;
     }
+    & > p {
+      max-width: 100%;
+    }
     :global {
       .about-us_section {
         flex-flow: column;
@@ -163,6 +166,7 @@
         h2 {
           font-size: 1.25rem;
           line-height: 1.75rem;
+          margin: $s12 0;
         }
         & > div {
           @include flex-col-center();
