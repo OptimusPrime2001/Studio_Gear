@@ -6,7 +6,6 @@
   $min: map-get($breakpoints, $name);
   @return if($min !=0, $min, null);
 }
-
 @mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
   $max: breakpoint-max($name, $breakpoints);
 
@@ -18,7 +17,6 @@
     @content;
   }
 }
-
 @mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
   $min: breakpoint-min($name, $breakpoints);
 

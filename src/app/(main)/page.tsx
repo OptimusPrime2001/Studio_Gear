@@ -150,7 +150,7 @@ export default function HomePage() {
   );
 
   return (
-    <main className='iu-d-flexcolumn'>
+    <main className='iu-d-flexcolumn border'>
       <HomeSlider />
       {headingHome()}
       {mainProduct()}
