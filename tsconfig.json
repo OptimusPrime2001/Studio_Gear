@@ -22,8 +22,10 @@
       "@*": ["./src/*"],
       "@common/*": ["./src/components/common/*"],
       "@icons/*": ["./src/components/icons/*"],
-      "@hooks/*": ["./src/hooks/*"]
-    }
+      "@hooks/*": ["./src/hooks/*"],
+      "styles/*": ["./styles/*"],
+    },
+    "target": "ES2017"
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
