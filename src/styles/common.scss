@@ -1,3 +1,6 @@
+@use 'utils/variables' as *;
+@use 'utils/mixin' as *;
+
 .iu-ac {
   align-items: center;
 }

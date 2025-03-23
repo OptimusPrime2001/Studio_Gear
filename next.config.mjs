@@ -9,7 +9,7 @@ const nextConfig = {
     includePaths: [path.join(__dirname, 'styles')],
     prependData: `@use "@styles/utils/_variables.scss" as *; @use "@styles/utils/_mixin.scss" as *;`,
   },
-  reactStrictMode: true,
+  reactStrictMode: false,
   images: {
     loader: 'custom',
     loaderFile: './public/loader.js',
