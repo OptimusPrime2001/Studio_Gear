@@ -1,7 +1,13 @@
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   sassOptions: {
-    additionalData: `@import "@styles/variables/_variables.scss"; `
+    includePaths: [path.join(__dirname, 'styles')],
+    prependData: `@use "@styles/utils/_variables.scss" as *; @use "@styles/utils/_mixin.scss" as *;`,
   },
   reactStrictMode: true,
   images: {
@@ -10,13 +16,13 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'img.clerk.com'
+        hostname: 'img.clerk.com',
       },
       {
         protocol: 'https',
-        hostname: 'ucarecdn.com'
-      }
-    ]
-  }
+        hostname: 'ucarecdn.com',
+      },
+    ],
+  },
 };
 export default nextConfig;

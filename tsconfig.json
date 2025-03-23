@@ -23,7 +23,7 @@
       "@common/*": ["./src/components/common/*"],
       "@icons/*": ["./src/components/icons/*"],
       "@hooks/*": ["./src/hooks/*"],
-      "styles/*": ["./styles/*"],
+      "styles/*": ["./src/styles/*"],
     },
     "target": "ES2017"
   },

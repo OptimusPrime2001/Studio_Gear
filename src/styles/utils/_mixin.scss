@@ -1,5 +1,5 @@
 @function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
-  $max: map-get($breakpoints, $name);
+  $max: max($breakpoints, $name);
   @return if($max and $max > 0, $max - 0.02, null);
 }
 @function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
@@ -28,7 +28,11 @@
     @content;
   }
 }
-@mixin media-breakpoint-between($lower, $upper, $breakpoints: $grid-breakpoints) {
+@mixin media-breakpoint-between(
+  $lower,
+  $upper,
+  $breakpoints: $grid-breakpoints
+) {
   $min: breakpoint-min($lower, $breakpoints);
   $max: breakpoint-max($upper, $breakpoints);
 
