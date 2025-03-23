@@ -7,7 +7,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
-    prependData: `@use "@styles/utils/_variables.scss" as *; @use "@styles/utils/_mixin.scss" as *;`,
+    prependData: `@use "@styles/utils/index" as *;`,
   },
   reactStrictMode: false,
   images: {
